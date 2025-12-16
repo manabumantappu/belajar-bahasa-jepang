@@ -79,4 +79,39 @@ button:hover {
 </div>
 
 <div class="question">
-<p>2️⃣ 「機械（きかい）」
+<p>2️⃣ 「機械（きかい）」 artinya?</p>
+<button onclick="jawab(true)">Mesin</button>
+<button onclick="jawab(false)">Pabrik</button>
+<button onclick="jawab(false)">Alat</button>
+</div>
+
+<div class="question">
+<p>3️⃣ 「検査（けんさ）」 dalam bahasa Indonesia?</p>
+<button onclick="jawab(true)">Inspeksi</button>
+<button onclick="jawab(false)">Produksi</button>
+<button onclick="jawab(false)">Keselamatan</button>
+</div>
+
+<p id="hasil" class="result"></p>
+
+<a href="index.html" class="btn">⬅ Kembali ke Beranda</a>
+
+</div>
+
+<script>
+let skor = 0;
+
+function jawab(benar) {
+    if (benar) {
+        skor++;
+        document.getElementById("hasil").innerHTML =
+            "✅ Benar! Skor kamu: " + skor;
+    } else {
+        document.getElementById("hasil").innerHTML =
+            "❌ Salah. Skor kamu: " + skor;
+    }
+}
+</script>
+
+</body>
+</html>
