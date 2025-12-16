@@ -1,1 +1,21 @@
+<div class="question">
+<p>1. ア</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">a</button>
+<button class="option" onclick="pilih(this,false)">i</button>
+<button class="option" onclick="pilih(this,false)">u</button>
+</div>
+
+<div class="question">
+<p>2. カ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">ka</button>
+<button class="option" onclick="pilih(this,false)">sa</button>
+<button class="option" onclick="pilih(this,false)">ta</button>
+</div>
+
+<div class="question">
+<p>3. サ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">sa</button>
+<button class="option" onclick="pilih(this,false)">ka</button>
+<button class="option" onclick="pilih(this,false)">ha</button>
+</div>
 
