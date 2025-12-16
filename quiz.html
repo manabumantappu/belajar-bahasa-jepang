@@ -1,4 +1,98 @@
-<!-- 1 -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Bahasa Jepang | Manabu Mantappu</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.question {
+  margin-top: 25px;
+}
+
+.option {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.option:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+#score {
+  margin-top: 30px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 25px;
+  background: #555;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  width: fit-content;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>🧠 Quiz Bahasa Jepang</h1>
+<p style="text-align:center;">Uji pemahaman dasar kamu</p>
+
+<script>
+let skor = 0;
+
+function pilih(btn, benar) {
+  const parent = btn.parentElement;
+  const buttons = parent.querySelectorAll("button");
+
+  buttons.forEach(b => b.disabled = true);
+
+  if (benar) {
+    btn.style.background = "#2ecc71";
+    skor++;
+  } else {
+    btn.style.background = "#e74c3c";
+    parent.querySelector('[data-benar="true"]').style.background = "#2ecc71";
+  }
+
+  document.getElementById("score").innerText = "Skor: " + skor;
+}
+</script>
+
+<!-- CONTOH 2 SOAL (CEK DULU INI JALAN) -->
 <div class="question">
 <p>1️⃣ Apa arti 「おはようございます」?</p>
 <button class="option" data-benar="true" onclick="pilih(this,true)">Selamat pagi</button>
@@ -6,7 +100,6 @@
 <button class="option" onclick="pilih(this,false)">Terima kasih</button>
 </div>
 
-<!-- 2 -->
 <div class="question">
 <p>2️⃣ 機械（きかい） artinya?</p>
 <button class="option" data-benar="true" onclick="pilih(this,true)">Mesin</button>
@@ -14,146 +107,10 @@
 <button class="option" onclick="pilih(this,false)">Alat</button>
 </div>
 
-<!-- 3 -->
-<div class="question">
-<p>3️⃣ 検査（けんさ） artinya?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Inspeksi</button>
-<button class="option" onclick="pilih(this,false)">Produksi</button>
-<button class="option" onclick="pilih(this,false)">Keselamatan</button>
+<p id="score">Skor: 0</p>
+
+<a href="index.html" class="btn">⬅ Kembali ke Beranda</a>
 </div>
 
-<!-- 4 -->
-<div class="question">
-<p>4️⃣ 工場（こうじょう）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Pabrik</button>
-<button class="option" onclick="pilih(this,false)">Gudang</button>
-<button class="option" onclick="pilih(this,false)">Kantor</button>
-</div>
-
-<!-- 5 -->
-<div class="question">
-<p>5️⃣ 作業（さぎょう）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Pekerjaan</button>
-<button class="option" onclick="pilih(this,false)">Libur</button>
-<button class="option" onclick="pilih(this,false)">Mesin</button>
-</div>
-
-<!-- 6 -->
-<div class="question">
-<p>6️⃣ 安全（あんぜん）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Keselamatan</button>
-<button class="option" onclick="pilih(this,false)">Bahaya</button>
-<button class="option" onclick="pilih(this,false)">Produksi</button>
-</div>
-
-<!-- 7 -->
-<div class="question">
-<p>7️⃣ 危険（きけん）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Bahaya</button>
-<button class="option" onclick="pilih(this,false)">Aman</button>
-<button class="option" onclick="pilih(this,false)">Rusak</button>
-</div>
-
-<!-- 8 -->
-<div class="question">
-<p>8️⃣ 部品（ぶひん）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Komponen</button>
-<button class="option" onclick="pilih(this,false)">Mesin</button>
-<button class="option" onclick="pilih(this,false)">Alat</button>
-</div>
-
-<!-- 9 -->
-<div class="question">
-<p>9️⃣ 溶接（ようせつ）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Pengelasan</button>
-<button class="option" onclick="pilih(this,false)">Pemotongan</button>
-<button class="option" onclick="pilih(this,false)">Perakitan</button>
-</div>
-
-<!-- 10 -->
-<div class="question">
-<p>🔟 測定（そくてい）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Pengukuran</button>
-<button class="option" onclick="pilih(this,false)">Inspeksi</button>
-<button class="option" onclick="pilih(this,false)">Produksi</button>
-</div>
-
-<!-- 11 -->
-<div class="question">
-<p>11️⃣ 不良（ふりょう）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Cacat</button>
-<button class="option" onclick="pilih(this,false)">Aman</button>
-<button class="option" onclick="pilih(this,false)">Baik</button>
-</div>
-
-<!-- 12 -->
-<div class="question">
-<p>12️⃣ 修理（しゅうり）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Perbaikan</button>
-<button class="option" onclick="pilih(this,false)">Produksi</button>
-<button class="option" onclick="pilih(this,false)">Pengiriman</button>
-</div>
-
-<!-- 13 -->
-<div class="question">
-<p>13️⃣ 点検（てんけん）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Pengecekan</button>
-<button class="option" onclick="pilih(this,false)">Pembersihan</button>
-<button class="option" onclick="pilih(this,false)">Perbaikan</button>
-</div>
-
-<!-- 14 -->
-<div class="question">
-<p>14️⃣ 組立（くみたて）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Perakitan</button>
-<button class="option" onclick="pilih(this,false)">Pemotongan</button>
-<button class="option" onclick="pilih(this,false)">Pengelasan</button>
-</div>
-
-<!-- 15 -->
-<div class="question">
-<p>15️⃣ 生産（せいさん）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Produksi</button>
-<button class="option" onclick="pilih(this,false)">Inspeksi</button>
-<button class="option" onclick="pilih(this,false)">Pengiriman</button>
-</div>
-
-<!-- 16 -->
-<div class="question">
-<p>16️⃣ 出荷（しゅっか）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Pengiriman</button>
-<button class="option" onclick="pilih(this,false)">Produksi</button>
-<button class="option" onclick="pilih(this,false)">Penyimpanan</button>
-</div>
-
-<!-- 17 -->
-<div class="question">
-<p>17️⃣ 工具（こうぐ）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Perkakas</button>
-<button class="option" onclick="pilih(this,false)">Mesin</button>
-<button class="option" onclick="pilih(this,false)">Bahan</button>
-</div>
-
-<!-- 18 -->
-<div class="question">
-<p>18️⃣ 原因（げんいん）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Penyebab</button>
-<button class="option" onclick="pilih(this,false)">Hasil</button>
-<button class="option" onclick="pilih(this,false)">Solusi</button>
-</div>
-
-<!-- 19 -->
-<div class="question">
-<p>19️⃣ 対策（たいさく）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Tindakan pencegahan</button>
-<button class="option" onclick="pilih(this,false)">Masalah</button>
-<button class="option" onclick="pilih(this,false)">Bahaya</button>
-</div>
-
-<!-- 20 -->
-<div class="question">
-<p>20️⃣ 改善（かいぜん）?</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">Perbaikan</button>
-<button class="option" onclick="pilih(this,false)">Kerusakan</button>
-<button class="option" onclick="pilih(this,false)">Penghentian</button>
-</div>
+</body>
+</html>
