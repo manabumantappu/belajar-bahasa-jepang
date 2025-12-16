@@ -33,87 +33,12 @@ h1 {
   padding: 12px;
   margin: 8px 0;
   font-size: 16px;
-  background: #ffffff;          /* PUTIH */
-  color: #2c3e50;               /* teks gelap */
-  border: 2px solid #3498db;    /* garis biru */
+  background: #ffffff;
+  color: #2c3e50;
+  border: 2px solid #3498db;
   border-radius: 6px;
   cursor: pointer;
 }
-
-
-.option:disabled {
-  cursor: not-allowed;
-  opacity: 0.9;
-}
-
-#score {
-  margin-top: 30px;
-  font-weight: bold;
-  text-align: center;
-  font-size: 18px;
-}
-
-.btn {
-  display: block;
-  margin: 30px auto 0;
-  padding: 12px 25px;
-  background: #555;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  width: fit-content;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-<h1>🧠 Quiz Bahasa Jepang</h1>
-<p style="text-align:center;">Uji pemahaman dasar kamu</p>
-
- <!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz Bahasa Jepang | Manabu Mantappu</title>
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  padding: 20px;
-}
-
-.container {
-  max-width: 750px;
-  margin: auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-}
-
-h1 {
-  text-align: center;
-}
-
-.question {
-  margin-top: 25px;
-}
-
-.option {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  font-size: 16px;
-  background: #ffffff;          /* PUTIH */
-  color: #2c3e50;               /* teks gelap */
-  border: 2px solid #3498db;    /* garis biru */
-  border-radius: 6px;
-  cursor: pointer;
-}
-
 
 .option:disabled {
   cursor: not-allowed;
@@ -148,40 +73,30 @@ h1 {
 
 <script>
 let skor = 0;
-let benar = 0;
-let salah = 0;
-
-
-function pilih(btn, benar) {
-  const parent = btn.parentElement;
-  const buttons = parent.querySelectorAll("button");
-
-  buttons.forEach(b => b.disabled = true);
-
-  <script>
-let skor = 0;
-let benar = 0;
-let salah = 0;
+let benarCount = 0;
+let salahCount = 0;
+const totalSoal = 20;
 
 function pilih(btn, isBenar) {
   const parent = btn.parentElement;
   const buttons = parent.querySelectorAll("button");
 
-  // matikan semua tombol di soal ini
   buttons.forEach(b => b.disabled = true);
 
   if (isBenar) {
     btn.style.background = "#2ecc71";
     skor++;
-    benar++;
+    benarCount++;
   } else {
     btn.style.background = "#e74c3c";
-    salah++;
+    salahCount++;
     parent.querySelector('[data-benar="true"]').style.background = "#2ecc71";
   }
 
   document.getElementById("score").innerHTML =
-    `Skor: ${skor} / 20<br>Benar: ${benar}<br>Salah: ${salah}`;
+    `Skor: ${skor} / ${totalSoal}<br>
+     Benar: ${benarCount}<br>
+     Salah: ${salahCount}`;
 }
 </script>
 
