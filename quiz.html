@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 700px;
+    max-width: 720px;
     margin: auto;
     background: white;
     padding: 30px;
@@ -28,7 +28,7 @@ h1 {
     margin-top: 25px;
 }
 
-button {
+.option {
     width: 100%;
     margin: 8px 0;
     padding: 12px;
@@ -40,13 +40,27 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.option:hover {
     background: #2980b9;
 }
 
-.result {
-    margin-top: 20px;
+.option.correct {
+    background: #2ecc71;
+}
+
+.option.wrong {
+    background: #e74c3c;
+}
+
+.option:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+#score {
+    margin-top: 25px;
     font-weight: bold;
+    text-align: center;
 }
 
 .btn {
@@ -73,28 +87,28 @@ button:hover {
 <!-- SOAL 1 -->
 <div class="question">
 <p>1️⃣ Apa arti dari 「おはようございます」?</p>
-<button onclick="jawab(true)">Selamat pagi</button>
-<button onclick="jawab(false)">Selamat malam</button>
-<button onclick="jawab(false)">Terima kasih</button>
+<button class="option" data-correct="true">Selamat pagi</button>
+<button class="option">Selamat malam</button>
+<button class="option">Terima kasih</button>
 </div>
 
 <!-- SOAL 2 -->
 <div class="question">
 <p>2️⃣ 「機械（きかい）」 artinya?</p>
-<button onclick="jawab(true)">Mesin</button>
-<button onclick="jawab(false)">Pabrik</button>
-<button onclick="jawab(false)">Alat</button>
+<button class="option" data-correct="true">Mesin</button>
+<button class="option">Pabrik</button>
+<button class="option">Alat</button>
 </div>
 
 <!-- SOAL 3 -->
 <div class="question">
 <p>3️⃣ 「検査（けんさ）」 dalam bahasa Indonesia?</p>
-<button onclick="jawab(true)">Inspeksi</button>
-<button onclick="jawab(false)">Produksi</button>
-<button onclick="jawab(false)">Keselamatan</button>
+<button class="option" data-correct="true">Inspeksi</button>
+<button class="option">Produksi</button>
+<button class="option">Keselamatan</button>
 </div>
 
-<p id="hasil" class="result"></p>
+<p id="score">Skor: 0</p>
 
 <a href="index.html" class="btn">⬅ Kembali ke Beranda</a>
 
@@ -103,17 +117,4 @@ button:hover {
 <script>
 let skor = 0;
 
-function jawab(benar) {
-    if (benar) {
-        skor++;
-        document.getElementById("hasil").innerHTML =
-            "✅ Benar! Skor kamu: " + skor;
-    } else {
-        document.getElementById("hasil").innerHTML =
-            "❌ Salah. Skor kamu: " + skor;
-    }
-}
-</script>
-
-</body>
-</html>
+document.querySelect
