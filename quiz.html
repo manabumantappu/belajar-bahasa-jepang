@@ -23,7 +23,6 @@ body {
 
 h1 {
     text-align: center;
-    color: #2c3e50;
 }
 
 .question {
@@ -31,7 +30,6 @@ h1 {
 }
 
 button {
-    display: block;
     width: 100%;
     margin: 8px 0;
     padding: 12px;
@@ -73,53 +71,12 @@ button:hover {
 <h1>🧠 Quiz Bahasa Jepang</h1>
 <p style="text-align:center;">Uji pemahaman dasar kamu</p>
 
-<!-- SOAL 1 -->
 <div class="question">
 <p>1️⃣ Apa arti dari 「おはようございます」?</p>
-
 <button onclick="jawab(true)">Selamat pagi</button>
 <button onclick="jawab(false)">Selamat malam</button>
 <button onclick="jawab(false)">Terima kasih</button>
 </div>
 
-<!-- SOAL 2 -->
 <div class="question">
-<p>2️⃣ 「機械（きかい）」 artinya?</p>
-
-<button onclick="jawab(true)">Mesin</button>
-<button onclick="jawab(false)">Pabrik</button>
-<button onclick="jawab(false)">Alat</button>
-</div>
-
-<!-- SOAL 3 -->
-<div class="question">
-<p>3️⃣ 「検査（けんさ）」 dalam bahasa Indonesia?</p>
-
-<button onclick="jawab(true)">Inspeksi</button>
-<button onclick="jawab(false)">Produksi</button>
-<button onclick="jawab(false)">Keselamatan</button>
-</div>
-
-<p id="hasil" class="result"></p>
-
-<a href="index.html" class="btn">⬅ Kembali ke Beranda</a>
-
-</div>
-
-<script>
-let skor = 0;
-
-function jawab(benar) {
-    if (benar) {
-        skor++;
-        document.getElementById("hasil").innerHTML =
-            "✅ Jawaban benar! Skor kamu: " + skor;
-    } else {
-        document.getElementById("hasil").innerHTML =
-            "❌ Jawaban salah. Skor kamu: " + skor;
-    }
-}
-</script>
-
-</body>
-</html>
+<p>2️⃣ 「機械（きかい）」
