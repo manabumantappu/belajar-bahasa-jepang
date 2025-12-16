@@ -1,21 +1,225 @@
-<div class="question">
-<p>1. ア</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Katakana | Manabu Mantappu</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 15px;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.question {
+  margin-top: 18px;
+}
+
+.option {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  font-size: 16px;
+  background: #ffffff;
+  color: #2c3e50;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.option:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+#score {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background: #555;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>🧠 Quiz Katakana</h1>
+<p style="text-align:center;">Pilih romaji yang benar</p>
+
+<script>
+let skor = 0;
+let benar = 0;
+let salah = 0;
+const total = 20;
+
+function pilih(btn, isBenar) {
+  const parent = btn.parentElement;
+  parent.querySelectorAll("button").forEach(b => b.disabled = true);
+
+  if (isBenar) {
+    btn.style.background = "#2ecc71";
+    skor++; benar++;
+  } else {
+    btn.style.background = "#e74c3c";
+    salah++;
+    parent.querySelector('[data-benar="true"]').style.background = "#2ecc71";
+  }
+
+  document.getElementById("score").innerHTML =
+    `Skor: ${skor} / ${total}<br>Benar: ${benar}<br>Salah: ${salah}`;
+}
+</script>
+
+<!-- SOAL 1–20 -->
+<div class="question"><p>1. ア</p>
 <button class="option" data-benar="true" onclick="pilih(this,true)">a</button>
 <button class="option" onclick="pilih(this,false)">i</button>
 <button class="option" onclick="pilih(this,false)">u</button>
 </div>
 
-<div class="question">
-<p>2. カ</p>
+<div class="question"><p>2. イ</p>
+<button class="option" onclick="pilih(this,false)">e</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">i</button>
+<button class="option" onclick="pilih(this,false)">o</button>
+</div>
+
+<div class="question"><p>3. ウ</p>
+<button class="option" onclick="pilih(this,false)">o</button>
+<button class="option" onclick="pilih(this,false)">e</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">u</button>
+</div>
+
+<div class="question"><p>4. エ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">e</button>
+<button class="option" onclick="pilih(this,false)">i</button>
+<button class="option" onclick="pilih(this,false)">u</button>
+</div>
+
+<div class="question"><p>5. オ</p>
+<button class="option" onclick="pilih(this,false)">a</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">o</button>
+<button class="option" onclick="pilih(this,false)">e</button>
+</div>
+
+<div class="question"><p>6. カ</p>
 <button class="option" data-benar="true" onclick="pilih(this,true)">ka</button>
 <button class="option" onclick="pilih(this,false)">sa</button>
 <button class="option" onclick="pilih(this,false)">ta</button>
 </div>
 
-<div class="question">
-<p>3. サ</p>
-<button class="option" data-benar="true" onclick="pilih(this,true)">sa</button>
+<div class="question"><p>7. サ</p>
 <button class="option" onclick="pilih(this,false)">ka</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">sa</button>
 <button class="option" onclick="pilih(this,false)">ha</button>
 </div>
 
+<div class="question"><p>8. タ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">ta</button>
+<button class="option" onclick="pilih(this,false)">na</button>
+<button class="option" onclick="pilih(this,false)">da</button>
+</div>
+
+<div class="question"><p>9. ナ</p>
+<button class="option" onclick="pilih(this,false)">ma</button>
+<button class="option" onclick="pilih(this,false)">ha</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">na</button>
+</div>
+
+<div class="question"><p>10. ハ</p>
+<button class="option" onclick="pilih(this,false)">ba</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">ha</button>
+<button class="option" onclick="pilih(this,false)">pa</button>
+</div>
+
+<div class="question"><p>11. マ</p>
+<button class="option" onclick="pilih(this,false)">na</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">ma</button>
+<button class="option" onclick="pilih(this,false)">ha</button>
+</div>
+
+<div class="question"><p>12. ヤ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">ya</button>
+<button class="option" onclick="pilih(this,false)">ra</button>
+<button class="option" onclick="pilih(this,false)">wa</button>
+</div>
+
+<div class="question"><p>13. ラ</p>
+<button class="option" onclick="pilih(this,false)">ya</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">ra</button>
+<button class="option" onclick="pilih(this,false)">ma</button>
+</div>
+
+<div class="question"><p>14. ワ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">wa</button>
+<button class="option" onclick="pilih(this,false)">ra</button>
+<button class="option" onclick="pilih(this,false)">ha</button>
+</div>
+
+<div class="question"><p>15. ン</p>
+<button class="option" onclick="pilih(this,false)">na</button>
+<button class="option" onclick="pilih(this,false)">mu</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">n</button>
+</div>
+
+<div class="question"><p>16. キ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">ki</button>
+<button class="option" onclick="pilih(this,false)">shi</button>
+<button class="option" onclick="pilih(this,false)">chi</button>
+</div>
+
+<div class="question"><p>17. シ</p>
+<button class="option" onclick="pilih(this,false)">tsu</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">shi</button>
+<button class="option" onclick="pilih(this,false)">chi</button>
+</div>
+
+<div class="question"><p>18. チ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">chi</button>
+<button class="option" onclick="pilih(this,false)">shi</button>
+<button class="option" onclick="pilih(this,false)">tsu</button>
+</div>
+
+<div class="question"><p>19. ツ</p>
+<button class="option" onclick="pilih(this,false)">shi</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">tsu</button>
+<button class="option" onclick="pilih(this,false)">su</button>
+</div>
+
+<div class="question"><p>20. フ</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">fu</button>
+<button class="option" onclick="pilih(this,false)">hu</button>
+<button class="option" onclick="pilih(this,false)">bu</button>
+</div>
+
+<p id="score">Skor: 0 / 20<br>Benar: 0<br>Salah: 0</p>
+
+<button class="btn" onclick="location.reload()">🔄 Reset</button>
+<a href="index.html" class="btn">⬅ Kembali</a>
+</div>
+
+</body>
+</html>
