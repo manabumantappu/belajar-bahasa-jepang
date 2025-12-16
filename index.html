@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 700px;
+    max-width: 720px;
     margin: auto;
     background: white;
     padding: 30px;
@@ -23,6 +23,27 @@ body {
 
 h1 {
     color: #2c3e50;
+}
+
+p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+li::before {
+    content: "✓ ";
+    color: #3498db;
+    font-weight: bold;
 }
 
 .section {
@@ -44,9 +65,20 @@ h1 {
 <body>
 
 <div class="container">
+
     <h1>Belajar Bahasa Jepang untuk Pemula</h1>
 
-    <p>Mulai belajar dari dasar dengan cara mudah dan menyenangkan.</p>
+    <p>
+        Mulai perjalanan Anda dalam belajar bahasa Jepang dengan metode yang mudah,
+        menyenangkan, dan cocok untuk pemula.
+    </p>
+
+    <ul>
+        <li>Belajar Hiragana dan Katakana</li>
+        <li>Kosakata sehari-hari</li>
+        <li>Kalimat dan percakapan dasar</li>
+        <li>Latihan untuk pemula</li>
+    </ul>
 
     <div class="section">
         <h2>Hiragana</h2>
@@ -57,6 +89,7 @@ h1 {
         <h2>Katakana</h2>
         <a href="katakana.html" class="btn">Belajar Katakana</a>
     </div>
+
 </div>
 
 </body>
