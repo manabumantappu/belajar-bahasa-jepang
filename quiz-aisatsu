@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Aisatsu | Manabu Mantappu</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 15px;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.question {
+  margin-top: 18px;
+}
+
+.option {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  font-size: 16px;
+  background: #ffffff;
+  color: #2c3e50;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.option:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+#score {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background: #555;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>🧠 Quiz Aisatsu (Salam)</h1>
+<p style="text-align:center;">Pilih arti yang benar</p>
+
+<script>
+let skor = 0;
+let benar = 0;
+let salah = 0;
+const total = 20;
+
+function pilih(btn, isBenar) {
+  const parent = btn.parentElement;
+  parent.querySelectorAll("button").forEach(b => b.disabled = true);
+
+  if (isBenar) {
+    btn.style.background = "#2ecc71";
+    skor++; benar++;
+  } else {
+    btn.style.background = "#e74c3c";
+    salah++;
+    parent.querySelector('[data-benar="true"]').style.background = "#2ecc71";
+  }
+
+  document.getElementById("score").innerHTML =
+    `Skor: ${skor} / ${total}<br>Benar: ${benar}<br>Salah: ${salah}`;
+}
+</script>
+
+<!-- SOAL 1–20 -->
+<div class="question"><p>1. おはようございます</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Selamat pagi</button>
+<button class="option" onclick="pilih(this,false)">Selamat malam</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+</div>
+
+<div class="question"><p>2. こんにちは</p>
+<button class="option" onclick="pilih(this,false)">Selamat pagi</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Selamat siang</button>
+<button class="option" onclick="pilih(this,false)">Selamat malam</button>
+</div>
+
+<div class="question"><p>3. こんばんは</p>
+<button class="option" onclick="pilih(this,false)">Selamat pagi</button>
+<button class="option" onclick="pilih(this,false)">Selamat siang</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Selamat malam</button>
+</div>
+
+<div class="question"><p>4. おやすみなさい</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Selamat tidur</button>
+<button class="option" onclick="pilih(this,false)">Selamat jalan</button>
+<button class="option" onclick="pilih(this,false)">Selamat datang</button>
+</div>
+
+<div class="question"><p>5. ありがとうございます</p>
+<button class="option" onclick="pilih(this,false)">Maaf</button>
+<button class="option" onclick="pilih(this,false)">Sama-sama</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Terima kasih</button>
+</div>
+
+<div class="question"><p>6. すみません</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Permisi / Maaf</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+<button class="option" onclick="pilih(this,false)">Tolong</button>
+</div>
+
+<div class="question"><p>7. ごめんなさい</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Maaf</button>
+<button class="option" onclick="pilih(this,false)">Permisi</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+</div>
+
+<div class="question"><p>8. どういたしまして</p>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Sama-sama</button>
+<button class="option" onclick="pilih(this,false)">Permisi</button>
+</div>
+
+<div class="question"><p>9. はじめまして</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Senang bertemu dengan Anda</button>
+<button class="option" onclick="pilih(this,false)">Selamat datang</button>
+<button class="option" onclick="pilih(this,false)">Sampai jumpa</button>
+</div>
+
+<div class="question"><p>10. よろしくお願いします</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Mohon kerja samanya</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+<button class="option" onclick="pilih(this,false)">Permisi</button>
+</div>
+
+<div class="question"><p>11. お疲れ様です</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Terima kasih atas kerja kerasnya</button>
+<button class="option" onclick="pilih(this,false)">Selamat pagi</button>
+<button class="option" onclick="pilih(this,false)">Permisi</button>
+</div>
+
+<div class="question"><p>12. お先に失礼します</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Permisi pulang duluan</button>
+<button class="option" onclick="pilih(this,false)">Selamat datang</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+</div>
+
+<div class="question"><p>13. いってきます</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Saya berangkat</button>
+<button class="option" onclick="pilih(this,false)">Selamat datang</button>
+<button class="option" onclick="pilih(this,false)">Hati-hati</button>
+</div>
+
+<div class="question"><p>14. いってらっしゃい</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Hati-hati</button>
+<button class="option" onclick="pilih(this,false)">Saya berangkat</button>
+<button class="option" onclick="pilih(this,false)">Selamat tinggal</button>
+</div>
+
+<div class="question"><p>15. ただいま</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Saya pulang</button>
+<button class="option" onclick="pilih(this,false)">Saya berangkat</button>
+<button class="option" onclick="pilih(this,false)">Selamat pagi</button>
+</div>
+
+<div class="question"><p>16. おかえりなさい</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Selamat datang kembali</button>
+<button class="option" onclick="pilih(this,false)">Selamat jalan</button>
+<button class="option" onclick="pilih(this,false)">Selamat pagi</button>
+</div>
+
+<div class="question"><p>17. またね</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Sampai jumpa</button>
+<button class="option" onclick="pilih(this,false)">Selamat malam</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+</div>
+
+<div class="question"><p>18. さようなら</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Selamat tinggal</button>
+<button class="option" onclick="pilih(this,false)">Sampai jumpa</button>
+<button class="option" onclick="pilih(this,false)">Permisi</button>
+</div>
+
+<div class="question"><p>19. 失礼します</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Permisi (formal)</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+<button class="option" onclick="pilih(this,false)">Maaf</button>
+</div>
+
+<div class="question"><p>20. お願いします</p>
+<button class="option" data-benar="true" onclick="pilih(this,true)">Tolong / Mohon</button>
+<button class="option" onclick="pilih(this,false)">Terima kasih</button>
+<button class="option" onclick="pilih(this,false)">Permisi</button>
+</div>
+
+<p id="score">Skor: 0 / 20<br>Benar: 0<br>Salah: 0</p>
+
+<button class="btn" onclick="location.reload()">🔄 Reset</button>
+<a href="index.html" class="btn">⬅ Kembali</a>
+
+</div>
+</body>
+</html>
