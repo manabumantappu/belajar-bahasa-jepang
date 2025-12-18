@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quiz Kana (Hiragana & Katakana) | Manabu Mantappu</title>
+  <meta name="description" content="Quiz Kana Bahasa Jepang (Hiragana & Katakana) untuk pemula. Uji pemahaman huruf Jepang dasar.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .quiz-box {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .question {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 24px 0;
+    }
+
+    .choices button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: #e5e7eb;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .choices button:hover {
+      background: #c7d2fe;
+    }
+
+    .choices button.correct {
+      background: #16a34a;
+      color: #fff;
+    }
+
+    .choices button.wrong {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .result {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="top-header">
+  <div class="header-inner header-center">
+    <div class="header-brand">
+      <img src="img/logo.png" class="site-logo" alt="Manabu Mantappu Logo">
+      <div class="header-text">
+        <h1 class="logo-text">Manabu Mantappu</h1>
+        <p class="tagline">Quiz Kana (Hiragana & Katakana)</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="kana.html" class="active">Kana</a></li>
+      <li><a href="aisatsu.html">Aisatsu</a></li>
+      <li><a href="kosakata-dasar.html">Kosakata Dasar</a></li>
+      <li><a href="latihan.html">Latihan</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== CONTENT ===== -->
+<main class="container">
+
+  <section class="section quiz-box">
+    <h2>Quiz Kana</h2>
+    <p>Pilih jawaban romaji yang benar</p>
+
+    <div class="question" id="question">あ</div>
+
+    <div class="choices" id="choices"></div>
+
+    <div class="result" id="result"></div>
+
+    <a href="quiz-kana.html" class="btn small" style="margin-top:20px;">
+      🔄 Ulangi Quiz
+    </a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2025 Manabu Mantappu</p>
+</footer>
+
+<script>
+const questions = [
+  { q: "あ", a: "a", c: ["a", "i", "u", "e"] },
+  { q: "い", a: "i", c: ["a", "i", "o", "u"] },
+  { q: "う", a: "u", c: ["u", "e", "i", "o"] },
+  { q: "え", a: "e", c: ["a", "e", "o", "i"] },
+  { q: "ア", a: "a", c: ["a", "i", "u", "e"] },
+  { q: "イ", a: "i", c: ["a", "i", "o", "u"] },
+  { q: "ウ", a: "u", c: ["u", "e", "i", "o"] },
+  { q: "エ", a: "e", c: ["a", "e", "o", "i"] }
+];
+
+let index = 0;
+let score = 0;
+
+const qEl = document.getElementById("question");
+const cEl = document.getElementById("choices");
+const rEl = document.getElementById("result");
+
+function loadQuestion() {
+  if (index >= questions.length) {
+    rEl.innerHTML = `🎉 Selesai! Skor kamu: ${score} / ${questions.length}`;
+    qEl.style.display = "none";
+    cEl.style.display = "none";
+    return;
+  }
+
+  const item = questions[index];
+  qEl.textContent = item.q;
+  cEl.innerHTML = "";
+
+  item.c.forEach(choice => {
+    const btn = document.createElement("button");
+    btn.textContent = choice;
+    btn.onclick = () => checkAnswer(btn, item.a);
+    cEl.appendChild(btn);
+  });
+}
+
+function checkAnswer(btn, answer) {
+  if (btn.textContent === answer) {
+    btn.classList.add("correct");
+    score++;
+  } else {
+    btn.classList.add("wrong");
+  }
+
+  setTimeout(() => {
+    index++;
+    loadQuestion();
+  }, 800);
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
