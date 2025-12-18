@@ -258,48 +258,43 @@ th {
   }
 }
 
-/* ================= HEADER CENTER FIX ================= */
+/* ================= HEADER FINAL FIX ================= */
 .top-header {
   background: linear-gradient(135deg, #0f4c81, #1e88e5);
   color: #ffffff;
 }
 
-/* container header */
+/* wrapper header */
 .header-inner {
   max-width: 960px;
   margin: 0 auto;
-  padding: 28px 16px;
+  padding: 24px 16px;   /* 🔑 kurangi tinggi header */
 }
 
-/* pusatkan isi header */
+/* center isi */
 .header-center {
   display: flex;
   justify-content: center;
 }
 
-/* grup logo + teks */
+/* logo + teks */
 .header-brand {
   display: flex;
   align-items: center;
   gap: 16px;
-  text-align: left;
 }
 
-/* logo */
+/* 🔥 INI PALING PENTING */
 .site-logo {
-  width: 60px;
+  width: 56px;         /* KUNCI: LOGO TIDAK BOLEH AUTO */
   height: auto;
+  flex-shrink: 0;
 }
 
 /* teks */
-.header-text {
-  display: flex;
-  flex-direction: column;
-}
-
 .logo-text {
   margin: 0;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
