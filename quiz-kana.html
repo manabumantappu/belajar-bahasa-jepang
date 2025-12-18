@@ -1,77 +1,82 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Quiz Kana (Hiragana & Katakana) | Manabu Mantappu</title>
-  <meta name="description" content="Quiz Kana Bahasa Jepang (Hiragana & Katakana) untuk pemula. Uji pemahaman huruf Jepang dasar.">
+<title>Quiz Kana | Manabu Mantappu</title>
+<meta name="description" content="Quiz Kana Hiragana & Katakana level 1–10 untuk pemula.">
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-  <style>
-    .quiz-box {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
+<style>
+.quiz-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
 
-    .question {
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 24px 0;
-    }
+.quiz-menu button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #1e88e5;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-    .choices button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 14px;
-      border-radius: 10px;
-      border: none;
-      background: #e5e7eb;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+.quiz-box {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
 
-    .choices button:hover {
-      background: #c7d2fe;
-    }
+.question {
+  font-size: 2.2rem;
+  margin: 20px 0;
+}
 
-    .choices button.correct {
-      background: #16a34a;
-      color: #fff;
-    }
+.choices button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #e5e7eb;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
-    .choices button.wrong {
-      background: #dc2626;
-      color: #fff;
-    }
+.choices button.correct {
+  background: #16a34a;
+  color: white;
+}
 
-    .result {
-      font-size: 1.1rem;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
+.choices button.wrong {
+  background: #dc2626;
+  color: white;
+}
+</style>
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header class="top-header">
   <div class="header-inner header-center">
     <div class="header-brand">
-      <img src="img/logo.png" class="site-logo" alt="Manabu Mantappu Logo">
-      <div class="header-text">
-        <h1 class="logo-text">Manabu Mantappu</h1>
-        <p class="tagline">Quiz Kana (Hiragana & Katakana)</p>
+      <img src="img/logo.png" class="site-logo">
+      <div>
+        <h1 class="logo-text">Quiz Kana</h1>
+        <p class="tagline">Hiragana & Katakana Level 1–10</p>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ===== NAVBAR ===== -->
 <nav class="main-nav">
   <div class="nav-inner">
     <ul class="nav-menu">
@@ -84,84 +89,83 @@
   </div>
 </nav>
 
-<!-- ===== CONTENT ===== -->
 <main class="container">
 
-  <section class="section quiz-box">
-    <h2>Quiz Kana</h2>
-    <p>Pilih jawaban romaji yang benar</p>
+<section class="section">
+<h2>Pilih Quiz Kana</h2>
 
-    <div class="question" id="question">あ</div>
+<div class="quiz-menu">
+  <button onclick="startQuiz(0)">Quiz 1</button>
+  <button onclick="startQuiz(1)">Quiz 2</button>
+  <button onclick="startQuiz(2)">Quiz 3</button>
+  <button onclick="startQuiz(3)">Quiz 4</button>
+  <button onclick="startQuiz(4)">Quiz 5</button>
+  <button onclick="startQuiz(5)">Quiz 6</button>
+  <button onclick="startQuiz(6)">Quiz 7</button>
+  <button onclick="startQuiz(7)">Quiz 8</button>
+  <button onclick="startQuiz(8)">Quiz 9</button>
+  <button onclick="startQuiz(9)">Quiz 10</button>
+</div>
 
-    <div class="choices" id="choices"></div>
-
-    <div class="result" id="result"></div>
-
-    <a href="quiz-kana.html" class="btn small" style="margin-top:20px;">
-      🔄 Ulangi Quiz
-    </a>
-  </section>
+<div class="quiz-box">
+  <div class="question" id="question">Pilih Quiz</div>
+  <div class="choices" id="choices"></div>
+</div>
+</section>
 
 </main>
 
-<footer class="footer">
-  <p>© 2025 Manabu Mantappu</p>
-</footer>
-
 <script>
-const questions = [
-  { q: "あ", a: "a", c: ["a", "i", "u", "e"] },
-  { q: "い", a: "i", c: ["a", "i", "o", "u"] },
-  { q: "う", a: "u", c: ["u", "e", "i", "o"] },
-  { q: "え", a: "e", c: ["a", "e", "o", "i"] },
-  { q: "ア", a: "a", c: ["a", "i", "u", "e"] },
-  { q: "イ", a: "i", c: ["a", "i", "o", "u"] },
-  { q: "ウ", a: "u", c: ["u", "e", "i", "o"] },
-  { q: "エ", a: "e", c: ["a", "e", "o", "i"] }
+const quizzes = [
+  // 1–5 Hiragana
+  [{q:"あ",a:"a",c:["a","i","u","e"]},{q:"い",a:"i",c:["i","u","o","a"]}],
+  [{q:"か",a:"ka",c:["ka","sa","ta","na"]},{q:"き",a:"ki",c:["ki","ku","ke","ko"]}],
+  [{q:"さ",a:"sa",c:["sa","ka","ta","na"]},{q:"し",a:"shi",c:["shi","su","se","so"]}],
+  [{q:"た",a:"ta",c:["ta","ka","sa","na"]},{q:"ち",a:"chi",c:["chi","tsu","te","to"]}],
+  [{q:"な",a:"na",c:["na","ma","ra","ka"]},{q:"に",a:"ni",c:["ni","nu","ne","no"]}],
+
+  // 6–10 Katakana
+  [{q:"ア",a:"a",c:["a","i","u","e"]},{q:"イ",a:"i",c:["i","o","u","a"]}],
+  [{q:"カ",a:"ka",c:["ka","sa","ta","na"]},{q:"キ",a:"ki",c:["ki","ku","ke","ko"]}],
+  [{q:"サ",a:"sa",c:["sa","ka","ta","na"]},{q:"シ",a:"shi",c:["shi","su","se","so"]}],
+  [{q:"タ",a:"ta",c:["ta","ka","sa","na"]},{q:"チ",a:"chi",c:["chi","tsu","te","to"]}],
+  [{q:"ナ",a:"na",c:["na","ma","ra","ka"]},{q:"ニ",a:"ni",c:["ni","nu","ne","no"]}]
 ];
 
+let current = [];
 let index = 0;
-let score = 0;
 
 const qEl = document.getElementById("question");
 const cEl = document.getElementById("choices");
-const rEl = document.getElementById("result");
 
-function loadQuestion() {
-  if (index >= questions.length) {
-    rEl.innerHTML = `🎉 Selesai! Skor kamu: ${score} / ${questions.length}`;
-    qEl.style.display = "none";
-    cEl.style.display = "none";
+function startQuiz(n){
+  current = quizzes[n];
+  index = 0;
+  load();
+}
+
+function load(){
+  if(index >= current.length){
+    qEl.textContent = "🎉 Selesai!";
+    cEl.innerHTML = "";
     return;
   }
 
-  const item = questions[index];
-  qEl.textContent = item.q;
+  qEl.textContent = current[index].q;
   cEl.innerHTML = "";
 
-  item.c.forEach(choice => {
-    const btn = document.createElement("button");
-    btn.textContent = choice;
-    btn.onclick = () => checkAnswer(btn, item.a);
-    cEl.appendChild(btn);
+  current[index].c.forEach(x=>{
+    const b = document.createElement("button");
+    b.textContent = x;
+    b.onclick = ()=>check(b, current[index].a);
+    cEl.appendChild(b);
   });
 }
 
-function checkAnswer(btn, answer) {
-  if (btn.textContent === answer) {
-    btn.classList.add("correct");
-    score++;
-  } else {
-    btn.classList.add("wrong");
-  }
-
-  setTimeout(() => {
-    index++;
-    loadQuestion();
-  }, 800);
+function check(btn, ans){
+  btn.className = btn.textContent === ans ? "correct" : "wrong";
+  setTimeout(()=>{ index++; load(); }, 700);
 }
-
-loadQuestion();
 </script>
 
 </body>
