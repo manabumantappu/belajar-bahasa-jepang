@@ -217,3 +217,53 @@ th {
     padding: 28px 22px;
   }
 }
+/* ================= NAVBAR WITH LOGO ================= */
+.main-nav {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo kiri */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 36px;
+}
+
+.nav-logo span {
+  font-weight: 700;
+  color: #0f4c81;
+  font-size: 1rem;
+}
+
+/* Menu kanan */
+.nav-menu {
+  display: flex;
+  gap: 26px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #0f4c81;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #e53935;
+}
