@@ -191,7 +191,7 @@
 </main>
 
 <script>
-const quizzes = Array.from({length:20},()=>[
+const quizzes = [
 
 /* =====================
    QUIZ 1 – HIRAGANA A–O
@@ -444,12 +444,9 @@ const quizzes = Array.from({length:20},()=>[
   {q:"ミュージック",a:"myuujikku",c:["myuujikku","myujikku","myuujiku","myujiku"]},
   {q:"リョウ",a:"ryou",c:["ryou","ryo","ryuu","riyuu"]},
   {q:"パーティー",a:"paatii",c:["paatii","paati","pati","paatei"]}
-],
- 
-]);
+];
+  
 </script>
-
-
 let current=[], index=0;
 const qEl=document.getElementById("question");
 const cEl=document.getElementById("choices");
