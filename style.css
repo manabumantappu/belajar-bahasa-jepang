@@ -217,33 +217,40 @@ th {
     padding: 28px 22px;
   }
 }
-/* ======================================================
-   HEADER DENGAN LOGO SAMPING
-====================================================== */
+/* ================= HEADER CENTER FIX ================= */
 .top-header {
   background: linear-gradient(135deg, #0f4c81, #1e88e5);
   color: #ffffff;
 }
 
+/* container header */
 .header-inner {
   max-width: 960px;
   margin: 0 auto;
   padding: 28px 16px;
 }
 
-.header-flex {
+/* pusatkan isi header */
+.header-center {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  justify-content: center;
 }
 
-/* Logo */
+/* grup logo + teks */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+/* logo */
 .site-logo {
-  width: 70px;        /* KUNCI: kontrol ukuran */
+  width: 60px;
   height: auto;
 }
 
-/* Teks */
+/* teks */
 .header-text {
   display: flex;
   flex-direction: column;
@@ -260,4 +267,5 @@ th {
   font-size: 0.9rem;
   opacity: 0.9;
 }
+
 
