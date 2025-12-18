@@ -350,4 +350,18 @@ th {
     font-size: 0.85rem;
   }
 
+.quiz-group {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.quiz-group h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: #0f4c81;
+  text-align: center;
+}
 
