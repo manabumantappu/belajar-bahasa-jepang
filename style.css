@@ -41,29 +41,42 @@ body {
   opacity: 0.9;
 }
 
-/* ======================================================
-   NAVBAR
-====================================================== */
+/* ================= NAVBAR SPACING FIX ================= */
 .main-nav {
   background: #ffffff;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 14px 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 8px;          /* JARAK dari header */
 }
 
-.main-nav a {
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 14px 16px;       /* TINGGI navbar */
+  display: flex;
+  justify-content: center;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  gap: 36px;                /* 🔑 JARAK ANTAR MENU */
+}
+
+/* Link */
+.nav-menu a {
   text-decoration: none;
   color: #0f4c81;
   font-weight: 600;
   font-size: 0.95rem;
+  padding: 6px 2px;         /* napas atas–bawah */
 }
 
-.main-nav a:hover,
-.main-nav a.active {
+/* Hover & active */
+.nav-menu a:hover,
+.nav-menu a.active {
   color: #e53935;
 }
+
 
 /* ======================================================
    MAIN CONTAINER
