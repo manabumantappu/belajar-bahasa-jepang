@@ -14,7 +14,7 @@ body {
 }
 
 /* ======================================================
-   HEADER (GRADASI)
+   HEADER
 ====================================================== */
 .top-header {
   background: linear-gradient(135deg, #0f4c81, #1e88e5);
@@ -24,24 +24,41 @@ body {
 .header-inner {
   max-width: 960px;
   margin: 0 auto;
-  padding: 36px 16px 26px;
-  text-align: center;
+  padding: 24px 16px;
 }
 
-.logo {
+.header-center {
+  display: flex;
+  justify-content: center;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.site-logo {
+  width: 56px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.logo-text {
   margin: 0;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
 .tagline {
-  margin-top: 6px;
-  font-size: 0.95rem;
+  margin-top: 4px;
+  font-size: 0.9rem;
   opacity: 0.9;
 }
 
-/* ================= NAVBAR FINAL ================= */
+/* ======================================================
+   NAVBAR
+====================================================== */
 .main-nav {
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -54,23 +71,20 @@ body {
   padding: 14px 16px;
 }
 
-/* menu list */
 .nav-menu {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 48px;              /* 🔥 JARAK KONSISTEN */
+  gap: 48px;
   padding: 0;
   margin: 0;
 }
 
-/* item */
 .nav-menu li {
   margin: 0;
   padding: 0;
 }
 
-/* link */
 .nav-menu a {
   text-decoration: none;
   font-weight: 600;
@@ -80,11 +94,10 @@ body {
   display: inline-block;
 }
 
-/* hover & active */
 .nav-menu a:hover,
 .nav-menu a.active {
   color: #e53935;
-
+}
 
 /* ======================================================
    MAIN CONTAINER
@@ -225,7 +238,6 @@ th {
 ====================================================== */
 @media (max-width: 600px) {
 
-  /* HEADER */
   .header-brand {
     flex-direction: column;
     text-align: center;
@@ -233,75 +245,24 @@ th {
   }
 
   .site-logo {
-    width: 54px;
+    width: 48px;
   }
 
   .logo-text {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
-  /* NAVBAR MENU */
   .nav-menu {
-    gap: 20px;          /* 🔑 jarak menu di mobile */
-    flex-wrap: wrap;    /* boleh turun baris */
-    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
   .nav-menu a {
     font-size: 0.9rem;
   }
 
-  /* CONTENT */
   .container {
     margin: 28px 14px;
     padding: 28px 22px;
   }
 }
-
-/* ================= HEADER FINAL FIX ================= */
-.top-header {
-  background: linear-gradient(135deg, #0f4c81, #1e88e5);
-  color: #ffffff;
-}
-
-/* wrapper header */
-.header-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 24px 16px;   /* 🔑 kurangi tinggi header */
-}
-
-/* center isi */
-.header-center {
-  display: flex;
-  justify-content: center;
-}
-
-/* logo + teks */
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* 🔥 INI PALING PENTING */
-.site-logo {
-  width: 56px;         /* KUNCI: LOGO TIDAK BOLEH AUTO */
-  height: auto;
-  flex-shrink: 0;
-}
-
-/* teks */
-.logo-text {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.tagline {
-  margin-top: 4px;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-
