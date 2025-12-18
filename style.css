@@ -41,41 +41,49 @@ body {
   opacity: 0.9;
 }
 
-/* ================= NAVBAR SPACING FIX ================= */
+/* ================= NAVBAR FINAL ================= */
 .main-nav {
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin-top: 8px;          /* JARAK dari header */
+  margin-top: 10px;
 }
 
 .nav-inner {
   max-width: 960px;
   margin: 0 auto;
-  padding: 14px 16px;       /* TINGGI navbar */
+  padding: 14px 16px;
+}
+
+/* menu list */
+.nav-menu {
+  list-style: none;
   display: flex;
   justify-content: center;
+  gap: 48px;              /* 🔥 JARAK KONSISTEN */
+  padding: 0;
+  margin: 0;
 }
 
-/* Menu */
-.nav-menu {
-  display: flex;
-  gap: 36px;                /* 🔑 JARAK ANTAR MENU */
+/* item */
+.nav-menu li {
+  margin: 0;
+  padding: 0;
 }
 
-/* Link */
+/* link */
 .nav-menu a {
   text-decoration: none;
-  color: #0f4c81;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 6px 2px;         /* napas atas–bawah */
+  color: #0f4c81;
+  padding: 6px 0;
+  display: inline-block;
 }
 
-/* Hover & active */
+/* hover & active */
 .nav-menu a:hover,
 .nav-menu a.active {
   color: #e53935;
-}
 
 
 /* ======================================================
