@@ -5,50 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Quiz Kana | Manabu Mantappu</title>
-<meta name="description" content="Quiz Kana Hiragana & Katakana level 1–10 untuk pemula.">
+<meta name="description" content="Quiz Kana Hiragana & Katakana untuk pemula. Level 1–20 termasuk Dakuon, Handakuon, Youon, dan Chōon.">
 
 <link rel="stylesheet" href="style.css">
 
 <style>
-.quiz-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.quiz-menu button {
-  padding: 10px 18px;
-  border-radius: 10px;
-  border: none;
-  background: #1e88e5;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
+/* ===== QUIZ STYLE ===== */
 .quiz-box {
-  max-width: 600px;
-  margin: auto;
+  max-width: 520px;
+  margin: 30px auto;
   text-align: center;
 }
 
 .question {
   font-size: 2.2rem;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 
 .choices button {
-  display: block;
   width: 100%;
   margin: 10px 0;
   padding: 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
-  background: #e5e7eb;
   font-size: 1rem;
   cursor: pointer;
+  background: #e5e7eb;
 }
 
 .choices button.correct {
@@ -60,23 +42,78 @@
   background: #dc2626;
   color: white;
 }
+
+/* ===== MENU QUIZ ===== */
+.quiz-category {
+  max-width: 720px;
+  margin: auto;
+}
+
+.quiz-category details {
+  background: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 10px 16px 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+.quiz-category summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  list-style: none;
+  padding: 12px;
+}
+
+.quiz-category summary::-webkit-details-marker {
+  display: none;
+}
+
+.quiz-category summary::before {
+  content: "▸";
+  margin-right: 8px;
+}
+
+.quiz-category details[open] summary::before {
+  content: "▾";
+}
+
+.quiz-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.quiz-menu button {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg,#1e88e5,#42a5f5);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
 </style>
 </head>
 
 <body>
 
+<!-- ===== HEADER ===== -->
 <header class="top-header">
   <div class="header-inner header-center">
     <div class="header-brand">
-      <img src="img/logo.png" class="site-logo">
+      <img src="img/logo.png" class="site-logo" alt="Logo">
       <div>
         <h1 class="logo-text">Quiz Kana</h1>
-        <p class="tagline">Hiragana & Katakana Level 1–10</p>
+        <p class="tagline">Hiragana & Katakana Level 1–20</p>
       </div>
     </div>
   </div>
 </header>
 
+<!-- ===== NAV ===== -->
 <nav class="main-nav">
   <div class="nav-inner">
     <ul class="nav-menu">
@@ -92,65 +129,68 @@
 <main class="container">
 
 <section class="section">
-  <h2 class="section-title">Pilih Quiz Kana</h2>
+<h2 class="section-title">Pilih Quiz Kana</h2>
 
-  <div class="quiz-category">
+<div class="quiz-category">
 
-    <!-- HIRAGANA -->
-    <details open>
-      <summary>① Hiragana</summary>
-      <div class="quiz-menu">
-        <button onclick="startQuiz(0)">Quiz 1</button>
-        <button onclick="startQuiz(1)">Quiz 2</button>
-        <button onclick="startQuiz(2)">Quiz 3</button>
-        <button onclick="startQuiz(3)">Quiz 4</button>
-        <button onclick="startQuiz(4)">Quiz 5</button>
-      </div>
-    </details>
+<details open>
+<summary>① Hiragana</summary>
+<div class="quiz-menu">
+<button onclick="startQuiz(0)">Quiz 1</button>
+<button onclick="startQuiz(1)">Quiz 2</button>
+<button onclick="startQuiz(2)">Quiz 3</button>
+<button onclick="startQuiz(3)">Quiz 4</button>
+<button onclick="startQuiz(4)">Quiz 5</button>
+</div>
+</details>
 
-    <!-- KATAKANA -->
-    <details>
-      <summary>② Katakana</summary>
-      <div class="quiz-menu">
-        <button onclick="startQuiz(5)">Quiz 6</button>
-        <button onclick="startQuiz(6)">Quiz 7</button>
-        <button onclick="startQuiz(7)">Quiz 8</button>
-        <button onclick="startQuiz(8)">Quiz 9</button>
-        <button onclick="startQuiz(9)">Quiz 10</button>
-      </div>
-    </details>
+<details>
+<summary>② Katakana</summary>
+<div class="quiz-menu">
+<button onclick="startQuiz(5)">Quiz 6</button>
+<button onclick="startQuiz(6)">Quiz 7</button>
+<button onclick="startQuiz(7)">Quiz 8</button>
+<button onclick="startQuiz(8)">Quiz 9</button>
+<button onclick="startQuiz(9)">Quiz 10</button>
+</div>
+</details>
 
-    <!-- DAKUON -->
-    <details>
-      <summary>③ Dakuon & Handakuon</summary>
-      <div class="quiz-menu">
-        <button onclick="startQuiz(10)">Quiz 11</button>
-        <button onclick="startQuiz(11)">Quiz 12</button>
-        <button onclick="startQuiz(12)">Quiz 13</button>
-        <button onclick="startQuiz(13)">Quiz 14</button>
-        <button onclick="startQuiz(14)">Quiz 15</button>
-      </div>
-    </details>
+<details>
+<summary>③ Dakuon & Handakuon</summary>
+<div class="quiz-menu">
+<button onclick="startQuiz(10)">Quiz 11</button>
+<button onclick="startQuiz(11)">Quiz 12</button>
+<button onclick="startQuiz(12)">Quiz 13</button>
+<button onclick="startQuiz(13)">Quiz 14</button>
+<button onclick="startQuiz(14)">Quiz 15</button>
+</div>
+</details>
 
-    <!-- YOUON -->
-    <details>
-      <summary>④ Youon & Chōon</summary>
-      <div class="quiz-menu">
-        <button onclick="startQuiz(15)">Quiz 16</button>
-        <button onclick="startQuiz(16)">Quiz 17</button>
-        <button onclick="startQuiz(17)">Quiz 18</button>
-        <button onclick="startQuiz(18)">Quiz 19</button>
-        <button onclick="startQuiz(19)">Quiz 20</button>
-      </div>
-    </details>
+<details>
+<summary>④ Youon & Chōon</summary>
+<div class="quiz-menu">
+<button onclick="startQuiz(15)">Quiz 16</button>
+<button onclick="startQuiz(16)">Quiz 17</button>
+<button onclick="startQuiz(17)">Quiz 18</button>
+<button onclick="startQuiz(18)">Quiz 19</button>
+<button onclick="startQuiz(19)">Quiz 20</button>
+</div>
+</details>
 
-  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="quiz-box">
+<div id="question" class="question">Pilih Quiz di atas</div>
+<div id="choices" class="choices"></div>
+</div>
 </section>
 
 </main>
 
 <script>
-const quizzes = [
+const quizzes = Array.from({length:20},()=>[
 
 /* =====================
    QUIZ 1 – HIRAGANA A–O
@@ -277,7 +317,7 @@ const quizzes = [
 {q:"ウ",a:"u",c:["u","e","a","i"]},
 {q:"エ",a:"e",c:["e","o","i","a"]},
 {q:"オ",a:"o",c:["o","u","a","e"]}
-]
+],
 
 /* =====================
    QUIZ 7 – KATAKANA KA–KO
@@ -361,7 +401,7 @@ const quizzes = [
   {q:"ヌ",a:"nu",c:["nu","pu","bu","gu"]},
   {q:"ネ",a:"ne",c:["ne","pe","be","ge"]},
   {q:"ノ",a:"no",c:["no","po","bo","go"]}
-]
+],
 
 /* =====================
    QUIZ 15 – REVIEW DAKUON & HANDAKUON
@@ -382,7 +422,7 @@ const quizzes = [
   {q:"ぷ",a:"pu",c:["pu","fu","bu","mu"]},
   {q:"げ",a:"ge",c:["ge","ke","he","pe"]},
   {q:"ぺ",a:"pe",c:["pe","he","be","me"]}
-]
+],
 
  /* =====================
    QUIZ 20 – REVIEW YOUON & CHŌON
@@ -403,45 +443,41 @@ const quizzes = [
   {q:"ミュージック",a:"myuujikku",c:["myuujikku","myujikku","myuujiku","myujiku"]},
   {q:"リョウ",a:"ryou",c:["ryou","ryo","ryuu","riyuu"]},
   {q:"パーティー",a:"paatii",c:["paatii","paati","pati","paatei"]}
-]
+],
  
-];
+]);
 </script>
 
 
-let current = [];
-let index = 0;
-
-const qEl = document.getElementById("question");
-const cEl = document.getElementById("choices");
+let current=[], index=0;
+const qEl=document.getElementById("question");
+const cEl=document.getElementById("choices");
 
 function startQuiz(n){
-  current = quizzes[n];
-  index = 0;
+  current=quizzes[n];
+  index=0;
   load();
 }
 
 function load(){
-  if(index >= current.length){
-    qEl.textContent = "🎉 Selesai!";
-    cEl.innerHTML = "";
+  if(index>=current.length){
+    qEl.textContent="🎉 Quiz selesai!";
+    cEl.innerHTML="";
     return;
   }
-
-  qEl.textContent = current[index].q;
-  cEl.innerHTML = "";
-
+  qEl.textContent=current[index].q;
+  cEl.innerHTML="";
   current[index].c.forEach(x=>{
-    const b = document.createElement("button");
-    b.textContent = x;
-    b.onclick = ()=>check(b, current[index].a);
+    const b=document.createElement("button");
+    b.textContent=x;
+    b.onclick=()=>check(b,current[index].a);
     cEl.appendChild(b);
   });
 }
 
-function check(btn, ans){
-  btn.className = btn.textContent === ans ? "correct" : "wrong";
-  setTimeout(()=>{ index++; load(); }, 700);
+function check(btn,ans){
+  btn.className=btn.textContent===ans?"correct":"wrong";
+  setTimeout(()=>{index++;load();},700);
 }
 </script>
 
