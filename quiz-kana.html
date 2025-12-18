@@ -117,20 +117,221 @@
 
 <script>
 const quizzes = [
-  // 1–5 Hiragana
-  [{q:"あ",a:"a",c:["a","i","u","e"]},{q:"い",a:"i",c:["i","u","o","a"]}],
-  [{q:"か",a:"ka",c:["ka","sa","ta","na"]},{q:"き",a:"ki",c:["ki","ku","ke","ko"]}],
-  [{q:"さ",a:"sa",c:["sa","ka","ta","na"]},{q:"し",a:"shi",c:["shi","su","se","so"]}],
-  [{q:"た",a:"ta",c:["ta","ka","sa","na"]},{q:"ち",a:"chi",c:["chi","tsu","te","to"]}],
-  [{q:"な",a:"na",c:["na","ma","ra","ka"]},{q:"に",a:"ni",c:["ni","nu","ne","no"]}],
 
-  // 6–10 Katakana
-  [{q:"ア",a:"a",c:["a","i","u","e"]},{q:"イ",a:"i",c:["i","o","u","a"]}],
-  [{q:"カ",a:"ka",c:["ka","sa","ta","na"]},{q:"キ",a:"ki",c:["ki","ku","ke","ko"]}],
-  [{q:"サ",a:"sa",c:["sa","ka","ta","na"]},{q:"シ",a:"shi",c:["shi","su","se","so"]}],
-  [{q:"タ",a:"ta",c:["ta","ka","sa","na"]},{q:"チ",a:"chi",c:["chi","tsu","te","to"]}],
-  [{q:"ナ",a:"na",c:["na","ma","ra","ka"]},{q:"ニ",a:"ni",c:["ni","nu","ne","no"]}]
+/* =====================
+   QUIZ 1 – HIRAGANA A–O
+===================== */
+[
+{q:"あ",a:"a",c:["a","i","u","e"]},
+{q:"い",a:"i",c:["i","u","o","a"]},
+{q:"う",a:"u",c:["u","e","i","o"]},
+{q:"え",a:"e",c:["e","a","i","o"]},
+{q:"お",a:"o",c:["o","a","u","e"]},
+{q:"あ",a:"a",c:["a","o","i","u"]},
+{q:"い",a:"i",c:["i","e","u","a"]},
+{q:"う",a:"u",c:["u","a","o","e"]},
+{q:"え",a:"e",c:["e","i","o","a"]},
+{q:"お",a:"o",c:["o","e","a","u"]},
+{q:"あ",a:"a",c:["a","i","e","o"]},
+{q:"い",a:"i",c:["i","a","o","u"]},
+{q:"う",a:"u",c:["u","e","a","i"]},
+{q:"え",a:"e",c:["e","o","i","a"]},
+{q:"お",a:"o",c:["o","u","a","e"]}
+],
+
+/* =====================
+   QUIZ 2 – HIRAGANA KA–KO
+===================== */
+[
+{q:"か",a:"ka",c:["ka","sa","ta","na"]},
+{q:"き",a:"ki",c:["ki","ku","ke","ko"]},
+{q:"く",a:"ku",c:["ku","ki","ka","ko"]},
+{q:"け",a:"ke",c:["ke","ko","ku","ki"]},
+{q:"こ",a:"ko",c:["ko","ka","ke","ku"]},
+{q:"か",a:"ka",c:["ka","na","sa","ta"]},
+{q:"き",a:"ki",c:["ki","ke","ko","ku"]},
+{q:"く",a:"ku",c:["ku","ko","ka","ki"]},
+{q:"け",a:"ke",c:["ke","ki","ku","ko"]},
+{q:"こ",a:"ko",c:["ko","ke","ka","ku"]},
+{q:"か",a:"ka",c:["ka","sa","ra","ta"]},
+{q:"き",a:"ki",c:["ki","shi","chi","ri"]},
+{q:"く",a:"ku",c:["ku","su","tsu","ru"]},
+{q:"け",a:"ke",c:["ke","se","te","re"]},
+{q:"こ",a:"ko",c:["ko","so","to","ro"]}
+],
+
+/* =====================
+   QUIZ 3 – HIRAGANA SA–SO
+===================== */
+[
+{q:"さ",a:"sa",c:["sa","ka","ta","na"]},
+{q:"し",a:"shi",c:["shi","su","se","so"]},
+{q:"す",a:"su",c:["su","shi","sa","so"]},
+{q:"せ",a:"se",c:["se","shi","su","so"]},
+{q:"そ",a:"so",c:["so","sa","se","su"]},
+{q:"さ",a:"sa",c:["sa","ta","na","ka"]},
+{q:"し",a:"shi",c:["shi","chi","ji","si"]},
+{q:"す",a:"su",c:["su","so","se","sa"]},
+{q:"せ",a:"se",c:["se","so","su","shi"]},
+{q:"そ",a:"so",c:["so","se","sa","su"]},
+{q:"さ",a:"sa",c:["sa","sha","cha","ja"]},
+{q:"し",a:"shi",c:["shi","si","chi","ji"]},
+{q:"す",a:"su",c:["su","zu","so","sa"]},
+{q:"せ",a:"se",c:["se","ze","so","su"]},
+{q:"そ",a:"so",c:["so","zo","se","sa"]}
+],
+
+/* =====================
+   QUIZ 4 – HIRAGANA TA–TO
+===================== */
+[
+{q:"た",a:"ta",c:["ta","ka","sa","na"]},
+{q:"ち",a:"chi",c:["chi","tsu","te","to"]},
+{q:"つ",a:"tsu",c:["tsu","chi","ta","to"]},
+{q:"て",a:"te",c:["te","ta","chi","tsu"]},
+{q:"と",a:"to",c:["to","ta","te","tsu"]},
+{q:"た",a:"ta",c:["ta","da","na","ra"]},
+{q:"ち",a:"chi",c:["chi","ji","shi","ti"]},
+{q:"つ",a:"tsu",c:["tsu","su","tu","zu"]},
+{q:"て",a:"te",c:["te","de","se","re"]},
+{q:"と",a:"to",c:["to","do","so","ro"]},
+{q:"た",a:"ta",c:["ta","ka","pa","ba"]},
+{q:"ち",a:"chi",c:["chi","shi","ji","hi"]},
+{q:"つ",a:"tsu",c:["tsu","zu","su","chu"]},
+{q:"て",a:"te",c:["te","ne","me","re"]},
+{q:"と",a:"to",c:["to","no","mo","ro"]}
+],
+
+/* =====================
+   QUIZ 5 – HIRAGANA NA–NO
+===================== */
+[
+{q:"な",a:"na",c:["na","ma","ra","ka"]},
+{q:"に",a:"ni",c:["ni","nu","ne","no"]},
+{q:"ぬ",a:"nu",c:["nu","ni","na","no"]},
+{q:"ね",a:"ne",c:["ne","nu","ni","no"]},
+{q:"の",a:"no",c:["no","na","ne","nu"]},
+{q:"な",a:"na",c:["na","ha","ma","ya"]},
+{q:"に",a:"ni",c:["ni","hi","mi","ri"]},
+{q:"ぬ",a:"nu",c:["nu","hu","mu","ru"]},
+{q:"ね",a:"ne",c:["ne","he","me","re"]},
+{q:"の",a:"no",c:["no","ho","mo","ro"]},
+{q:"な",a:"na",c:["na","pa","ba","ga"]},
+{q:"に",a:"ni",c:["ni","pi","bi","gi"]},
+{q:"ぬ",a:"nu",c:["nu","pu","bu","gu"]},
+{q:"ね",a:"ne",c:["ne","pe","be","ge"]},
+{q:"の",a:"no",c:["no","po","bo","go"]}
+],
+
+/* =====================
+   QUIZ 6–10 KATAKANA
+===================== */
+
+/* 6 A–O */[
+{q:"ア",a:"a",c:["a","i","u","e"]},
+{q:"イ",a:"i",c:["i","u","o","a"]},
+{q:"ウ",a:"u",c:["u","e","i","o"]},
+{q:"エ",a:"e",c:["e","a","i","o"]},
+{q:"オ",a:"o",c:["o","a","u","e"]},
+{q:"ア",a:"a",c:["a","o","i","u"]},
+{q:"イ",a:"i",c:["i","e","u","a"]},
+{q:"ウ",a:"u",c:["u","a","o","e"]},
+{q:"エ",a:"e",c:["e","i","o","a"]},
+{q:"オ",a:"o",c:["o","e","a","u"]},
+{q:"ア",a:"a",c:["a","i","e","o"]},
+{q:"イ",a:"i",c:["i","a","o","u"]},
+{q:"ウ",a:"u",c:["u","e","a","i"]},
+{q:"エ",a:"e",c:["e","o","i","a"]},
+{q:"オ",a:"o",c:["o","u","a","e"]}
+]
+
+/* =====================
+   QUIZ 7 – KATAKANA KA–KO
+===================== */
+[
+  {q:"カ",a:"ka",c:["ka","sa","ta","na"]},
+  {q:"キ",a:"ki",c:["ki","ku","ke","ko"]},
+  {q:"ク",a:"ku",c:["ku","ki","ka","ko"]},
+  {q:"ケ",a:"ke",c:["ke","ko","ku","ki"]},
+  {q:"コ",a:"ko",c:["ko","ka","ke","ku"]},
+  {q:"カ",a:"ka",c:["ka","na","sa","ta"]},
+  {q:"キ",a:"ki",c:["ki","ke","ko","ku"]},
+  {q:"ク",a:"ku",c:["ku","ko","ka","ki"]},
+  {q:"ケ",a:"ke",c:["ke","ki","ku","ko"]},
+  {q:"コ",a:"ko",c:["ko","ke","ka","ku"]},
+  {q:"カ",a:"ka",c:["ka","sa","ra","ta"]},
+  {q:"キ",a:"ki",c:["ki","shi","chi","ri"]},
+  {q:"ク",a:"ku",c:["ku","su","tsu","ru"]},
+  {q:"ケ",a:"ke",c:["ke","se","te","re"]},
+  {q:"コ",a:"ko",c:["ko","so","to","ro"]}
+],
+
+/* =====================
+   QUIZ 8 – KATAKANA SA–SO
+===================== */
+[
+  {q:"サ",a:"sa",c:["sa","ka","ta","na"]},
+  {q:"シ",a:"shi",c:["shi","su","se","so"]},
+  {q:"ス",a:"su",c:["su","shi","sa","so"]},
+  {q:"セ",a:"se",c:["se","shi","su","so"]},
+  {q:"ソ",a:"so",c:["so","sa","se","su"]},
+  {q:"サ",a:"sa",c:["sa","ta","na","ka"]},
+  {q:"シ",a:"shi",c:["shi","chi","ji","si"]},
+  {q:"ス",a:"su",c:["su","so","se","sa"]},
+  {q:"セ",a:"se",c:["se","so","su","shi"]},
+  {q:"ソ",a:"so",c:["so","se","sa","su"]},
+  {q:"サ",a:"sa",c:["sa","sha","cha","ja"]},
+  {q:"シ",a:"shi",c:["shi","si","chi","ji"]},
+  {q:"ス",a:"su",c:["su","zu","so","sa"]},
+  {q:"セ",a:"se",c:["se","ze","so","su"]},
+  {q:"ソ",a:"so",c:["so","zo","se","sa"]}
+],
+
+/* =====================
+   QUIZ 9 – KATAKANA TA–TO
+===================== */
+[
+  {q:"タ",a:"ta",c:["ta","ka","sa","na"]},
+  {q:"チ",a:"chi",c:["chi","tsu","te","to"]},
+  {q:"ツ",a:"tsu",c:["tsu","chi","ta","to"]},
+  {q:"テ",a:"te",c:["te","ta","chi","tsu"]},
+  {q:"ト",a:"to",c:["to","ta","te","tsu"]},
+  {q:"タ",a:"ta",c:["ta","da","na","ra"]},
+  {q:"チ",a:"chi",c:["chi","ji","shi","ti"]},
+  {q:"ツ",a:"tsu",c:["tsu","su","tu","zu"]},
+  {q:"テ",a:"te",c:["te","de","se","re"]},
+  {q:"ト",a:"to",c:["to","do","so","ro"]},
+  {q:"タ",a:"ta",c:["ta","ka","pa","ba"]},
+  {q:"チ",a:"chi",c:["chi","shi","ji","hi"]},
+  {q:"ツ",a:"tsu",c:["tsu","zu","su","chu"]},
+  {q:"テ",a:"te",c:["te","ne","me","re"]},
+  {q:"ト",a:"to",c:["to","no","mo","ro"]}
+],
+
+/* =====================
+   QUIZ 10 – KATAKANA NA–NO
+===================== */
+[
+  {q:"ナ",a:"na",c:["na","ma","ra","ka"]},
+  {q:"ニ",a:"ni",c:["ni","nu","ne","no"]},
+  {q:"ヌ",a:"nu",c:["nu","ni","na","no"]},
+  {q:"ネ",a:"ne",c:["ne","nu","ni","no"]},
+  {q:"ノ",a:"no",c:["no","na","ne","nu"]},
+  {q:"ナ",a:"na",c:["na","ha","ma","ya"]},
+  {q:"ニ",a:"ni",c:["ni","hi","mi","ri"]},
+  {q:"ヌ",a:"nu",c:["nu","hu","mu","ru"]},
+  {q:"ネ",a:"ne",c:["ne","he","me","re"]},
+  {q:"ノ",a:"no",c:["no","ho","mo","ro"]},
+  {q:"ナ",a:"na",c:["na","pa","ba","ga"]},
+  {q:"ニ",a:"ni",c:["ni","pi","bi","gi"]},
+  {q:"ヌ",a:"nu",c:["nu","pu","bu","gu"]},
+  {q:"ネ",a:"ne",c:["ne","pe","be","ge"]},
+  {q:"ノ",a:"no",c:["no","po","bo","go"]}
+]
+  
 ];
+</script>
+
 
 let current = [];
 let index = 0;
