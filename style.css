@@ -224,20 +224,40 @@ th {
    RESPONSIVE
 ====================================================== */
 @media (max-width: 600px) {
-  .logo {
+
+  /* HEADER */
+  .header-brand {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .site-logo {
+    width: 54px;
+  }
+
+  .logo-text {
     font-size: 1.6rem;
   }
 
-  .main-nav {
-    flex-wrap: wrap;
-    gap: 18px;
+  /* NAVBAR MENU */
+  .nav-menu {
+    gap: 20px;          /* 🔑 jarak menu di mobile */
+    flex-wrap: wrap;    /* boleh turun baris */
+    justify-content: center;
   }
 
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+
+  /* CONTENT */
   .container {
     margin: 28px 14px;
     padding: 28px 22px;
   }
 }
+
 /* ================= HEADER CENTER FIX ================= */
 .top-header {
   background: linear-gradient(135deg, #0f4c81, #1e88e5);
