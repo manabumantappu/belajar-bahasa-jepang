@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 18 – Youon・Chouon・Sokuon</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1e88e5;
+  margin-bottom: 10px;
+}
+
+#progress {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 64px;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.choices button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #e3f2fd;
+}
+
+.choices button:hover {
+  background: #bbdefb;
+}
+
+.correct {
+  background: #c8e6c9 !important;
+}
+
+.wrong {
+  background: #ffcdd2 !important;
+}
+
+#nextBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background: #1e88e5;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#result {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Quiz 18 – Youon・Chouon・Sokuon</h1>
+  <div id="progress"></div>
+
+  <div id="quiz">
+    <div class="question" id="question"></div>
+    <div class="choices" id="choices"></div>
+    <button id="nextBtn" onclick="nextQuestion()">Soal Berikutnya</button>
+  </div>
+
+  <div id="result"></div>
+</div>
+
+<script>
+/* =========================================
+   QUIZ 18 – YOUON・CHOUON・SOKUON
+========================================= */
+const quizData = [
+  /* === YOUON (りゃ・りゅ・りょ) === */
+  { q:"りゃ", a:"rya", c:["rya","riya","raya","ra"] },
+  { q:"りゅ", a:"ryu", c:["ryu","riyu","ruyu","ru"] },
+  { q:"りょ", a:"ryo", c:["ryo","riyo","royo","ro"] },
+
+  /* === YOUON (ぎゃ・ぎゅ・ぎょ) === */
+  { q:"ぎゃ", a:"gya", c:["gya","giya","gaya","ga"] },
+  { q:"ぎゅ", a:"gyu", c:["gyu","giyu","guyu","gu"] },
+  { q:"ぎょ", a:"gyo", c:["gyo","giyo","goyo","go"] },
+
+  /* === YOUON (じゃ・じゅ・じょ) === */
+  { q:"じゃ", a:"ja", c:["ja","jya","jiya","za"] },
+  { q:"じゅ", a:"ju", c:["ju","jyu","jiyu","zu"] },
+  { q:"じょ", a:"jo", c:["jo","jyo","jiyo","zo"] },
+
+  /* === CHOUON (vokal panjang) === */
+  { q:"せんせい", a:"sensei", c:["sensei","sensai","sense","sensii"] },
+  { q:"おねえさん", a:"oneesan", c:["oneesan","onesan","oneisan","onee san"] },
+
+  /* === SOKUON (っ) === */
+  { q:"とっても", a:"tottemo", c:["tottemo","totemo","totte mo","totemo"] },
+  { q:"けっこん", a:"kekkon", c:["kekkon","kekon","keekon","kekkon"] },
+  { q:"まっすぐ", a:"massugu", c:["massugu","masugu","matsugu","masugu"] }
+];
+
+/* =====================
+   QUIZ ENGINE (UMUM)
+===================== */
+let index = 0;
+let score = 0;
+
+const questionEl = document.getElementById("question");
+const choicesEl = document.getElementById("choices");
+const progressEl = document.getElementById("progress");
+const nextBtn = document.getElementById("nextBtn");
+const resultEl = document.getElementById("result");
+
+function loadQuestion() {
+  const q = quizData[index];
+  questionEl.textContent = q.q;
+  choicesEl.innerHTML = "";
+  progressEl.textContent = `Soal ${index + 1} / ${quizData.length}`;
+  nextBtn.style.display = "none";
+
+  q.c.forEach(choice => {
+    const btn = document.createElement("button");
+    btn.textContent = choice;
+    btn.onclick = () => checkAnswer(btn, choice, q.a);
+    choicesEl.appendChild(btn);
+  });
+}
+
+function checkAnswer(btn, selected, correct) {
+  const buttons = document.querySelectorAll(".choices button");
+  buttons.forEach(b => b.disabled = true);
+
+  if (selected === correct) {
+    btn.classList.add("correct");
+    score++;
+  } else {
+    btn.classList.add("wrong");
+    buttons.forEach(b => {
+      if (b.textContent === correct) {
+        b.classList.add("correct");
+      }
+    });
+  }
+
+  nextBtn.style.display = "block";
+}
+
+function nextQuestion() {
+  index++;
+  if (index < quizData.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById("quiz").style.display = "none";
+  resultEl.innerHTML = `Skor Akhir: ${score} / ${quizData.length}`;
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
