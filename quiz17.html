@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz 17 – Youon・Chouon・Sokuon</title>
+<title> QUIZ 17 – YOUON・CHOUON・SOKUON</title>
 
 <style>
 body {
@@ -13,75 +13,108 @@ body {
   padding: 20px;
 }
 
+/* ===== CARD ===== */
 .container {
   max-width: 720px;
   margin: auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.12);
 }
 
+/* ===== TITLE ===== */
 h1 {
   text-align: center;
   color: #1e88e5;
   margin-bottom: 10px;
 }
 
+/* ===== PROGRESS ===== */
 #progress {
   text-align: center;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #374151;
 }
 
+/* ===== QUESTION ===== */
 .question {
   font-size: 64px;
   text-align: center;
-  margin: 25px 0;
+  margin: 26px 0;
 }
 
+/* ===== CHOICES ===== */
 .choices button {
-  display: block;
   width: 100%;
   margin: 10px 0;
   padding: 14px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 14px;
   border: none;
   cursor: pointer;
   background: #e3f2fd;
+  transition: background 0.15s, transform 0.1s;
 }
 
 .choices button:hover {
   background: #bbdefb;
+  transform: scale(1.01);
 }
 
 .correct {
-  background: #c8e6c9 !important;
+  background: #22c55e !important;
+  color: white;
 }
 
 .wrong {
-  background: #ffcdd2 !important;
-}
-
-#nextBtn {
-  margin-top: 20px;
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  background: #1e88e5;
+  background: #ef4444 !important;
   color: white;
-  cursor: pointer;
-  display: none;
 }
 
-#result {
+/* ===== RESULT ===== */
+.result-box {
   text-align: center;
-  font-size: 20px;
+  margin-top: 30px;
+}
+
+.score-text {
+  font-size: 1.4rem;
   font-weight: bold;
-  margin-top: 20px;
+  margin-bottom: 22px;
+}
+
+/* ===== RESULT BUTTONS (FINAL FIX) ===== */
+.result-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.result-buttons .btn {
+  width: 220px;               /* SAMA UKURAN */
+  padding: 14px 0;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+
+  background: linear-gradient(135deg,#1e88e5,#42a5f5);
+  color: #ffffff !important;
+
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  box-shadow: 0 8px 18px rgba(30,136,229,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.result-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(30,136,229,.45);
 }
 </style>
 </head>
@@ -89,16 +122,11 @@ h1 {
 <body>
 
 <div class="container">
-  <h1>Quiz 17 – Youon・Chouon・Sokuon</h1>
+  <h1>Q QUIZ 17 – YOUON・CHOUON・SOKUON</h1>
+
   <div id="progress"></div>
-
-  <div id="quiz">
-    <div class="question" id="question"></div>
-    <div class="choices" id="choices"></div>
-    <button id="nextBtn" onclick="nextQuestion()">Soal Berikutnya</button>
-  </div>
-
-  <div id="result"></div>
+  <div id="question" class="question"></div>
+  <div id="choices" class="choices"></div>
 </div>
 
 <script>
@@ -132,30 +160,34 @@ const quizData = [
   { q:"いっしょ", a:"issho", c:["issho","isho","isso","ishho"] }
 ];
 
-/* =====================
-   QUIZ ENGINE (UMUM)
-===================== */
 let index = 0;
 let score = 0;
 
-const questionEl = document.getElementById("question");
-const choicesEl = document.getElementById("choices");
-const progressEl = document.getElementById("progress");
-const nextBtn = document.getElementById("nextBtn");
-const resultEl = document.getElementById("result");
+const qEl = document.getElementById("question");
+const cEl = document.getElementById("choices");
+const pEl = document.getElementById("progress");
+
+/* ===== SHUFFLE ===== */
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
 
 function loadQuestion() {
-  const q = quizData[index];
-  questionEl.textContent = q.q;
-  choicesEl.innerHTML = "";
-  progressEl.textContent = `Soal ${index + 1} / ${quizData.length}`;
-  nextBtn.style.display = "none";
+  if (index >= quizData.length) {
+    showResult();
+    return;
+  }
 
-  q.c.forEach(choice => {
+  const q = quizData[index];
+  qEl.textContent = q.q;
+  pEl.textContent = `Soal ${index + 1} / ${quizData.length}`;
+  cEl.innerHTML = "";
+
+  shuffle([...q.c]).forEach(choice => {
     const btn = document.createElement("button");
     btn.textContent = choice;
     btn.onclick = () => checkAnswer(btn, choice, q.a);
-    choicesEl.appendChild(btn);
+    cEl.appendChild(btn);
   });
 }
 
@@ -175,23 +207,29 @@ function checkAnswer(btn, selected, correct) {
     });
   }
 
-  nextBtn.style.display = "block";
-}
-
-function nextQuestion() {
-  index++;
-  if (index < quizData.length) {
+  setTimeout(() => {
+    index++;
     loadQuestion();
-  } else {
-    showResult();
-  }
+  }, 700);
 }
 
 function showResult() {
-  document.getElementById("quiz").style.display = "none";
-  resultEl.innerHTML = `Skor Akhir: ${score} / ${quizData.length}`;
+  qEl.textContent = "🎉 Quiz Selesai!";
+  pEl.textContent = "";
+  cEl.innerHTML = `
+    <div class="result-box">
+      <p class="score-text">
+        Skor kamu: ${score} / ${quizData.length}
+      </p>
+      <div class="result-buttons">
+        <button class="btn" onclick="history.back()">⬅ Kembali</button>
+        <a href="index.html" class="btn">Kembali ke Home</a>
+      </div>
+    </div>
+  `;
 }
 
+/* START */
 loadQuestion();
 </script>
 
