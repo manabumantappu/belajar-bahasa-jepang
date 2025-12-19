@@ -13,21 +13,24 @@ body {
   padding: 20px;
 }
 
+/* ===== CARD ===== */
 .container {
   max-width: 720px;
   margin: auto;
   background: #ffffff;
-  padding: 26px;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.1);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.12);
 }
 
+/* ===== TITLE ===== */
 h1 {
   text-align: center;
   color: #1e88e5;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
+/* ===== PROGRESS ===== */
 #progress {
   text-align: center;
   font-weight: bold;
@@ -35,14 +38,15 @@ h1 {
   color: #374151;
 }
 
+/* ===== QUESTION ===== */
 .question {
   font-size: 64px;
   text-align: center;
-  margin: 24px 0;
+  margin: 26px 0;
 }
 
+/* ===== CHOICES ===== */
 .choices button {
-  display: block;
   width: 100%;
   margin: 10px 0;
   padding: 14px;
@@ -51,11 +55,12 @@ h1 {
   border: none;
   cursor: pointer;
   background: #e3f2fd;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.1s;
 }
 
 .choices button:hover {
   background: #bbdefb;
+  transform: scale(1.01);
 }
 
 .correct {
@@ -71,36 +76,43 @@ h1 {
 /* ===== RESULT ===== */
 .result-box {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .score-text {
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
+/* ===== RESULT BUTTONS (FINAL FIX) ===== */
 .result-buttons {
   display: flex;
-  gap: 14px;
   justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.btn {
-  padding: 14px 22px;
+.result-buttons .btn {
+  width: 220px;               /* SAMA UKURAN */
+  padding: 14px 0;
   border-radius: 14px;
+  font-size: 1rem;
   font-weight: 700;
-  text-decoration: none;
+  text-align: center;
+
+  background: linear-gradient(135deg,#1e88e5,#42a5f5);
+  color: #ffffff !important;
+
   border: none;
   cursor: pointer;
-  color: white;
-  background: linear-gradient(135deg,#1e88e5,#42a5f5);
+  text-decoration: none;
+
   box-shadow: 0 8px 18px rgba(30,136,229,.35);
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.btn:hover {
+.result-buttons .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(30,136,229,.45);
 }
@@ -148,7 +160,7 @@ const qEl = document.getElementById("question");
 const cEl = document.getElementById("choices");
 const pEl = document.getElementById("progress");
 
-/* 🔀 SHUFFLE */
+/* ===== SHUFFLE ===== */
 function shuffle(arr) {
   return arr.sort(() => Math.random() - 0.5);
 }
@@ -203,18 +215,14 @@ function showResult() {
         Skor kamu: ${score} / ${quizData.length}
       </p>
       <div class="result-buttons">
-        <button class="btn" onclick="history.back()">
-          ⬅ Kembali
-        </button>
-        <a href="index.html" class="btn">
-          🏠 Kembali ke Home
-        </a>
+        <button class="btn" onclick="history.back()">⬅ Kembali</button>
+        <a href="index.html" class="btn">🏠 Kembali ke Home</a>
       </div>
     </div>
   `;
 }
 
-/* WAJIB */
+/* START */
 loadQuestion();
 </script>
 
