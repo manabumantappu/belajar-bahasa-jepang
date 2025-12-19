@@ -365,3 +365,18 @@ th {
   text-align: center;
 }
 
+   .back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #1e88e5;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  opacity: 0.9;
+}
+
