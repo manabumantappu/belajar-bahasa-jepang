@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 14 – Dakuon & Handakuon</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1e88e5;
+  margin-bottom: 10px;
+}
+
+#progress {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 64px;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.choices button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #e3f2fd;
+}
+
+.choices button:hover {
+  background: #bbdefb;
+}
+
+.correct {
+  background: #c8e6c9 !important;
+}
+
+.wrong {
+  background: #ffcdd2 !important;
+}
+
+#nextBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background: #1e88e5;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#result {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Quiz 14 – Dakuon & Handakuon</h1>
+  <div id="progress"></div>
+
+  <div id="quiz">
+    <div class="question" id="question"></div>
+    <div class="choices" id="choices"></div>
+    <button id="nextBtn" onclick="nextQuestion()">Soal Berikutnya</button>
+  </div>
+
+  <div id="result"></div>
+</div>
+
+<script>
+/* ===============================
+   QUIZ 14 – DAKUON & HANDAKUON 
+=============================== */
+const quizData = [
+{ q:"ぎ", a:"gi", c:["gi","ki","shi","hi"] },
+  { q:"ぐ", a:"gu", c:["gu","ku","su","fu"] },
+  { q:"げ", a:"ge", c:["ge","ke","se","he"] },
+  { q:"ご", a:"go", c:["go","ko","so","ho"] },
+
+  { q:"じ", a:"ji", c:["ji","shi","chi","gi"] },
+  { q:"ず", a:"zu", c:["zu","su","tsu","ru"] },
+  { q:"ぜ", a:"ze", c:["ze","se","de","re"] },
+  { q:"ぞ", a:"zo", c:["zo","so","do","ro"] },
+
+  { q:"だ", a:"da", c:["da","ta","za","ra"] },
+  { q:"ぢ", a:"ji", c:["ji","chi","di","gi"] },
+  { q:"づ", a:"zu", c:["zu","tsu","du","su"] },
+  { q:"で", a:"de", c:["de","te","ze","re"] },
+  { q:"ど", a:"do", c:["do","to","zo","ro"] },
+
+  { q:"び", a:"bi", c:["bi","hi","pi","mi"] },
+  { q:"ぷ", a:"pu", c:["pu","fu","bu","tsu"] }
+];
+
+/* =====================
+   QUIZ ENGINE (UMUM)
+===================== */
+let index = 0;
+let score = 0;
+
+const questionEl = document.getElementById("question");
+const choicesEl = document.getElementById("choices");
+const progressEl = document.getElementById("progress");
+const nextBtn = document.getElementById("nextBtn");
+const resultEl = document.getElementById("result");
+
+function loadQuestion() {
+  const q = quizData[index];
+  questionEl.textContent = q.q;
+  choicesEl.innerHTML = "";
+  progressEl.textContent = `Soal ${index + 1} / ${quizData.length}`;
+  nextBtn.style.display = "none";
+
+  q.c.forEach(choice => {
+    const btn = document.createElement("button");
+    btn.textContent = choice;
+    btn.onclick = () => checkAnswer(btn, choice, q.a);
+    choicesEl.appendChild(btn);
+  });
+}
+
+function checkAnswer(btn, selected, correct) {
+  const buttons = document.querySelectorAll(".choices button");
+  buttons.forEach(b => b.disabled = true);
+
+  if (selected === correct) {
+    btn.classList.add("correct");
+    score++;
+  } else {
+    btn.classList.add("wrong");
+    buttons.forEach(b => {
+      if (b.textContent === correct) {
+        b.classList.add("correct");
+      }
+    });
+  }
+
+  nextBtn.style.display = "block";
+}
+
+function nextQuestion() {
+  index++;
+  if (index < quizData.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById("quiz").style.display = "none";
+  resultEl.innerHTML = `Skor Akhir: ${score} / ${quizData.length}`;
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
