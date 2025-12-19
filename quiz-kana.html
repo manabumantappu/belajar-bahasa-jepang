@@ -5,77 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Quiz Kana | Manabu Mantappu</title>
-<meta name="description" content="Quiz Kana Hiragana & Katakana untuk pemula. Level 1–20 termasuk Dakuon, Handakuon, Youon, dan Chōon.">
+<meta name="description" content="Quiz Kana Hiragana & Katakana level 1–20. Termasuk Dakuon, Handakuon, Youon, Chōon, dan Fukushū.">
 
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* ===== QUIZ STYLE ===== */
-.quiz-box {
-  max-width: 520px;
-  margin: 30px auto;
-  text-align: center;
-}
-
-.question {
-  font-size: 2.2rem;
-  margin: 24px 0;
-}
-
-.choices button {
-  width: 100%;
-  margin: 10px 0;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  background: #e5e7eb;
-}
-
-.choices button.correct {
-  background: #16a34a;
-  color: white;
-}
-
-.choices button.wrong {
-  background: #dc2626;
-  color: white;
-}
-
 /* ===== MENU QUIZ ===== */
-.quiz-category {
-  max-width: 720px;
-  margin: auto;
+.quiz-container {
+  max-width: 760px;
+  margin: 40px auto;
 }
 
-.quiz-category details {
+.quiz-group {
   background: #ffffff;
   border-radius: 16px;
-  margin-bottom: 16px;
-  padding: 10px 16px 16px;
+  padding: 18px;
+  margin-bottom: 20px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.06);
 }
 
-.quiz-category summary {
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1.05rem;
-  list-style: none;
-  padding: 12px;
-}
-
-.quiz-category summary::-webkit-details-marker {
-  display: none;
-}
-
-.quiz-category summary::before {
-  content: "▸";
-  margin-right: 8px;
-}
-
-.quiz-category details[open] summary::before {
-  content: "▾";
+.quiz-group h3 {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
 }
 
 .quiz-menu {
@@ -83,17 +34,21 @@
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  margin-top: 14px;
 }
 
-.quiz-menu button {
+.quiz-btn {
+  display: inline-block;
   padding: 10px 18px;
   border-radius: 12px;
-  border: none;
   background: linear-gradient(135deg,#1e88e5,#42a5f5);
   color: white;
   font-weight: 600;
-  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.quiz-btn:hover {
+  opacity: 0.9;
 }
 </style>
 </head>
@@ -126,358 +81,70 @@
   </div>
 </nav>
 
+<!-- ===== MAIN ===== -->
 <main class="container">
 
 <section class="section">
   <h2 class="section-title">Pilih Quiz Kana</h2>
 
-  <div class="quiz-category">
+  <div class="quiz-container">
 
+    <!-- ================= HIRAGANA ================= -->
     <div class="quiz-group">
-      <h3>① Hiragana</h3>
+      <h3>① Hiragana Dasar</h3>
       <div class="quiz-menu">
-        <button onclick="startQuiz(0)">Quiz 1</button>
-        <button onclick="startQuiz(1)">Quiz 2</button>
-        <button onclick="startQuiz(2)">Quiz 3</button>
-        <button onclick="startQuiz(3)">Quiz 4</button>
-        <button onclick="startQuiz(4)">Quiz 5</button>
+        <a href="quiz1.html" class="quiz-btn">Quiz 1</a>
+        <a href="quiz2.html" class="quiz-btn">Quiz 2</a>
+        <a href="quiz3.html" class="quiz-btn">Quiz 3</a>
+        <a href="quiz4.html" class="quiz-btn">Quiz 4</a>
+        <a href="quiz5.html" class="quiz-btn">Quiz 5</a>
       </div>
     </div>
 
+    <!-- ================= KATAKANA ================= -->
     <div class="quiz-group">
-      <h3>② Katakana</h3>
+      <h3>② Katakana Dasar</h3>
       <div class="quiz-menu">
-        <button onclick="startQuiz(5)">Quiz 6</button>
-        <button onclick="startQuiz(6)">Quiz 7</button>
-        <button onclick="startQuiz(7)">Quiz 8</button>
-        <button onclick="startQuiz(8)">Quiz 9</button>
-        <button onclick="startQuiz(9)">Quiz 10</button>
+        <a href="quiz6.html" class="quiz-btn">Quiz 6</a>
+        <a href="quiz7.html" class="quiz-btn">Quiz 7</a>
+        <a href="quiz8.html" class="quiz-btn">Quiz 8</a>
+        <a href="quiz9.html" class="quiz-btn">Quiz 9</a>
+        <a href="quiz10.html" class="quiz-btn">Quiz 10</a>
       </div>
     </div>
 
+    <!-- ========== DAKUON & HANDAKUON ========== -->
     <div class="quiz-group">
       <h3>③ Dakuon & Handakuon</h3>
       <div class="quiz-menu">
-        <button onclick="startQuiz(10)">Quiz 11</button>
-        <button onclick="startQuiz(11)">Quiz 12</button>
-        <button onclick="startQuiz(12)">Quiz 13</button>
-        <button onclick="startQuiz(13)">Quiz 14</button>
-        <button onclick="startQuiz(14)">Quiz 15</button>
+        <a href="quiz11.html" class="quiz-btn">Quiz 11</a>
+        <a href="quiz12.html" class="quiz-btn">Quiz 12</a>
+        <a href="quiz13.html" class="quiz-btn">Quiz 13</a>
+        <a href="quiz14.html" class="quiz-btn">Quiz 14</a>
+        <a href="quiz15.html" class="quiz-btn">Quiz 15</a>
       </div>
     </div>
 
+    <!-- ========== YOUON・CHŌON・FUKUSHŪ ========== -->
     <div class="quiz-group">
-      <h3>④ Youon & Chōon</h3>
+      <h3>④ Youon・Chōon・Fukushū</h3>
       <div class="quiz-menu">
-        <button onclick="startQuiz(15)">Quiz 16</button>
-        <button onclick="startQuiz(16)">Quiz 17</button>
-        <button onclick="startQuiz(17)">Quiz 18</button>
-        <button onclick="startQuiz(18)">Quiz 19</button>
-        <button onclick="startQuiz(19)">Quiz 20</button>
+        <a href="quiz16.html" class="quiz-btn">Quiz 16</a>
+        <a href="quiz17.html" class="quiz-btn">Quiz 17</a>
+        <a href="quiz18.html" class="quiz-btn">Quiz 18</a>
+        <a href="quiz19.html" class="quiz-btn">Quiz 19</a>
+        <a href="quiz20.html" class="quiz-btn">Quiz 20</a>
       </div>
     </div>
 
   </div>
 </section>
 
-
-<section class="section">
-<div class="quiz-box">
-<div id="question" class="question">Pilih Quiz di atas</div>
-<div id="choices" class="choices"></div>
-</div>
-</section>
-
 </main>
 
-<script>
-const quizzes = [
-
-/* =====================
-   QUIZ 1 – HIRAGANA A–O
-===================== */
-[
-{q:"あ",a:"a",c:["a","i","u","e"]},
-{q:"い",a:"i",c:["i","u","o","a"]},
-{q:"う",a:"u",c:["u","e","i","o"]},
-{q:"え",a:"e",c:["e","a","i","o"]},
-{q:"お",a:"o",c:["o","a","u","e"]},
-{q:"あ",a:"a",c:["a","o","i","u"]},
-{q:"い",a:"i",c:["i","e","u","a"]},
-{q:"う",a:"u",c:["u","a","o","e"]},
-{q:"え",a:"e",c:["e","i","o","a"]},
-{q:"お",a:"o",c:["o","e","a","u"]},
-{q:"あ",a:"a",c:["a","i","e","o"]},
-{q:"い",a:"i",c:["i","a","o","u"]},
-{q:"う",a:"u",c:["u","e","a","i"]},
-{q:"え",a:"e",c:["e","o","i","a"]},
-{q:"お",a:"o",c:["o","u","a","e"]}
-],
-
-/* =====================
-   QUIZ 2 – HIRAGANA KA–KO
-===================== */
-[
-{q:"か",a:"ka",c:["ka","sa","ta","na"]},
-{q:"き",a:"ki",c:["ki","ku","ke","ko"]},
-{q:"く",a:"ku",c:["ku","ki","ka","ko"]},
-{q:"け",a:"ke",c:["ke","ko","ku","ki"]},
-{q:"こ",a:"ko",c:["ko","ka","ke","ku"]},
-{q:"か",a:"ka",c:["ka","na","sa","ta"]},
-{q:"き",a:"ki",c:["ki","ke","ko","ku"]},
-{q:"く",a:"ku",c:["ku","ko","ka","ki"]},
-{q:"け",a:"ke",c:["ke","ki","ku","ko"]},
-{q:"こ",a:"ko",c:["ko","ke","ka","ku"]},
-{q:"か",a:"ka",c:["ka","sa","ra","ta"]},
-{q:"き",a:"ki",c:["ki","shi","chi","ri"]},
-{q:"く",a:"ku",c:["ku","su","tsu","ru"]},
-{q:"け",a:"ke",c:["ke","se","te","re"]},
-{q:"こ",a:"ko",c:["ko","so","to","ro"]}
-],
-
-/* =====================
-   QUIZ 3 – HIRAGANA SA–SO
-===================== */
-[
-{q:"さ",a:"sa",c:["sa","ka","ta","na"]},
-{q:"し",a:"shi",c:["shi","su","se","so"]},
-{q:"す",a:"su",c:["su","shi","sa","so"]},
-{q:"せ",a:"se",c:["se","shi","su","so"]},
-{q:"そ",a:"so",c:["so","sa","se","su"]},
-{q:"さ",a:"sa",c:["sa","ta","na","ka"]},
-{q:"し",a:"shi",c:["shi","chi","ji","si"]},
-{q:"す",a:"su",c:["su","so","se","sa"]},
-{q:"せ",a:"se",c:["se","so","su","shi"]},
-{q:"そ",a:"so",c:["so","se","sa","su"]},
-{q:"さ",a:"sa",c:["sa","sha","cha","ja"]},
-{q:"し",a:"shi",c:["shi","si","chi","ji"]},
-{q:"す",a:"su",c:["su","zu","so","sa"]},
-{q:"せ",a:"se",c:["se","ze","so","su"]},
-{q:"そ",a:"so",c:["so","zo","se","sa"]}
-],
-
-/* =====================
-   QUIZ 4 – HIRAGANA TA–TO
-===================== */
-[
-{q:"た",a:"ta",c:["ta","ka","sa","na"]},
-{q:"ち",a:"chi",c:["chi","tsu","te","to"]},
-{q:"つ",a:"tsu",c:["tsu","chi","ta","to"]},
-{q:"て",a:"te",c:["te","ta","chi","tsu"]},
-{q:"と",a:"to",c:["to","ta","te","tsu"]},
-{q:"た",a:"ta",c:["ta","da","na","ra"]},
-{q:"ち",a:"chi",c:["chi","ji","shi","ti"]},
-{q:"つ",a:"tsu",c:["tsu","su","tu","zu"]},
-{q:"て",a:"te",c:["te","de","se","re"]},
-{q:"と",a:"to",c:["to","do","so","ro"]},
-{q:"た",a:"ta",c:["ta","ka","pa","ba"]},
-{q:"ち",a:"chi",c:["chi","shi","ji","hi"]},
-{q:"つ",a:"tsu",c:["tsu","zu","su","chu"]},
-{q:"て",a:"te",c:["te","ne","me","re"]},
-{q:"と",a:"to",c:["to","no","mo","ro"]}
-],
-
-/* =====================
-   QUIZ 5 – HIRAGANA NA–NO
-===================== */
-[
-{q:"な",a:"na",c:["na","ma","ra","ka"]},
-{q:"に",a:"ni",c:["ni","nu","ne","no"]},
-{q:"ぬ",a:"nu",c:["nu","ni","na","no"]},
-{q:"ね",a:"ne",c:["ne","nu","ni","no"]},
-{q:"の",a:"no",c:["no","na","ne","nu"]},
-{q:"な",a:"na",c:["na","ha","ma","ya"]},
-{q:"に",a:"ni",c:["ni","hi","mi","ri"]},
-{q:"ぬ",a:"nu",c:["nu","hu","mu","ru"]},
-{q:"ね",a:"ne",c:["ne","he","me","re"]},
-{q:"の",a:"no",c:["no","ho","mo","ro"]},
-{q:"な",a:"na",c:["na","pa","ba","ga"]},
-{q:"に",a:"ni",c:["ni","pi","bi","gi"]},
-{q:"ぬ",a:"nu",c:["nu","pu","bu","gu"]},
-{q:"ね",a:"ne",c:["ne","pe","be","ge"]},
-{q:"の",a:"no",c:["no","po","bo","go"]}
-],
-
-/* =====================
-   QUIZ 6–10 KATAKANA
-===================== */
-
-/* 6 A–O */[
-{q:"ア",a:"a",c:["a","i","u","e"]},
-{q:"イ",a:"i",c:["i","u","o","a"]},
-{q:"ウ",a:"u",c:["u","e","i","o"]},
-{q:"エ",a:"e",c:["e","a","i","o"]},
-{q:"オ",a:"o",c:["o","a","u","e"]},
-{q:"ア",a:"a",c:["a","o","i","u"]},
-{q:"イ",a:"i",c:["i","e","u","a"]},
-{q:"ウ",a:"u",c:["u","a","o","e"]},
-{q:"エ",a:"e",c:["e","i","o","a"]},
-{q:"オ",a:"o",c:["o","e","a","u"]},
-{q:"ア",a:"a",c:["a","i","e","o"]},
-{q:"イ",a:"i",c:["i","a","o","u"]},
-{q:"ウ",a:"u",c:["u","e","a","i"]},
-{q:"エ",a:"e",c:["e","o","i","a"]},
-{q:"オ",a:"o",c:["o","u","a","e"]}
-],
-
-/* =====================
-   QUIZ 7 – KATAKANA KA–KO
-===================== */
-[
-  {q:"カ",a:"ka",c:["ka","sa","ta","na"]},
-  {q:"キ",a:"ki",c:["ki","ku","ke","ko"]},
-  {q:"ク",a:"ku",c:["ku","ki","ka","ko"]},
-  {q:"ケ",a:"ke",c:["ke","ko","ku","ki"]},
-  {q:"コ",a:"ko",c:["ko","ka","ke","ku"]},
-  {q:"カ",a:"ka",c:["ka","na","sa","ta"]},
-  {q:"キ",a:"ki",c:["ki","ke","ko","ku"]},
-  {q:"ク",a:"ku",c:["ku","ko","ka","ki"]},
-  {q:"ケ",a:"ke",c:["ke","ki","ku","ko"]},
-  {q:"コ",a:"ko",c:["ko","ke","ka","ku"]},
-  {q:"カ",a:"ka",c:["ka","sa","ra","ta"]},
-  {q:"キ",a:"ki",c:["ki","shi","chi","ri"]},
-  {q:"ク",a:"ku",c:["ku","su","tsu","ru"]},
-  {q:"ケ",a:"ke",c:["ke","se","te","re"]},
-  {q:"コ",a:"ko",c:["ko","so","to","ro"]}
-],
-
-/* =====================
-   QUIZ 8 – KATAKANA SA–SO
-===================== */
-[
-  {q:"サ",a:"sa",c:["sa","ka","ta","na"]},
-  {q:"シ",a:"shi",c:["shi","su","se","so"]},
-  {q:"ス",a:"su",c:["su","shi","sa","so"]},
-  {q:"セ",a:"se",c:["se","shi","su","so"]},
-  {q:"ソ",a:"so",c:["so","sa","se","su"]},
-  {q:"サ",a:"sa",c:["sa","ta","na","ka"]},
-  {q:"シ",a:"shi",c:["shi","chi","ji","si"]},
-  {q:"ス",a:"su",c:["su","so","se","sa"]},
-  {q:"セ",a:"se",c:["se","so","su","shi"]},
-  {q:"ソ",a:"so",c:["so","se","sa","su"]},
-  {q:"サ",a:"sa",c:["sa","sha","cha","ja"]},
-  {q:"シ",a:"shi",c:["shi","si","chi","ji"]},
-  {q:"ス",a:"su",c:["su","zu","so","sa"]},
-  {q:"セ",a:"se",c:["se","ze","so","su"]},
-  {q:"ソ",a:"so",c:["so","zo","se","sa"]}
-],
-
-/* =====================
-   QUIZ 9 – KATAKANA TA–TO
-===================== */
-[
-  {q:"タ",a:"ta",c:["ta","ka","sa","na"]},
-  {q:"チ",a:"chi",c:["chi","tsu","te","to"]},
-  {q:"ツ",a:"tsu",c:["tsu","chi","ta","to"]},
-  {q:"テ",a:"te",c:["te","ta","chi","tsu"]},
-  {q:"ト",a:"to",c:["to","ta","te","tsu"]},
-  {q:"タ",a:"ta",c:["ta","da","na","ra"]},
-  {q:"チ",a:"chi",c:["chi","ji","shi","ti"]},
-  {q:"ツ",a:"tsu",c:["tsu","su","tu","zu"]},
-  {q:"テ",a:"te",c:["te","de","se","re"]},
-  {q:"ト",a:"to",c:["to","do","so","ro"]},
-  {q:"タ",a:"ta",c:["ta","ka","pa","ba"]},
-  {q:"チ",a:"chi",c:["chi","shi","ji","hi"]},
-  {q:"ツ",a:"tsu",c:["tsu","zu","su","chu"]},
-  {q:"テ",a:"te",c:["te","ne","me","re"]},
-  {q:"ト",a:"to",c:["to","no","mo","ro"]}
-],
-
-/* =====================
-   QUIZ 10 – KATAKANA NA–NO
-===================== */
-[
-  {q:"ナ",a:"na",c:["na","ma","ra","ka"]},
-  {q:"ニ",a:"ni",c:["ni","nu","ne","no"]},
-  {q:"ヌ",a:"nu",c:["nu","ni","na","no"]},
-  {q:"ネ",a:"ne",c:["ne","nu","ni","no"]},
-  {q:"ノ",a:"no",c:["no","na","ne","nu"]},
-  {q:"ナ",a:"na",c:["na","ha","ma","ya"]},
-  {q:"ニ",a:"ni",c:["ni","hi","mi","ri"]},
-  {q:"ヌ",a:"nu",c:["nu","hu","mu","ru"]},
-  {q:"ネ",a:"ne",c:["ne","he","me","re"]},
-  {q:"ノ",a:"no",c:["no","ho","mo","ro"]},
-  {q:"ナ",a:"na",c:["na","pa","ba","ga"]},
-  {q:"ニ",a:"ni",c:["ni","pi","bi","gi"]},
-  {q:"ヌ",a:"nu",c:["nu","pu","bu","gu"]},
-  {q:"ネ",a:"ne",c:["ne","pe","be","ge"]},
-  {q:"ノ",a:"no",c:["no","po","bo","go"]}
-],
-
-/* =====================
-   QUIZ 15 – REVIEW DAKUON & HANDAKUON
-===================== */
-[
-  {q:"が",a:"ga",c:["ga","ka","ha","pa"]},
-  {q:"ざ",a:"za",c:["za","sa","ta","pa"]},
-  {q:"だ",a:"da",c:["da","ta","sa","pa"]},
-  {q:"ば",a:"ba",c:["ba","ha","pa","ma"]},
-  {q:"ぱ",a:"pa",c:["pa","ha","ba","ma"]},
-  {q:"ぎ",a:"gi",c:["gi","ki","hi","pi"]},
-  {q:"じ",a:"ji",c:["ji","shi","chi","pi"]},
-  {q:"び",a:"bi",c:["bi","hi","pi","mi"]},
-  {q:"ぴ",a:"pi",c:["pi","hi","bi","mi"]},
-  {q:"ぐ",a:"gu",c:["gu","ku","fu","pu"]},
-  {q:"ず",a:"zu",c:["zu","su","tsu","pu"]},
-  {q:"ぶ",a:"bu",c:["bu","fu","pu","mu"]},
-  {q:"ぷ",a:"pu",c:["pu","fu","bu","mu"]},
-  {q:"げ",a:"ge",c:["ge","ke","he","pe"]},
-  {q:"ぺ",a:"pe",c:["pe","he","be","me"]}
-],
-
- /* =====================
-   QUIZ 20 – REVIEW YOUON & CHŌON
-===================== */
-[
-  {q:"きゃ",a:"kya",c:["kya","kyu","kyo","kia"]},
-  {q:"しゃ",a:"sha",c:["sha","sya","cha","ja"]},
-  {q:"ちょ",a:"cho",c:["cho","cha","chu","tyo"]},
-  {q:"にゅ",a:"nyu",c:["nyu","nyo","nya","niu"]},
-  {q:"ひゃ",a:"hya",c:["hya","bya","pya","hia"]},
-  {q:"キャ",a:"kya",c:["kya","kyu","kyo","kia"]},
-  {q:"ショ",a:"sho",c:["sho","sha","shu","syo"]},
-  {q:"チュ",a:"chu",c:["chu","cho","cha","tyu"]},
-  {q:"ニュー",a:"nyuu",c:["nyuu","nyu","nyoo","niu"]},
-  {q:"コーヒー",a:"koohii",c:["koohii","kohii","kohi","koohi"]},
-  {q:"ゲーム",a:"geemu",c:["geemu","gemu","geime","geem"]},
-  {q:"スーパー",a:"suupaa",c:["suupaa","supaa","supa","suupa"]},
-  {q:"ミュージック",a:"myuujikku",c:["myuujikku","myujikku","myuujiku","myujiku"]},
-  {q:"リョウ",a:"ryou",c:["ryou","ryo","ryuu","riyuu"]},
-  {q:"パーティー",a:"paatii",c:["paatii","paati","pati","paatei"]}
-];
-  
-</script>
-let current=[], index=0;
-const qEl=document.getElementById("question");
-const cEl=document.getElementById("choices");
-
-function startQuiz(n){
-  current=quizzes[n];
-  index=0;
-  load();
-}
-
-function load(){
-  if(index>=current.length){
-    qEl.textContent="🎉 Quiz selesai!";
-    cEl.innerHTML="";
-    return;
-  }
-  qEl.textContent=current[index].q;
-  cEl.innerHTML="";
-  current[index].c.forEach(x=>{
-    const b=document.createElement("button");
-    b.textContent=x;
-    b.onclick=()=>check(b,current[index].a);
-    cEl.appendChild(b);
-  });
-}
-
-function check(btn,ans){
-  btn.className=btn.textContent===ans?"correct":"wrong";
-  setTimeout(()=>{index++;load();},700);
-}
-</script>
+<footer class="site-footer">
+  <p>© Manabu Mantappu – Belajar Bahasa Jepang dari Nol</p>
+</footer>
 
 </body>
 </html>
