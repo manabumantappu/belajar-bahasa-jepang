@@ -16,28 +16,29 @@ body {
 .container {
   max-width: 720px;
   margin: auto;
-  background: #fff;
+  background: #ffffff;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.1);
 }
 
 h1 {
   text-align: center;
   color: #1e88e5;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 #progress {
   text-align: center;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #374151;
 }
 
 .question {
   font-size: 64px;
   text-align: center;
-  margin: 25px 0;
+  margin: 24px 0;
 }
 
 .choices button {
@@ -46,10 +47,11 @@ h1 {
   margin: 10px 0;
   padding: 14px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
   background: #e3f2fd;
+  transition: background 0.15s;
 }
 
 .choices button:hover {
@@ -57,31 +59,39 @@ h1 {
 }
 
 .correct {
-  background: #c8e6c9 !important;
+  background: #22c55e !important;
+  color: white;
 }
 
 .wrong {
-  background: #ffcdd2 !important;
-}
-
-#nextBtn {
-  margin-top: 20px;
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  background: #1e88e5;
+  background: #ef4444 !important;
   color: white;
-  cursor: pointer;
-  display: none;
 }
 
-#result {
+.result-box {
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
   margin-top: 20px;
+}
+
+.score-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#1e88e5,#42a5f5);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(30,136,229,.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
 }
 </style>
 </head>
@@ -90,13 +100,10 @@ h1 {
 
 <div class="container">
   <h1>Quiz 1 – Hiragana A–O</h1>
-  <div id="progress"></div>
 
-  <div class="quiz-box">
   <div id="progress"></div>
   <div id="question" class="question"></div>
   <div id="choices" class="choices"></div>
-  <div id="result"></div>
 </div>
 
 <script>
@@ -123,16 +130,12 @@ const quizData = [
   { q:"お", a:"o", c:["o","u","a","e"] }
 ];
 
-/* =====================
-   QUIZ ENGINE (UMUM)
-===================== */
 let index = 0;
 let score = 0;
 
 const qEl = document.getElementById("question");
 const cEl = document.getElementById("choices");
 const pEl = document.getElementById("progress");
-const rEl = document.getElementById("result");
 
 function loadQuestion() {
   if (index >= quizData.length) {
@@ -154,7 +157,7 @@ function loadQuestion() {
 }
 
 function checkAnswer(btn, selected, correct) {
-  const buttons = document.querySelectorAll("#choices button");
+  const buttons = document.querySelectorAll(".choices button");
   buttons.forEach(b => b.disabled = true);
 
   if (selected === correct) {
@@ -169,7 +172,6 @@ function checkAnswer(btn, selected, correct) {
     });
   }
 
-  // ⏱ otomatis lanjut
   setTimeout(() => {
     index++;
     loadQuestion();
@@ -179,21 +181,21 @@ function checkAnswer(btn, selected, correct) {
 function showResult() {
   qEl.textContent = "🎉 Quiz Selesai!";
   pEl.textContent = "";
-
   cEl.innerHTML = `
     <div class="result-box">
       <p class="score-text">
         Skor kamu: ${score} / ${quizData.length}
       </p>
-
       <a href="kana.html" class="btn-primary">
         ⬅ Kembali ke Menu Quiz Kana
       </a>
     </div>
   `;
 }
-</script>
 
+/* WAJIB */
+loadQuestion();
+</script>
 
 </body>
 </html>
