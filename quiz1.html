@@ -17,8 +17,8 @@ body {
   max-width: 720px;
   margin: auto;
   background: #ffffff;
-  padding: 25px;
-  border-radius: 14px;
+  padding: 26px;
+  border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,.1);
 }
 
@@ -47,7 +47,7 @@ h1 {
   margin: 10px 0;
   padding: 14px;
   font-size: 16px;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   cursor: pointer;
   background: #e3f2fd;
@@ -68,6 +68,7 @@ h1 {
   color: white;
 }
 
+/* ===== RESULT ===== */
 .result-box {
   text-align: center;
   margin-top: 20px;
@@ -76,21 +77,36 @@ h1 {
 .score-text {
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-.btn-primary {
-  display: inline-block;
+.result-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
   padding: 14px 22px;
   border-radius: 14px;
-  background: linear-gradient(135deg,#1e88e5,#42a5f5);
-  color: white;
   font-weight: 700;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-back {
+  background: #64748b;
+}
+
+.btn-home {
+  background: linear-gradient(135deg,#1e88e5,#42a5f5);
   box-shadow: 0 8px 18px rgba(30,136,229,.35);
 }
 
-.btn-primary:hover {
+.btn:hover {
   opacity: 0.9;
 }
 </style>
@@ -137,6 +153,11 @@ const qEl = document.getElementById("question");
 const cEl = document.getElementById("choices");
 const pEl = document.getElementById("progress");
 
+/* 🔀 SHUFFLE FUNCTION */
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
 function loadQuestion() {
   if (index >= quizData.length) {
     showResult();
@@ -148,7 +169,9 @@ function loadQuestion() {
   pEl.textContent = `Soal ${index + 1} / ${quizData.length}`;
   cEl.innerHTML = "";
 
-  q.c.forEach(choice => {
+  const shuffledChoices = shuffle([...q.c]);
+
+  shuffledChoices.forEach(choice => {
     const btn = document.createElement("button");
     btn.textContent = choice;
     btn.onclick = () => checkAnswer(btn, choice, q.a);
@@ -186,9 +209,14 @@ function showResult() {
       <p class="score-text">
         Skor kamu: ${score} / ${quizData.length}
       </p>
-      <a href="kana.html" class="btn-primary">
-        ⬅ Kembali ke Menu Quiz Kana
-      </a>
+      <div class="result-buttons">
+        <button class="btn btn-back" onclick="history.back()">
+          ⬅ Kembali
+        </button>
+        <a href="kana.html" class="btn btn-home">
+          🏠 Menu Quiz Kana
+        </a>
+      </div>
     </div>
   `;
 }
