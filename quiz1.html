@@ -179,18 +179,19 @@ function checkAnswer(btn, selected, correct) {
 function showResult() {
   qEl.textContent = "🎉 Quiz Selesai!";
   pEl.textContent = "";
-  cEl.innerHTML = `
-    <p style="font-size:1.2rem;font-weight:bold">
-      Skor kamu: ${score} / ${quizData.length}
-    </p>
 
-    <a href="kana.html" class="back-btn">
-      ⬅ Kembali ke Menu Quiz
-    </a>
+  cEl.innerHTML = `
+    <div class="result-box">
+      <p class="score-text">
+        Skor kamu: ${score} / ${quizData.length}
+      </p>
+
+      <a href="kana.html" class="btn-primary">
+        ⬅ Kembali ke Menu Quiz Kana
+      </a>
+    </div>
   `;
 }
-
-loadQuestion();
 </script>
 
 
