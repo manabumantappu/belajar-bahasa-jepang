@@ -436,6 +436,33 @@ th {
   margin-bottom: 12px;
 }
 
+   /* ===== Native Adsterra Fix ===== */
+.native-ad-wrapper {
+  max-width: 360px;       /* ukuran aman mobile */
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.native-ad-wrapper img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 10px;
+}
+
+.native-ad-wrapper iframe {
+  max-width: 100% !important;
+  border-radius: 10px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .native-ad-wrapper {
+    max-width: 600px;
+  }
+}
+
 .result-box {
   text-align: center;
 }
