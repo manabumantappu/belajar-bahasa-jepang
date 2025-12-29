@@ -94,6 +94,34 @@
 
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
+  
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+
+    // ===== ACTIVE MENU AUTO =====
+    const path = window.location.pathname;
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      const page = link.dataset.page;
+
+      if (
+        (page === 'home' && path.endsWith('/index.html')) ||
+        (page === 'kana' && path.includes('kana')) ||
+        (page === 'aisatsu' && path.includes('aisatsu')) ||
+        (page === 'kosakata' && path.includes('kosakata')) ||
+        (page === 'jft' && path.includes('/jft/')) ||
+        (page === 'ssw' && path.includes('/ssw/')) ||
+        (page === 'download' && path.includes('download')) ||
+        (page === 'latihan' && path.includes('latihan'))
+      ) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 
 <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
