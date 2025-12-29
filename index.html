@@ -101,9 +101,16 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
 
 
 <!-- ===== FOOTER ===== -->
-<footer class="footer" style="text-align:center; padding:20px; background:#0f2027;">
-  <p>© 2025 Manabu Mantappu</p>
-  <p><em>Website belajar Bahasa Jepang ini akan terus disempurnakan</em></p>
+<div id="footer"></div>
+
+<script>
+fetch('/belajar-bahasa-jepang/includes/footer.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+</script>
+
 
   <a href="earn.html"
      style="
