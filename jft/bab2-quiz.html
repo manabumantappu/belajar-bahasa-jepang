@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz JFT Bab 2 – Aisatsu & Ungkapan Sehari-hari</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* ===== QUIZ JFT ===== */
+.quiz-container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quiz-header h1 {
+  color: #1e3a8a;
+}
+
+.quiz-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.question {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.choices label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.correct {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.wrong {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.explain {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.nav-back {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.nav-back a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e88e5;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(d => document.getElementById('header').innerHTML = d);
+</script>
+
+<main class="quiz-container">
+
+  <div class="quiz-header">
+    <h1>Quiz JFT – Bab 2</h1>
+    <p>Aisatsu & Ungkapan Sehari-hari</p>
+  </div>
+
+  <form id="quizForm">
+
+    <!-- SOAL 1 -->
+    <div class="quiz-card" data-answer="c">
+      <div class="question">1. Ungkapan yang digunakan pada pagi hari adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q1" value="a"> こんばんは</label>
+        <label><input type="radio" name="q1" value="b"> こんにちは</label>
+        <label><input type="radio" name="q1" value="c"> おはようございます</label>
+        <label><input type="radio" name="q1" value="d"> ありがとうございます</label>
+      </div>
+      <div class="explain">おはようございます digunakan pada pagi hari.</div>
+    </div>
+
+    <!-- SOAL 2 -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">2. 「ありがとうございます」artinya adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q2" value="a"> permisi</label>
+        <label><input type="radio" name="q2" value="b"> terima kasih</label>
+        <label><input type="radio" name="q2" value="c"> selamat malam</label>
+        <label><input type="radio" name="q2" value="d"> maaf</label>
+      </div>
+      <div class="explain">ありがとうございます = terima kasih (sopan).</div>
+    </div>
+
+    <!-- SOAL 3 -->
+    <div class="quiz-card" data-answer="a">
+      <div class="question">3. Saat keluar rumah, biasanya mengucapkan …</div>
+      <div class="choices">
+        <label><input type="radio" name="q3" value="a"> いってきます</label>
+        <label><input type="radio" name="q3" value="b"> ただいま</label>
+        <label><input type="radio" name="q3" value="c"> おかえりなさい</label>
+        <label><input type="radio" name="q3" value="d"> すみません</label>
+      </div>
+      <div class="explain">いってきます = saya berangkat.</div>
+    </div>
+
+    <!-- SOAL 4 -->
+    <div class="quiz-card" data-answer="d">
+      <div class="question">4. Jawaban yang tepat untuk 「ただいま」adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q4" value="a"> いってきます</label>
+        <label><input type="radio" name="q4" value="b"> すみません</label>
+        <label><input type="radio" name="q4" value="c"> こんにちは</label>
+        <label><input type="radio" name="q4" value="d"> おかえりなさい</label>
+      </div>
+      <div class="explain">ただいま → おかえりなさい.</div>
+    </div>
+
+    <!-- SOAL 5 -->
+    <div class="quiz-card" data-answer="a">
+      <div class="question">5. 「すみません」bisa digunakan untuk …</div>
+      <div class="choices">
+        <label><input type="radio" name="q5" value="a"> permisi / minta maaf</label>
+        <label><input type="radio" name="q5" value="b"> mengucapkan selamat pagi</label>
+        <label><input type="radio" name="q5" value="c"> pamit pergi</label>
+        <label><input type="radio" name="q5" value="d"> mengucapkan terima kasih formal</label>
+      </div>
+      <div class="explain">すみません = permisi / maaf (konteks ringan).</div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="checkQuiz()">
+      Cek Jawaban
+    </button>
+
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <div class="nav-back">
+    <a href="bab2.html">← Kembali ke Materi Bab 2</a>
+  </div>
+
+</main>
+
+<script>
+function checkQuiz() {
+  let score = 0;
+  const cards = document.querySelectorAll('.quiz-card');
+
+  cards.forEach(card => {
+    const correct = card.dataset.answer;
+    const selected = card.querySelector('input[type="radio"]:checked');
+    const explain = card.querySelector('.explain');
+
+    if (selected) {
+      if (selected.value === correct) {
+        selected.parentElement.classList.add('correct');
+        score++;
+      } else {
+        selected.parentElement.classList.add('wrong');
+        card.querySelector(`input[value="${correct}"]`)
+            .parentElement.classList.add('correct');
+      }
+      explain.style.display = "block";
+    }
+  });
+
+  document.getElementById('result').innerText =
+    `Skor kamu: ${score} / ${cards.length}`;
+}
+</script>
+
+</body>
+</html>
