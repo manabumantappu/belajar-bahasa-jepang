@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JFT Basic Bab 8 – Percakapan & Situasi Ujian | Manabu Mantappu</title>
+<meta name="description" content="Materi JFT Basic Bab 8: Percakapan dan situasi ujian, dialog pendek ala JFT lengkap dengan latihan.">
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* ===== BAB CONTENT ===== */
+.bab-container{max-width:900px;margin:40px auto;padding:0 20px}
+.bab-header{text-align:center;margin-bottom:40px}
+.bab-header h1{font-size:1.9rem;color:#1e3a8a}
+.bab-header p{color:#475569}
+
+.section{margin-bottom:36px}
+.section h2{color:#1e88e5;margin-bottom:14px}
+.section p{line-height:1.7;color:#334155}
+
+.dialog-box{
+  background:#f8fafc;border-left:4px solid #1e88e5;
+  padding:18px;margin:16px 0;border-radius:10px
+}
+.dialog-jp{font-size:1.05rem;line-height:1.8;color:#0f172a}
+.dialog-id{margin-top:10px;color:#334155}
+
+.tip{
+  background:#eef6ff;border-radius:14px;padding:16px;margin:14px 0
+}
+.tip strong{color:#1e3a8a}
+
+.quiz-mini{
+  background:#eef6ff;border-radius:16px;padding:18px;margin-top:18px
+}
+.quiz-mini h3{margin-top:0;color:#1e3a8a}
+
+.quiz-action{display:flex;justify-content:center;margin:26px 0}
+.quiz-btn{
+  display:inline-block;padding:14px 26px;background:#1e88e5;color:#fff;
+  font-weight:700;border-radius:12px;text-decoration:none;
+  box-shadow:0 8px 22px rgba(30,136,229,.25);transition:.2s
+}
+.quiz-btn:hover{background:#1565c0;transform:translateY(-2px)}
+
+.nav-bab{display:flex;justify-content:space-between;margin-top:40px}
+.nav-bab a{text-decoration:none;font-weight:600;color:#1e88e5}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r=>r.text())
+  .then(d=>document.getElementById('header').innerHTML=d);
+</script>
+
+<main class="bab-container">
+
+  <div class="bab-header">
+    <h1>Bab 8 – Percakapan & Situasi Ujian</h1>
+    <p>Dialog pendek yang sering muncul di JFT Basic</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <h2>1️⃣ Tips Mengerjakan Soal Percakapan JFT</h2>
+    <div class="tip">
+      <strong>Perhatikan:</strong>
+      <ul>
+        <li>Siapa berbicara dengan siapa (atasan, teman, pelanggan).</li>
+        <li>Situasi: rumah, kantor, toko, sekolah.</li>
+        <li>Respons yang paling sopan dan alami.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section">
+    <h2>2️⃣ Dialog ① – Di Tempat Kerja</h2>
+    <div class="dialog-box">
+      <div class="dialog-jp">
+        A: おつかれさまです。<br>
+        B: おつかれさまです。
+      </div>
+      <div class="dialog-id">
+        A: Terima kasih atas kerja kerasnya.<br>
+        B: Terima kasih.
+      </div>
+    </div>
+
+    <div class="quiz-mini">
+      <h3>📝 Pertanyaan</h3>
+      <p>Dialog ini biasanya terjadi di …</p>
+      <p>a. rumah &nbsp; b. kantor &nbsp; c. toko &nbsp; d. sekolah</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section">
+    <h2>3️⃣ Dialog ② – Meminta Pengulangan</h2>
+    <div class="dialog-box">
+      <div class="dialog-jp">
+        A: すみません。<br>
+        もういちど おねがいします。
+      </div>
+      <div class="dialog-id">
+        A: Permisi. Tolong ulangi sekali lagi.
+      </div>
+    </div>
+
+    <div class="quiz-mini">
+      <h3>📝 Pertanyaan</h3>
+      <p>Apa maksud pembicara?</p>
+      <p>a. Menolak &nbsp; b. Meminta maaf &nbsp; c. Meminta pengulangan &nbsp; d. Mengucapkan terima kasih</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section">
+    <h2>4️⃣ Dialog ③ – Menyatakan Paham</h2>
+    <div class="dialog-box">
+      <div class="dialog-jp">
+        A: わかりました。<br>
+        ありがとうございます。
+      </div>
+      <div class="dialog-id">
+        A: Saya mengerti. Terima kasih.
+      </div>
+    </div>
+
+    <div class="quiz-mini">
+      <h3>📝 Pertanyaan</h3>
+      <p>Apa arti 「わかりました」?</p>
+      <p>a. Tidak tahu &nbsp; b. Saya mengerti &nbsp; c. Tolong &nbsp; d. Maaf</p>
+    </div>
+  </div>
+
+  <!-- TOMBOL QUIZ -->
+  <div class="quiz-action">
+    <a href="bab8-quiz.html" class="quiz-btn">📝 Kerjakan Quiz Bab 8</a>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-bab">
+    <a href="bab7.html">← Kembali ke Bab 7</a>
+    <a href="tryout.html">Lanjut ke Try Out JFT →</a>
+  </div>
+
+</main>
+
+</body>
+</html>
