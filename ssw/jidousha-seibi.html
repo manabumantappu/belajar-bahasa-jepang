@@ -9,7 +9,17 @@
 </head>
 
 <body>
+<!-- ===== HEADER ===== -->
+<div id="header"></div>
 
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+  
 <!-- BREADCRUMB -->
 <nav class="ssw-breadcrumb">
   <a href="../index.html">Home</a>
