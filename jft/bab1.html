@@ -45,21 +45,23 @@
   color: #334155;
 }
 
+/* ===== KANA GRID (5 PER BARIS) ===== */
 .kana-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-template-columns: repeat(5, 1fr); /* 🔥 PAKSA 5 */
   gap: 12px;
-  margin: 16px 0;
+  margin: 16px 0 28px;
 }
 
 .kana-item {
   background: #f1f5f9;
   border-radius: 12px;
-  padding: 14px;
+  padding: 14px 6px;
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
+
 
 .example {
   background: #f8fafc;
