@@ -13,39 +13,47 @@
   margin:40px auto;
   padding:0 20px;
 }
+
 .download-wrap h1{
-  color:#1e3a8a;
   text-align:center;
+  color:#1e3a8a;
+  margin-bottom:8px;
 }
-.download-wrap p.subtitle{
+
+.download-wrap .subtitle{
   text-align:center;
   color:#475569;
   margin-bottom:40px;
 }
 
 .section{
-  margin-bottom:50px;
+  margin-bottom:55px;
 }
+
 .section h2{
   color:#1e88e5;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
+
 .file-list{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:14px;
 }
+
 .file-item{
   background:#f8fafc;
   padding:14px 16px;
   border-radius:10px;
   border-left:4px solid #1e88e5;
 }
+
 .file-item a{
   text-decoration:none;
-  color:#0f172a;
   font-weight:600;
+  color:#0f172a;
 }
+
 .file-item span{
   display:block;
   font-size:.85rem;
@@ -53,11 +61,12 @@
   margin-top:4px;
 }
 
-.cta-form{
+.form-cta{
   text-align:center;
-  margin:30px 0;
+  margin-top:25px;
 }
-.cta-form a{
+
+.form-cta a{
   display:inline-block;
   padding:14px 26px;
   background:#22c55e;
@@ -71,7 +80,7 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- ===== HEADER ===== -->
 <div id="header"></div>
 <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
@@ -91,30 +100,49 @@ SSW • JFT-Basic • JLPT • Buku Bahasa Jepang
 <div class="section">
 <h2>📘 Modul SSW (PDF)</h2>
 <div class="file-list">
+
   <div class="file-item">
-    <a href="#">SSW Kaigo (PDF)</a>
+    <a href="assets/pdf/ssw/kaigo/ssw-kaigo-modul.pdf" target="_blank">
+      SSW Kaigo
+    </a>
     <span>Perawatan lansia Jepang</span>
   </div>
+
   <div class="file-item">
-    <a href="#">SSW Manufaktur (PDF)</a>
+    <a href="assets/pdf/ssw/manufaktur/ssw-manufaktur-modul.pdf" target="_blank">
+      SSW Manufaktur
+    </a>
     <span>Pabrik & produksi</span>
   </div>
+
   <div class="file-item">
-    <a href="#">SSW Pengolahan Makanan (PDF)</a>
-    <span>Pabrik makanan</span>
+    <a href="assets/pdf/ssw/pengolahan-makanan/ssw-pengolahan-makanan-modul.pdf" target="_blank">
+      SSW Pengolahan Makanan
+    </a>
+    <span>Pabrik makanan Jepang</span>
   </div>
+
   <div class="file-item">
-    <a href="#">SSW Pertanian (PDF)</a>
-    <span>Pertanian Jepang</span>
+    <a href="assets/pdf/ssw/pertanian/ssw-pertanian-modul.pdf" target="_blank">
+      SSW Pertanian
+    </a>
+    <span>Pertanian & greenhouse</span>
   </div>
+
   <div class="file-item">
-    <a href="#">SSW Perhotelan (PDF)</a>
+    <a href="assets/pdf/ssw/perhotelan/ssw-perhotelan-modul.pdf" target="_blank">
+      SSW Perhotelan
+    </a>
     <span>Hotel & ryokan</span>
   </div>
+
   <div class="file-item">
-    <a href="#">SSW Jidōsha Seibi (PDF)</a>
+    <a href="assets/pdf/ssw/jidousha-seibi/ssw-jidousha-seibi-modul.pdf" target="_blank">
+      SSW Jidōsha Seibi
+    </a>
     <span>Mekanik kendaraan</span>
   </div>
+
 </div>
 </div>
 
@@ -122,15 +150,30 @@ SSW • JFT-Basic • JLPT • Buku Bahasa Jepang
 <div class="section">
 <h2>📝 JFT-Basic</h2>
 <div class="file-list">
-  <div class="file-item"><a href="#">Modul JFT Bab 1–8 (PDF)</a></div>
-  <div class="file-item"><a href="#">Kumpulan Soal JFT (PDF)</a></div>
-  <div class="file-item"><a href="#">Try Out JFT (PDF)</a></div>
+
+  <div class="file-item">
+    <a href="assets/pdf/jft/jft-modul-bab1-8.pdf" target="_blank">
+      Modul JFT Bab 1–8
+    </a>
+  </div>
+
+  <div class="file-item">
+    <a href="assets/pdf/jft/jft-soal-latihan.pdf" target="_blank">
+      Kumpulan Soal JFT
+    </a>
+  </div>
+
+  <div class="file-item">
+    <a href="assets/pdf/jft/jft-tryout.pdf" target="_blank">
+      Try Out JFT (PDF)
+    </a>
+  </div>
+
 </div>
 
-<div class="cta-form">
-  <a href="https://docs.google.com/forms/XXXX"
-     target="_blank">
-     🚀 Latihan JFT Online (Google Form)
+<div class="form-cta">
+  <a href="https://docs.google.com/forms/XXXX" target="_blank">
+    🚀 Latihan JFT Online (Google Form)
   </a>
 </div>
 </div>
@@ -139,9 +182,19 @@ SSW • JFT-Basic • JLPT • Buku Bahasa Jepang
 <div class="section">
 <h2>📕 JLPT</h2>
 <div class="file-list">
-  <div class="file-item"><a href="#">JLPT N5 – Modul & Soal</a></div>
-  <div class="file-item"><a href="#">JLPT N4 – Modul & Soal</a></div>
-  <div class="file-item"><a href="#">JLPT N3 – Modul Dasar</a></div>
+
+  <div class="file-item">
+    <a href="assets/pdf/jlpt/n5/jlpt-n5-modul.pdf" target="_blank">
+      JLPT N5 – Modul & Soal
+    </a>
+  </div>
+
+  <div class="file-item">
+    <a href="assets/pdf/jlpt/n4/jlpt-n4-modul.pdf" target="_blank">
+      JLPT N4 – Modul & Soal
+    </a>
+  </div>
+
 </div>
 </div>
 
@@ -149,25 +202,52 @@ SSW • JFT-Basic • JLPT • Buku Bahasa Jepang
 <div class="section">
 <h2>📚 Buku Bahasa Jepang</h2>
 <div class="file-list">
-  <div class="file-item"><a href="#">Hiragana & Katakana Lengkap</a></div>
-  <div class="file-item"><a href="#">Tata Bahasa Jepang Dasar</a></div>
-  <div class="file-item"><a href="#">Kosakata Sehari-hari</a></div>
+
+  <div class="file-item">
+    <a href="assets/pdf/buku/hiragana-katakana.pdf" target="_blank">
+      Hiragana & Katakana Lengkap
+    </a>
+  </div>
+
+  <div class="file-item">
+    <a href="assets/pdf/buku/tata-bahasa-dasar.pdf" target="_blank">
+      Tata Bahasa Jepang Dasar
+    </a>
+  </div>
+
+  <div class="file-item">
+    <a href="assets/pdf/buku/kosakata-sehari-hari.pdf" target="_blank">
+      Kosakata Sehari-hari
+    </a>
+  </div>
+
 </div>
 </div>
 
 </div>
 
-<!-- ===== ADSTERRA ===== -->
+<!-- ===== ADSTERRA NATIVE ===== -->
 <div style="margin:40px auto;max-width:1000px;text-align:center;">
 <script async data-cfasync="false"
 src="https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/invoke.js"></script>
 <div id="container-a025500e946b1b3c647de88ab69d003a"></div>
 </div>
 
-<!-- FOOTER -->
+<!-- ===== AFFILIATE ===== -->
+<div style="text-align:center;margin:40px 0;">
+  <a href="earn.html"
+     style="display:inline-block;padding:14px 26px;
+            background:#00e676;color:#000;
+            font-weight:bold;border-radius:12px;
+            text-decoration:none;">
+     💰 Cara Dapat Dollar dari Website
+  </a>
+</div>
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
-<p>© 2025 Manabu Mantappu</p>
-<p><em>Belajar Jepang dari nol sampai kerja di Jepang</em></p>
+  <p>© 2025 Manabu Mantappu</p>
+  <p><em>Belajar Jepang dari nol sampai kerja di Jepang</em></p>
 </footer>
 
 </body>
