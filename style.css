@@ -770,4 +770,21 @@ th {
     text-align: center;
   }
 }
+/* ===== AFFILIATE BUTTON (FOOTER) ===== */
+.affiliate-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #00e676;
+  color: #000000;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: all 0.2s ease;
+}
+
+.affiliate-btn:hover {
+  background: #1aff83;
+  transform: translateY(-2px);
+}
 
