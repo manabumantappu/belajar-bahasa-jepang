@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quiz JFT Bab 4 – Pola Kalimat ～です／～ます</title>
+<link rel="stylesheet" href="../style.css" />
+
+<style>
+/* ===== QUIZ BAB 4 ===== */
+.quiz-container {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.quiz-header h1 {
+  color: #1e3a8a;
+  margin: 6px 0;
+}
+
+.quiz-header p {
+  color: #475569;
+  margin: 0;
+}
+
+.quiz-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  margin-bottom: 18px;
+}
+
+.question {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.choices label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+/* mark chosen answer */
+.choices input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* feedback classes on label */
+.correct {
+  color: #14532d;
+  background: rgba(16,185,129,0.08);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.wrong {
+  color: #7f1d1d;
+  background: rgba(239,68,68,0.06);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.explain {
+  display: none; /* hidden until submit */
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 8px 20px rgba(30,136,229,0.14);
+}
+
+.submit-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+
+.result {
+  text-align: center;
+  margin-top: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.nav-back {
+  display:flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nav-back a {
+  text-decoration: none;
+  color: #1e88e5;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<!-- header include -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(html => { document.getElementById('header').innerHTML = html; })
+  .catch(()=>{/* header fetch optional */});
+</script>
+
+<main class="quiz-container">
+
+  <div class="quiz-header">
+    <h1>Quiz JFT – Bab 4</h1>
+    <p>Pola Kalimat Dasar（～です／～ます）</p>
+  </div>
+
+  <form id="quizForm" aria-label="Quiz Bab 4">
+
+    <!-- Q1 -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">1. 「これは ほん です。」 kalimat ini menggunakan pola …</div>
+      <div class="choices">
+        <label><input type="radio" name="q1" value="a"> ～ます</label>
+        <label><input type="radio" name="q1" value="b"> ～です</label>
+        <label><input type="radio" name="q1" value="c"> ～ました</label>
+        <label><input type="radio" name="q1" value="d"> ～ない</label>
+      </div>
+      <div class="explain">Jawab: ～です — kalimat ini menjelaskan identitas/keadaan: "Ini adalah buku."</div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-card" data-answer="c">
+      <div class="question">2. Pilih kalimat yang menyatakan kegiatan:</div>
+      <div class="choices">
+        <label><input type="radio" name="q2" value="a"> わたしは がくせい です。</label>
+        <label><input type="radio" name="q2" value="b"> これは みず です。</label>
+        <label><input type="radio" name="q2" value="c"> わたしは べんきょうします。</label>
+        <label><input type="radio" name="q2" value="d"> まいにち げんき です。</label>
+      </div>
+      <div class="explain">Jawab: ～ます (べんきょうします) menandakan kegiatan: "Saya belajar".</div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-card" data-answer="a">
+      <div class="question">3. Ke mana seharusnya letak kata です dalam kalimat bahasa Jepang?</div>
+      <div class="choices">
+        <label><input type="radio" name="q3" value="a"> di akhir kalimat</label>
+        <label><input type="radio" name="q3" value="b"> di awal kalimat</label>
+        <label><input type="radio" name="q3" value="c"> selalu setelah partikel は</label>
+        <label><input type="radio" name="q3" value="d"> sebelum subjek</label>
+      </div>
+      <div class="explain">Jawab: di akhir kalimat — predikat di bahasa Jepang biasanya di akhir.</div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">4. Mana yang benar untuk menyatakan "Saya makan roti" (sopan)?</div>
+      <div class="choices">
+        <label><input type="radio" name="q4" value="a"> わたしは パン です。</label>
+        <label><input type="radio" name="q4" value="b"> わたしは パンを たべます。</label>
+        <label><input type="radio" name="q4" value="c"> パン たべます。</label>
+        <label><input type="radio" name="q4" value="d"> パン を です。</label>
+      </div>
+      <div class="explain">Jawab: わたしは パンを たべます — pola ～ます dengan partikel を untuk objek.</div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="quiz-card" data-answer="d">
+      <div class="question">5. Kalimat negatif sopan dari "たべます" adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q5" value="a"> たべませんでした</label>
+        <label><input type="radio" name="q5" value="b"> たべました</label>
+        <label><input type="radio" name="q5" value="c"> たべますか</label>
+        <label><input type="radio" name="q5" value="d"> たべません</label>
+      </div>
+      <div class="explain">Jawab: たべません — bentuk negatif sopan (bukan lampau).</div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="checkQuiz()" aria-label="Cek Jawaban">
+      Cek Jawaban
+    </button>
+
+  </form>
+
+  <div id="result" class="result" role="status" aria-live="polite"></div>
+
+  <div class="nav-back">
+    <a href="bab4.html">← Kembali ke Materi Bab 4</a>
+  </div>
+
+</main>
+
+<script>
+/* Check quiz only when user clicks 'Cek Jawaban' */
+function checkQuiz() {
+  const cards = Array.from(document.querySelectorAll('.quiz-card'));
+  let score = 0;
+
+  cards.forEach(card => {
+    const correct = card.dataset.answer;
+    const selected = card.querySelector('input[type="radio"]:checked');
+    const explain = card.querySelector('.explain');
+
+    // reset previous classes
+    card.querySelectorAll('label').forEach(l => l.classList.remove('correct','wrong'));
+
+    // hide explanation initially
+    if (explain) explain.style.display = 'none';
+
+    if (!selected) {
+      // no answer selected for this card -> leave it (no feedback)
+      return;
+    }
+
+    if (selected.value === correct) {
+      // mark the label containing the chosen radio as correct
+      selected.parentElement.classList.add('correct');
+      score++;
+    } else {
+      // mark chosen as wrong and also mark the correct option
+      selected.parentElement.classList.add('wrong');
+      const correctInput = card.querySelector(`input[value="${correct}"]`);
+      if (correctInput) correctInput.parentElement.classList.add('correct');
+    }
+
+    // show explanation
+    if (explain) explain.style.display = 'block';
+  });
+
+  document.getElementById('result').innerText = `Skor kamu: ${score} / ${cards.length}`;
+  // optionally disable inputs after submit (uncomment if desired)
+  // document.querySelectorAll('input[type="radio"]').forEach(i=>i.disabled=true);
+}
+</script>
+
+</body>
+</html>
