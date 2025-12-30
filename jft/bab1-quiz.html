@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz JFT Bab 1 – Kana & Kosakata Dasar</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* ===== QUIZ JFT ===== */
+.quiz-container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quiz-header h1 {
+  color: #1e3a8a;
+}
+
+.quiz-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.question {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.choices label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  background: #1e88e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.nav-back {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.nav-back a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e88e5;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(d => document.getElementById('header').innerHTML = d);
+</script>
+
+<main class="quiz-container">
+
+  <div class="quiz-header">
+    <h1>Quiz JFT – Bab 1</h1>
+    <p>Kana & Kosakata Dasar</p>
+  </div>
+
+  <form id="quizForm">
+
+    <!-- SOAL 1 -->
+    <div class="quiz-card">
+      <div class="question">1. 「みず」artinya adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q1" value="a"> api</label>
+        <label><input type="radio" name="q1" value="b"> air</label>
+        <label><input type="radio" name="q1" value="c"> rumah</label>
+        <label><input type="radio" name="q1" value="d"> orang</label>
+      </div>
+    </div>
+
+    <!-- SOAL 2 -->
+    <div class="quiz-card">
+      <div class="question">2. 「アイス」ditulis dengan huruf …</div>
+      <div class="choices">
+        <label><input type="radio" name="q2" value="a"> Hiragana</label>
+        <label><input type="radio" name="q2" value="b"> Kanji</label>
+        <label><input type="radio" name="q2" value="c"> Katakana</label>
+        <label><input type="radio" name="q2" value="d"> Romaji</label>
+      </div>
+    </div>
+
+    <!-- SOAL 3 -->
+    <div class="quiz-card">
+      <div class="question">3. Huruf 「あ」dibaca …</div>
+      <div class="choices">
+        <label><input type="radio" name="q3" value="a"> i</label>
+        <label><input type="radio" name="q3" value="b"> u</label>
+        <label><input type="radio" name="q3" value="c"> a</label>
+        <label><input type="radio" name="q3" value="d"> e</label>
+      </div>
+    </div>
+
+    <!-- SOAL 4 -->
+    <div class="quiz-card">
+      <div class="question">4. 「くるま」artinya …</div>
+      <div class="choices">
+        <label><input type="radio" name="q4" value="a"> sepeda</label>
+        <label><input type="radio" name="q4" value="b"> motor</label>
+        <label><input type="radio" name="q4" value="c"> mobil</label>
+        <label><input type="radio" name="q4" value="d"> kereta</label>
+      </div>
+    </div>
+
+    <!-- SOAL 5 -->
+    <div class="quiz-card">
+      <div class="question">5. Kata 「いえ」berarti …</div>
+      <div class="choices">
+        <label><input type="radio" name="q5" value="a"> sekolah</label>
+        <label><input type="radio" name="q5" value="b"> rumah</label>
+        <label><input type="radio" name="q5" value="c"> toko</label>
+        <label><input type="radio" name="q5" value="d"> kantor</label>
+      </div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="checkQuiz()">
+      Cek Jawaban
+    </button>
+
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <div class="nav-back">
+    <a href="bab1.html">← Kembali ke Materi Bab 1</a>
+  </div>
+
+</main>
+
+<script>
+function checkQuiz() {
+  const answers = {
+    q1: "b",
+    q2: "c",
+    q3: "c",
+    q4: "c",
+    q5: "b"
+  };
+
+  let score = 0;
+  let total = Object.keys(answers).length;
+
+  for (let q in answers) {
+    const selected = document.querySelector(`input[name="${q}"]:checked`);
+    if (selected && selected.value === answers[q]) {
+      score++;
+    }
+  }
+
+  document.getElementById("result").innerHTML =
+    `Skor kamu: ${score} / ${total}`;
+}
+</script>
+
+</body>
+</html>
