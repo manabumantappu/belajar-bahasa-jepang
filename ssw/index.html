@@ -103,6 +103,17 @@
 
 <body>
 
+  <!-- ===== HEADER ===== -->
+<div id="header"></div>
+
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+  
 <div class="ssw-landing">
 
   <!-- HERO -->
