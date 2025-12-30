@@ -3,42 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dapat Dollar dari Website & HP</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(160deg, #000428, #004e92);
-  color: #fff;
-  margin: 0;
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
 }
 
+/* ===== BODY CENTER FIX ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(160deg, #000428, #004e92);
+  color: #ffffff;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* CENTER HORIZONTAL */
+  align-items: center;       /* CENTER VERTICAL */
+}
+
+/* ===== WRAPPER ===== */
 .wrap {
+  width: 100%;
   max-width: 420px;
-  margin: auto;
-  padding: 32px 16px;
+  padding: 32px 18px;
   text-align: center;
 }
 
+/* ===== BADGE ===== */
 .badge {
   display: inline-block;
   background: #ff1744;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: bold;
   margin-bottom: 14px;
 }
 
+/* ===== TEXT ===== */
 h1 {
   font-size: 1.8rem;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 p {
   font-size: 1rem;
   opacity: 0.9;
+  margin: 6px 0;
 }
 
+/* ===== BUTTON ===== */
 .btn {
   display: block;
   width: 100%;
@@ -48,26 +66,36 @@ p {
   color: #000;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1.1rem;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+  transition: all 0.2s ease;
 }
 
+.btn:hover {
+  background: #1aff83;
+  transform: translateY(-2px);
+}
+
+/* ===== BOX ===== */
 .box {
   background: rgba(255,255,255,0.12);
   padding: 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   margin-top: 18px;
 }
 
 ul {
   text-align: left;
   padding-left: 18px;
+  margin: 0;
 }
 
 li {
   margin-bottom: 8px;
 }
 
+/* ===== FOOTNOTE ===== */
 .small {
   font-size: 0.8rem;
   opacity: 0.7;
@@ -75,15 +103,15 @@ li {
 }
 </style>
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5C26QNPKL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-C5C26QNPKL');
-</script> 
+</script>
+
 </head>
 
 <body>
