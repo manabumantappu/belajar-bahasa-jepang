@@ -1,0 +1,16 @@
+.btn-ssw{
+  display:inline-block;
+  padding:16px 26px;
+  background:#ef4444;
+  color:#fff;
+  font-weight:800;
+  border-radius:14px;
+  text-decoration:none;
+  box-shadow:0 10px 28px rgba(239,68,68,.3);
+  transition:.2s;
+}
+
+.btn-ssw:hover{
+  background:#dc2626;
+  transform:translateY(-2px);
+}
