@@ -3,223 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW Pertanian – Pertanian Jepang (Tokutei Ginou)</title>
+<title>SSW Pertanian (農業) – Jepang</title>
 
 <link rel="stylesheet" href="../style.css">
 
 <style>
-.ssw-container{max-width:900px;margin:40px auto;padding:0 20px}
-.ssw-header{text-align:center;margin-bottom:40px}
-.ssw-header h1{color:#1e3a8a;margin-bottom:10px}
-.ssw-header p{color:#475569}
-
-.ssw-section{margin-bottom:36px}
-.ssw-section h2{color:#1e88e5;margin-bottom:12px}
-.ssw-section p{line-height:1.7;color:#334155}
-.ssw-section ul{padding-left:20px;line-height:1.7;color:#334155}
-
-.ssw-highlight{
-  background:#f8fafc;
-  border-left:4px solid #1e88e5;
-  padding:16px;
-  border-radius:10px;
+.page-wrap{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+  box-sizing:border-box;
 }
+.page-wrap h1{color:#1e3a8a}
+.page-wrap h2{margin-top:28px;color:#1e88e5}
+.page-wrap p{line-height:1.7;color:#334155}
+.page-wrap ul{padding-left:20px;line-height:1.7;color:#334155}
 
-.ssw-btn-wrap{text-align:center;margin:50px 0}
-.ssw-btn{
+.cta-box{
+  text-align:center;
+  margin:40px 0;
+}
+.cta-btn{
   display:inline-block;
-  padding:16px 28px;
+  padding:14px 26px;
   background:#ef4444;
   color:#fff;
   font-weight:800;
-  border-radius:14px;
+  border-radius:12px;
   text-decoration:none;
-  box-shadow:0 12px 30px rgba(239,68,68,.35);
-  transition:.2s;
 }
-.ssw-btn:hover{background:#dc2626;transform:translateY(-2px)}
 </style>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
+<!-- ===== HEADER ===== -->
 <div id="header"></div>
-
 <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('header').innerHTML = data;
-  });
+  .then(r => r.ok ? r.text() : '')
+  .then(t => document.getElementById('header').innerHTML = t)
+  .catch(() => {});
 </script>
-  
-<div class="ssw-container">
 
-  <div class="ssw-header">
-    <h1>SSW Pertanian (農業)</h1>
-    <p>Pekerjaan Pertanian di Jepang – Penjelasan Lengkap dari A sampai Z</p>
-  </div>
+<!-- ===== KONTEN TEKS ===== -->
+<div class="page-wrap">
 
-  <!-- A -->
-  <div class="ssw-section">
-    <h2>A. Apa itu SSW Pertanian?</h2>
-    <p>
-      <strong>SSW Pertanian</strong> adalah bidang kerja resmi Jepang
-      yang berhubungan dengan <strong>budidaya tanaman dan hasil pertanian</strong>
-      seperti sayuran, buah-buahan, padi, serta pertanian modern (greenhouse).
-      Bidang ini sangat dibutuhkan karena kekurangan tenaga kerja di sektor pertanian Jepang.
-    </p>
-  </div>
+<h1>SSW Pertanian (農業)</h1>
 
-  <!-- B -->
-  <div class="ssw-section">
-    <h2>B. Jenis Pertanian</h2>
-    <ul>
-      <li>Pertanian sayur (tomat, kubis, selada, dll)</li>
-      <li>Pertanian buah (apel, stroberi, anggur)</li>
-      <li>Padi dan hasil sawah</li>
-      <li>Greenhouse (rumah kaca)</li>
-    </ul>
-  </div>
+<p>
+Bidang <strong>SSW Pertanian</strong> adalah pekerjaan di Jepang
+yang berfokus pada <strong>budidaya tanaman dan hasil pertanian</strong>,
+seperti sayuran, buah-buahan, padi, serta pertanian modern
+menggunakan greenhouse. Bidang ini sangat dibutuhkan karena
+kekurangan tenaga kerja di sektor pertanian Jepang.
+</p>
 
-  <!-- C -->
-  <div class="ssw-section">
-    <h2>C. Pekerjaan Utama</h2>
-    <ul>
-      <li>Menanam dan merawat tanaman</li>
-      <li>Memanen hasil pertanian</li>
-      <li>Menyortir dan mengemas hasil panen</li>
-      <li>Mengoperasikan alat pertanian sederhana</li>
-      <li>Membersihkan area kerja</li>
-    </ul>
-  </div>
+<h2>A. Apa itu SSW Pertanian?</h2>
+<p>
+SSW Pertanian mencakup pekerjaan menanam, merawat,
+memanen, serta mengemas hasil pertanian
+sesuai standar kualitas dan kebersihan Jepang.
+</p>
 
-  <!-- D -->
-  <div class="ssw-section">
-    <h2>D. Lingkungan Kerja</h2>
-    <p>
-      Pekerjaan dilakukan di luar ruangan (outdoor) atau di greenhouse.
-      Terpapar cuaca panas, dingin, hujan, serta kerja mengikuti musim tanam dan panen.
-    </p>
-  </div>
+<h2>B. Jenis Pertanian</h2>
+<ul>
+  <li>Pertanian sayur (tomat, kubis, selada, dll)</li>
+  <li>Pertanian buah (apel, stroberi, anggur)</li>
+  <li>Padi dan hasil sawah</li>
+  <li>Greenhouse (rumah kaca)</li>
+</ul>
 
-  <!-- E -->
-  <div class="ssw-section">
-    <h2>E. Syarat Umum</h2>
-    <ul>
-      <li>Lulus ujian SSW Pertanian</li>
-      <li>Lulus JFT-Basic atau JLPT N4</li>
-      <li>Sehat jasmani dan tahan kerja fisik</li>
-      <li>Siap kerja lapangan dan disiplin</li>
-    </ul>
-  </div>
+<h2>C. Jenis Pekerjaan</h2>
+<ul>
+  <li>Menanam dan merawat tanaman</li>
+  <li>Memanen hasil pertanian</li>
+  <li>Menyortir dan mengemas hasil panen</li>
+  <li>Mengoperasikan alat pertanian sederhana</li>
+  <li>Membersihkan area kerja</li>
+</ul>
 
-  <!-- F -->
-  <div class="ssw-section">
-    <h2>F. Materi Ujian SSW Pertanian</h2>
-    <ul>
-      <li>Dasar-dasar budidaya tanaman</li>
-      <li>Keselamatan kerja pertanian</li>
-      <li>Penggunaan alat pertanian</li>
-      <li>Kebersihan dan kualitas hasil panen</li>
-    </ul>
-  </div>
+<h2>D. Lingkungan Kerja</h2>
+<p>
+Pekerjaan dilakukan di luar ruangan atau di greenhouse.
+Pekerja akan terpapar cuaca panas, dingin, dan hujan,
+serta bekerja mengikuti musim tanam dan panen.
+</p>
 
-  <!-- G -->
-  <div class="ssw-section">
-    <h2>G. Gaji & Jam Kerja</h2>
-    <ul>
-      <li>Gaji rata-rata: ¥170.000 – ¥230.000 / bulan</li>
-      <li>Jam kerja: pagi – sore</li>
-      <li>Lembur tersedia saat musim panen</li>
-    </ul>
-  </div>
+<h2>E. Syarat Umum</h2>
+<ul>
+  <li>Lulus ujian SSW Pertanian</li>
+  <li>Lulus JFT-Basic atau JLPT N4</li>
+  <li>Sehat jasmani dan kuat fisik</li>
+  <li>Siap kerja lapangan dan disiplin</li>
+</ul>
 
-  <!-- H -->
-  <div class="ssw-section">
-    <h2>H. Kelebihan SSW Pertanian</h2>
-    <ul>
-      <li>Banyak lowongan di seluruh Jepang</li>
-      <li>Cocok untuk pemula</li>
-      <li>Biaya hidup lebih rendah (daerah pedesaan)</li>
-      <li>Lingkungan kerja relatif tenang</li>
-    </ul>
-  </div>
+<h2>F. Materi Ujian SSW Pertanian</h2>
+<ul>
+  <li>Dasar-dasar budidaya tanaman</li>
+  <li>Keselamatan kerja pertanian</li>
+  <li>Penggunaan alat pertanian</li>
+  <li>Kebersihan dan kualitas hasil panen</li>
+</ul>
 
-  <!-- I -->
-  <div class="ssw-section">
-    <h2>I. Tantangan</h2>
-    <ul>
-      <li>Kerja fisik dan berdiri lama</li>
-      <li>Tergantung cuaca dan musim</li>
-      <li>Pekerjaan repetitif</li>
-    </ul>
-  </div>
+<h2>G. Gaji & Jam Kerja</h2>
+<ul>
+  <li>Gaji rata-rata: ¥170.000 – ¥230.000 per bulan</li>
+  <li>Jam kerja: pagi sampai sore</li>
+  <li>Lembur tersedia saat musim panen</li>
+</ul>
 
-  <!-- J -->
-  <div class="ssw-section ssw-highlight">
-    <h2>J. Cocok untuk Siapa?</h2>
-    <p>SSW Pertanian cocok untuk:</p>
-    <ul>
-      <li>Lulusan SMA/SMK</li>
-      <li>Yang suka kerja lapangan</li>
-      <li>Ingin suasana kerja tidak terlalu ramai</li>
-      <li>Siap kerja fisik dan disiplin</li>
-    </ul>
-  </div>
+<h2>H. Cocok untuk Siapa?</h2>
+<ul>
+  <li>Lulusan SMA / SMK</li>
+  <li>Suka kerja lapangan dan alam terbuka</li>
+  <li>Ingin suasana kerja tenang</li>
+  <li>Siap kerja fisik dan disiplin</li>
+</ul>
 
-  <!-- BUTTON -->
-  <div class="ssw-btn-wrap">
-    <a href="https://manabumantappu.github.io/ssw-manabu-mantappu/"
-       target="_blank"
-       class="ssw-btn">
-       🌾 Masuk ke Website SSW Pertanian
-    </a>
-  </div>
+<!-- ===== CTA KE WEBSITE SSW ===== -->
+<div class="cta-box">
+  <a href="https://manabumantappu.github.io/ssw-manabu-mantappu/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="cta-btn">
+     🌾 Masuk ke Website SSW Pertanian
+  </a>
+</div>
+
+</div>
+
+<!-- ===== NATIVE BANNER ADSTERRA ===== -->
+<div style="margin:40px auto;max-width:1000px;text-align:center;">
+  <script async data-cfasync="false"
+    src="https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/invoke.js">
+  </script>
+  <div id="container-a025500e946b1b3c647de88ab69d003a"></div>
+</div>
+
+<!-- ===== AFFILIATE ===== -->
+<div style="text-align:center;margin:40px 0;">
+  <a href="/belajar-bahasa-jepang/earn.html"
+     style="display:inline-block;padding:14px 24px;
+            background:#00e676;color:#000;
+            font-weight:bold;border-radius:12px;
+            text-decoration:none;">
+     💰 Cara Dapat Dollar dari Website
+  </a>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <p>© 2025 Manabu Mantappu</p>
   <p><em>Website belajar Bahasa Jepang ini akan terus disempurnakan</em></p>
 </footer>
-
-<!-- ===== MONETIZATION / AFFILIATE ===== -->
-<section class="monetization-section" style="text-align:center; margin:40px 0;">
-
-  <div class="monetization-outer">
-    <div class="monetization-inner">
-
-      <p class="monetization-label">Sponsor</p>
-
-      <h3 class="monetization-title">
-        Ingin Mulai Menghasilkan dari Website?
-      </h3>
-
-      <p class="monetization-desc">
-        Pelajari cara mendapatkan dollar dari website menggunakan iklan dan
-        affiliate, cocok untuk pemula tanpa modal besar.
-      </p>
-
-      <a href="/belajar-bahasa-jepang/earn.html"
-         style="
-           display:inline-block;
-           padding:14px 24px;
-           background:#00e676;
-           color:#000;
-           font-weight:bold;
-           border-radius:12px;
-           text-decoration:none;
-           box-shadow:0 8px 20px rgba(0,0,0,.15);
-         ">
-         💰 Cara Dapat Dollar dari Website
-      </a>
-
-    </div>
-  </div>
-
-</section>
-
 
 </body>
 </html>
