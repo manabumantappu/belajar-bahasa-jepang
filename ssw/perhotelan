@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW Perhotelan – Akomodasi Jepang (Tokutei Ginou)</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+.ssw-container{max-width:900px;margin:40px auto;padding:0 20px}
+.ssw-header{text-align:center;margin-bottom:40px}
+.ssw-header h1{color:#1e3a8a;margin-bottom:10px}
+.ssw-header p{color:#475569}
+
+.ssw-section{margin-bottom:36px}
+.ssw-section h2{color:#1e88e5;margin-bottom:12px}
+.ssw-section p{line-height:1.7;color:#334155}
+.ssw-section ul{padding-left:20px;line-height:1.7;color:#334155}
+
+.ssw-highlight{
+  background:#f8fafc;
+  border-left:4px solid #1e88e5;
+  padding:16px;
+  border-radius:10px;
+}
+
+.ssw-btn-wrap{text-align:center;margin:50px 0}
+.ssw-btn{
+  display:inline-block;
+  padding:16px 28px;
+  background:#ef4444;
+  color:#fff;
+  font-weight:800;
+  border-radius:14px;
+  text-decoration:none;
+  box-shadow:0 12px 30px rgba(239,68,68,.35);
+  transition:.2s;
+}
+.ssw-btn:hover{background:#dc2626;transform:translateY(-2px)}
+</style>
+</head>
+
+<body>
+
+<div class="ssw-container">
+
+  <div class="ssw-header">
+    <h1>SSW Perhotelan / Akomodasi (宿泊業)</h1>
+    <p>Pekerjaan Hotel & Penginapan di Jepang – Penjelasan Lengkap dari A sampai Z</p>
+  </div>
+
+  <!-- A -->
+  <div class="ssw-section">
+    <h2>A. Apa itu SSW Perhotelan?</h2>
+    <p>
+      <strong>SSW Perhotelan (宿泊業)</strong> adalah bidang kerja resmi Jepang
+      yang berfokus pada <strong>pelayanan tamu di hotel, ryokan, dan penginapan</strong>.
+      Bidang ini menuntut sikap sopan, komunikasi yang baik, dan standar pelayanan tinggi.
+    </p>
+  </div>
+
+  <!-- B -->
+  <div class="ssw-section">
+    <h2>B. Jenis Tempat Kerja</h2>
+    <ul>
+      <li>Hotel bisnis</li>
+      <li>Hotel wisata</li>
+      <li>Ryokan (penginapan tradisional Jepang)</li>
+      <li>Resort dan penginapan daerah wisata</li>
+    </ul>
+  </div>
+
+  <!-- C -->
+  <div class="ssw-section">
+    <h2>C. Jenis Pekerjaan</h2>
+    <ul>
+      <li>Front office / resepsionis</li>
+      <li>Housekeeping (membersihkan kamar)</li>
+      <li>Menyambut dan melayani tamu</li>
+      <li>Menyiapkan kamar dan fasilitas</li>
+      <li>Menangani keluhan tamu sederhana</li>
+    </ul>
+  </div>
+
+  <!-- D -->
+  <div class="ssw-section">
+    <h2>D. Lingkungan Kerja</h2>
+    <p>
+      Lingkungan kerja bersih dan profesional,
+      namun ritme kerja bisa padat terutama di musim liburan.
+      Interaksi dengan tamu (orang Jepang & asing) sangat sering.
+    </p>
+  </div>
+
+  <!-- E -->
+  <div class="ssw-section">
+    <h2>E. Syarat Umum</h2>
+    <ul>
+      <li>Lulus ujian SSW Perhotelan</li>
+      <li>Lulus JFT-Basic atau JLPT N4</li>
+      <li>Penampilan rapi & sopan</li>
+      <li>Kemampuan komunikasi dasar bahasa Jepang</li>
+    </ul>
+  </div>
+
+  <!-- F -->
+  <div class="ssw-section">
+    <h2>F. Materi Ujian SSW Perhotelan</h2>
+    <ul>
+      <li>Etika pelayanan (接客マナー)</li>
+      <li>Bahasa Jepang pelayanan dasar</li>
+      <li>Prosedur hotel</li>
+      <li>Keselamatan dan kebersihan</li>
+    </ul>
+  </div>
+
+  <!-- G -->
+  <div class="ssw-section">
+    <h2>G. Gaji & Jam Kerja</h2>
+    <ul>
+      <li>Gaji rata-rata: ¥180.000 – ¥250.000 / bulan</li>
+      <li>Sistem shift (pagi / siang / malam)</li>
+      <li>Lembur saat high season</li>
+    </ul>
+  </div>
+
+  <!-- H -->
+  <div class="ssw-section">
+    <h2>H. Kelebihan SSW Perhotelan</h2>
+    <ul>
+      <li>Lingkungan kerja bersih & profesional</li>
+      <li>Skill komunikasi meningkat</li>
+      <li>Cocok untuk yang tidak ingin kerja berat</li>
+      <li>Peluang kerja di area wisata</li>
+    </ul>
+  </div>
+
+  <!-- I -->
+  <div class="ssw-section">
+    <h2>I. Tantangan</h2>
+    <ul>
+      <li>Bahasa Jepang harus aktif</li>
+      <li>Tekanan pelayanan pelanggan</li>
+      <li>Kerja shift & hari libur</li>
+    </ul>
+  </div>
+
+  <!-- J -->
+  <div class="ssw-section ssw-highlight">
+    <h2>J. Cocok untuk Siapa?</h2>
+    <p>
+      Bidang ini cocok untuk:
+    </p>
+    <ul>
+      <li>Yang suka berkomunikasi</li>
+      <li>Berpenampilan rapi & sopan</li>
+      <li>Ingin lingkungan kerja bersih</li>
+      <li>Tidak ingin kerja fisik berat</li>
+    </ul>
+  </div>
+
+  <!-- BUTTON -->
+  <div class="ssw-btn-wrap">
+    <a href="https://ISI-DENGAN-URL-WEBSITE-SSW-KAMU"
+       target="_blank"
+       class="ssw-btn">
+       🏨 Masuk ke Website SSW Perhotelan
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
