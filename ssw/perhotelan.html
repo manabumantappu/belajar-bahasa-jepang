@@ -3,225 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW Perhotelan – Akomodasi Jepang (Tokutei Ginou)</title>
+<title>SSW Perhotelan (宿泊業) – Jepang</title>
 
 <link rel="stylesheet" href="../style.css">
 
 <style>
-.ssw-container{max-width:900px;margin:40px auto;padding:0 20px}
-.ssw-header{text-align:center;margin-bottom:40px}
-.ssw-header h1{color:#1e3a8a;margin-bottom:10px}
-.ssw-header p{color:#475569}
-
-.ssw-section{margin-bottom:36px}
-.ssw-section h2{color:#1e88e5;margin-bottom:12px}
-.ssw-section p{line-height:1.7;color:#334155}
-.ssw-section ul{padding-left:20px;line-height:1.7;color:#334155}
-
-.ssw-highlight{
-  background:#f8fafc;
-  border-left:4px solid #1e88e5;
-  padding:16px;
-  border-radius:10px;
+.page-wrap{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+  box-sizing:border-box;
 }
+.page-wrap h1{color:#1e3a8a}
+.page-wrap h2{margin-top:28px;color:#1e88e5}
+.page-wrap p{line-height:1.7;color:#334155}
+.page-wrap ul{padding-left:20px;line-height:1.7;color:#334155}
 
-.ssw-btn-wrap{text-align:center;margin:50px 0}
-.ssw-btn{
+.cta-box{
+  text-align:center;
+  margin:40px 0;
+}
+.cta-btn{
   display:inline-block;
-  padding:16px 28px;
+  padding:14px 26px;
   background:#ef4444;
   color:#fff;
   font-weight:800;
-  border-radius:14px;
+  border-radius:12px;
   text-decoration:none;
-  box-shadow:0 12px 30px rgba(239,68,68,.35);
-  transition:.2s;
 }
-.ssw-btn:hover{background:#dc2626;transform:translateY(-2px)}
 </style>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
+<!-- ===== HEADER ===== -->
 <div id="header"></div>
-
 <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('header').innerHTML = data;
-  });
+  .then(r => r.ok ? r.text() : '')
+  .then(t => document.getElementById('header').innerHTML = t)
+  .catch(() => {});
 </script>
-  
-<div class="ssw-container">
 
-  <div class="ssw-header">
-    <h1>SSW Perhotelan / Akomodasi (宿泊業)</h1>
-    <p>Pekerjaan Hotel & Penginapan di Jepang – Penjelasan Lengkap dari A sampai Z</p>
-  </div>
+<!-- ===== KONTEN TEKS ===== -->
+<div class="page-wrap">
 
-  <!-- A -->
-  <div class="ssw-section">
-    <h2>A. Apa itu SSW Perhotelan?</h2>
-    <p>
-      <strong>SSW Perhotelan (宿泊業)</strong> adalah bidang kerja resmi Jepang
-      yang berfokus pada <strong>pelayanan tamu di hotel, ryokan, dan penginapan</strong>.
-      Bidang ini menuntut sikap sopan, komunikasi yang baik, dan standar pelayanan tinggi.
-    </p>
-  </div>
+<h1>SSW Perhotelan (宿泊業)</h1>
 
-  <!-- B -->
-  <div class="ssw-section">
-    <h2>B. Jenis Tempat Kerja</h2>
-    <ul>
-      <li>Hotel bisnis</li>
-      <li>Hotel wisata</li>
-      <li>Ryokan (penginapan tradisional Jepang)</li>
-      <li>Resort dan penginapan daerah wisata</li>
-    </ul>
-  </div>
+<p>
+Bidang <strong>SSW Perhotelan</strong> adalah pekerjaan di Jepang
+yang berfokus pada <strong>pelayanan tamu di hotel, ryokan,
+dan penginapan</strong>. Bidang ini menuntut sikap sopan,
+komunikasi yang baik, serta standar pelayanan yang tinggi.
+</p>
 
-  <!-- C -->
-  <div class="ssw-section">
-    <h2>C. Jenis Pekerjaan</h2>
-    <ul>
-      <li>Front office / resepsionis</li>
-      <li>Housekeeping (membersihkan kamar)</li>
-      <li>Menyambut dan melayani tamu</li>
-      <li>Menyiapkan kamar dan fasilitas</li>
-      <li>Menangani keluhan tamu sederhana</li>
-    </ul>
-  </div>
+<h2>A. Apa itu SSW Perhotelan?</h2>
+<p>
+SSW Perhotelan mencakup pekerjaan pelayanan tamu,
+pengelolaan kamar, serta dukungan operasional hotel
+agar tamu merasa nyaman selama menginap.
+</p>
 
-  <!-- D -->
-  <div class="ssw-section">
-    <h2>D. Lingkungan Kerja</h2>
-    <p>
-      Lingkungan kerja bersih dan profesional,
-      namun ritme kerja bisa padat terutama di musim liburan.
-      Interaksi dengan tamu (orang Jepang & asing) sangat sering.
-    </p>
-  </div>
+<h2>B. Jenis Tempat Kerja</h2>
+<ul>
+  <li>Hotel bisnis</li>
+  <li>Hotel wisata</li>
+  <li>Ryokan (penginapan tradisional Jepang)</li>
+  <li>Resort dan penginapan daerah wisata</li>
+</ul>
 
-  <!-- E -->
-  <div class="ssw-section">
-    <h2>E. Syarat Umum</h2>
-    <ul>
-      <li>Lulus ujian SSW Perhotelan</li>
-      <li>Lulus JFT-Basic atau JLPT N4</li>
-      <li>Penampilan rapi & sopan</li>
-      <li>Kemampuan komunikasi dasar bahasa Jepang</li>
-    </ul>
-  </div>
+<h2>C. Jenis Pekerjaan</h2>
+<ul>
+  <li>Front office / resepsionis</li>
+  <li>Housekeeping (membersihkan kamar)</li>
+  <li>Menyambut dan melayani tamu</li>
+  <li>Menyiapkan kamar dan fasilitas</li>
+  <li>Menangani keluhan tamu sederhana</li>
+</ul>
 
-  <!-- F -->
-  <div class="ssw-section">
-    <h2>F. Materi Ujian SSW Perhotelan</h2>
-    <ul>
-      <li>Etika pelayanan (接客マナー)</li>
-      <li>Bahasa Jepang pelayanan dasar</li>
-      <li>Prosedur hotel</li>
-      <li>Keselamatan dan kebersihan</li>
-    </ul>
-  </div>
+<h2>D. Lingkungan Kerja</h2>
+<p>
+Lingkungan kerja bersih dan profesional.
+Namun ritme kerja bisa padat, terutama
+saat musim liburan atau high season.
+</p>
 
-  <!-- G -->
-  <div class="ssw-section">
-    <h2>G. Gaji & Jam Kerja</h2>
-    <ul>
-      <li>Gaji rata-rata: ¥180.000 – ¥250.000 / bulan</li>
-      <li>Sistem shift (pagi / siang / malam)</li>
-      <li>Lembur saat high season</li>
-    </ul>
-  </div>
+<h2>E. Syarat Umum</h2>
+<ul>
+  <li>Lulus ujian SSW Perhotelan</li>
+  <li>Lulus JFT-Basic atau JLPT N4</li>
+  <li>Penampilan rapi dan sopan</li>
+  <li>Mampu komunikasi dasar bahasa Jepang</li>
+</ul>
 
-  <!-- H -->
-  <div class="ssw-section">
-    <h2>H. Kelebihan SSW Perhotelan</h2>
-    <ul>
-      <li>Lingkungan kerja bersih & profesional</li>
-      <li>Skill komunikasi meningkat</li>
-      <li>Cocok untuk yang tidak ingin kerja berat</li>
-      <li>Peluang kerja di area wisata</li>
-    </ul>
-  </div>
+<h2>F. Materi Ujian SSW Perhotelan</h2>
+<ul>
+  <li>Etika pelayanan (接客マナー)</li>
+  <li>Bahasa Jepang pelayanan dasar</li>
+  <li>Prosedur operasional hotel</li>
+  <li>Keselamatan dan kebersihan</li>
+</ul>
 
-  <!-- I -->
-  <div class="ssw-section">
-    <h2>I. Tantangan</h2>
-    <ul>
-      <li>Bahasa Jepang harus aktif</li>
-      <li>Tekanan pelayanan pelanggan</li>
-      <li>Kerja shift & hari libur</li>
-    </ul>
-  </div>
+<h2>G. Gaji & Jam Kerja</h2>
+<ul>
+  <li>Gaji rata-rata: ¥180.000 – ¥250.000 per bulan</li>
+  <li>Sistem shift (pagi / siang / malam)</li>
+  <li>Lembur tersedia saat high season</li>
+</ul>
 
-  <!-- J -->
-  <div class="ssw-section ssw-highlight">
-    <h2>J. Cocok untuk Siapa?</h2>
-    <p>
-      Bidang ini cocok untuk:
-    </p>
-    <ul>
-      <li>Yang suka berkomunikasi</li>
-      <li>Berpenampilan rapi & sopan</li>
-      <li>Ingin lingkungan kerja bersih</li>
-      <li>Tidak ingin kerja fisik berat</li>
-    </ul>
-  </div>
+<h2>H. Cocok untuk Siapa?</h2>
+<ul>
+  <li>Suka berkomunikasi dengan orang</li>
+  <li>Berpenampilan rapi dan sopan</li>
+  <li>Ingin lingkungan kerja bersih</li>
+  <li>Tidak ingin kerja fisik berat</li>
+</ul>
 
-  <!-- BUTTON -->
-  <div class="ssw-btn-wrap">
-    <a href="https://manabumantappu.github.io/ssw-manabu-mantappu/"
-       target="_blank"
-       class="ssw-btn">
-       🏨 Masuk ke Website SSW Perhotelan
-    </a>
-  </div>
+<!-- ===== CTA KE WEBSITE SSW ===== -->
+<div class="cta-box">
+  <a href="https://manabumantappu.github.io/ssw-manabu-mantappu/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="cta-btn">
+     🏨 Masuk ke Website SSW Perhotelan
+  </a>
+</div>
+
+</div>
+
+<!-- ===== NATIVE BANNER ADSTERRA ===== -->
+<div style="margin:40px auto;max-width:1000px;text-align:center;">
+  <script async data-cfasync="false"
+    src="https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/invoke.js">
+  </script>
+  <div id="container-a025500e946b1b3c647de88ab69d003a"></div>
+</div>
+
+<!-- ===== AFFILIATE ===== -->
+<div style="text-align:center;margin:40px 0;">
+  <a href="/belajar-bahasa-jepang/earn.html"
+     style="display:inline-block;padding:14px 24px;
+            background:#00e676;color:#000;
+            font-weight:bold;border-radius:12px;
+            text-decoration:none;">
+     💰 Cara Dapat Dollar dari Website
+  </a>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <p>© 2025 Manabu Mantappu</p>
   <p><em>Website belajar Bahasa Jepang ini akan terus disempurnakan</em></p>
 </footer>
-
-<!-- ===== MONETIZATION / AFFILIATE ===== -->
-<section class="monetization-section" style="text-align:center; margin:40px 0;">
-
-  <div class="monetization-outer">
-    <div class="monetization-inner">
-
-      <p class="monetization-label">Sponsor</p>
-
-      <h3 class="monetization-title">
-        Ingin Mulai Menghasilkan dari Website?
-      </h3>
-
-      <p class="monetization-desc">
-        Pelajari cara mendapatkan dollar dari website menggunakan iklan dan
-        affiliate, cocok untuk pemula tanpa modal besar.
-      </p>
-
-      <a href="/belajar-bahasa-jepang/earn.html"
-         style="
-           display:inline-block;
-           padding:14px 24px;
-           background:#00e676;
-           color:#000;
-           font-weight:bold;
-           border-radius:12px;
-           text-decoration:none;
-           box-shadow:0 8px 20px rgba(0,0,0,.15);
-         ">
-         💰 Cara Dapat Dollar dari Website
-      </a>
-
-    </div>
-  </div>
-
-</section>
-
 
 </body>
 </html>
