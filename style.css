@@ -976,4 +976,40 @@ th {
   background: #1565c0;
   transform: translateY(-2px);
 }
+.quiz-action{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:30px;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.quiz-btn{
+  display:inline-block;
+  padding:14px 22px;
+  background:#1e88e5;
+  color:#fff;
+  font-weight:700;
+  border-radius:12px;
+  text-decoration:none;
+  box-shadow:0 8px 22px rgba(30,136,229,.25);
+  transition:.2s;
+  text-align:center;
+}
+
+.quiz-btn:hover{
+  background:#1565c0;
+  transform:translateY(-2px);
+}
+
+.quiz-link{
+  color:#1e88e5;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.quiz-link:hover{
+  text-decoration:underline;
+}
 
