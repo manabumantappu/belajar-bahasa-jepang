@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JFT Basic Bab 1 – Kana & Kosakata Dasar | Manabu Mantappu</title>
+<meta name="description" content="Materi JFT Basic Bab 1: Hiragana, Katakana, dan kosakata dasar untuk pemula. Lengkap dengan contoh dan latihan ala JFT.">
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* ===== BAB CONTENT ===== */
+.bab-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.bab-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.bab-header h1 {
+  font-size: 1.9rem;
+  color: #1e3a8a;
+}
+
+.bab-header p {
+  color: #475569;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.section h2 {
+  color: #1e88e5;
+  margin-bottom: 14px;
+}
+
+.section p {
+  line-height: 1.7;
+  color: #334155;
+}
+
+.kana-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.kana-item {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.example {
+  background: #f8fafc;
+  border-left: 4px solid #1e88e5;
+  padding: 14px;
+  margin: 14px 0;
+}
+
+.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.vocab-table th,
+.vocab-table td {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  text-align: left;
+}
+
+.vocab-table th {
+  background: #f1f5f9;
+}
+
+.quiz-mini {
+  background: #eef6ff;
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.quiz-mini h3 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.quiz-mini p {
+  margin: 6px 0;
+}
+
+.nav-bab {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.nav-bab a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e88e5;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(d => document.getElementById('header').innerHTML = d);
+</script>
+
+<main class="bab-container">
+
+  <div class="bab-header">
+    <h1>Bab 1 – Kana & Kosakata Dasar</h1>
+    <p>Dasar membaca bahasa Jepang untuk JFT Basic (A2)</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <h2>1️⃣ Hiragana</h2>
+    <p>
+      Hiragana adalah huruf dasar bahasa Jepang. Di JFT Basic,
+      kamu harus bisa membaca hiragana dengan lancar.
+    </p>
+
+    <div class="kana-box">
+      <div class="kana-item">あ a</div>
+      <div class="kana-item">い i</div>
+      <div class="kana-item">う u</div>
+      <div class="kana-item">え e</div>
+      <div class="kana-item">お o</div>
+    </div>
+
+    <div class="example">
+      Contoh: あい（ai）= cinta
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section">
+    <h2>2️⃣ Katakana</h2>
+    <p>
+      Katakana digunakan untuk kata serapan dan nama asing.
+      Sering muncul di soal JFT.
+    </p>
+
+    <div class="kana-box">
+      <div class="kana-item">ア a</div>
+      <div class="kana-item">イ i</div>
+      <div class="kana-item">ウ u</div>
+      <div class="kana-item">エ e</div>
+      <div class="kana-item">オ o</div>
+    </div>
+
+    <div class="example">
+      Contoh: アイス（aisu）= es krim
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section">
+    <h2>3️⃣ Kosakata Dasar</h2>
+    <p>
+      Berikut kosakata dasar yang sering muncul di level JFT Basic.
+    </p>
+
+    <table class="vocab-table">
+      <tr>
+        <th>Jepang</th>
+        <th>Romaji</th>
+        <th>Arti</th>
+      </tr>
+      <tr>
+        <td>ひと</td>
+        <td>hito</td>
+        <td>orang</td>
+      </tr>
+      <tr>
+        <td>いえ</td>
+        <td>ie</td>
+        <td>rumah</td>
+      </tr>
+      <tr>
+        <td>みず</td>
+        <td>mizu</td>
+        <td>air</td>
+      </tr>
+      <tr>
+        <td>くるま</td>
+        <td>kuruma</td>
+        <td>mobil</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- MINI QUIZ -->
+  <div class="quiz-mini">
+    <h3>📝 Latihan Mini (Gaya JFT)</h3>
+    <p>1. 「みず」artinya adalah …</p>
+    <p>a. api &nbsp; b. air &nbsp; c. rumah &nbsp; d. orang</p>
+
+    <p>2. 「アイス」ditulis dengan huruf …</p>
+    <p>a. hiragana &nbsp; b. kanji &nbsp; c. katakana &nbsp; d. romaji</p>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-bab">
+    <a href="modul.html">← Kembali ke Daftar Bab</a>
+    <a href="bab2.html">Lanjut ke Bab 2 →</a>
+  </div>
+
+</main>
+
+</body>
+</html>
