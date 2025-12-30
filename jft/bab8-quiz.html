@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quiz JFT Bab 8 – Percakapan & Situasi Ujian</title>
+<link rel="stylesheet" href="../style.css" />
+
+<style>
+/* ===== QUIZ BAB 8 ===== */
+.quiz-container{max-width:760px;margin:40px auto;padding:0 20px}
+.quiz-header{text-align:center;margin-bottom:22px}
+.quiz-header h1{color:#1e3a8a;margin:6px 0}
+.quiz-header p{color:#475569;margin:0}
+
+.quiz-card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.06);margin-bottom:16px}
+.dialog-jp{font-size:1.05rem;line-height:1.7;color:#0f172a;margin-bottom:8px}
+.dialog-id{color:#334155;margin-bottom:8px}
+.question{font-weight:700;margin-top:8px;margin-bottom:8px;color:#0f172a}
+.choices label{display:block;margin-bottom:10px;cursor:pointer;color:#0f172a}
+.choices input{margin-right:8px}
+
+/* feedback styles */
+.correct{color:#14532d;background:rgba(16,185,129,.08);padding:8px;border-radius:8px}
+.wrong{color:#7f1d1d;background:rgba(239,68,68,.06);padding:8px;border-radius:8px}
+.explain{display:none;margin-top:10px;font-size:.95rem;color:#334155;background:#f1f5f9;padding:10px;border-radius:8px}
+
+.submit-btn{width:100%;padding:14px;background:#1e88e5;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(30,136,229,.14)}
+.submit-btn:hover{opacity:.95;transform:translateY(-1px)}
+
+.result{text-align:center;margin-top:14px;font-weight:700;color:#0f172a}
+.nav-back{display:flex;justify-content:center;margin-top:18px}
+.nav-back a{text-decoration:none;color:#1e88e5;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- optional universal header -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r=>r.text())
+  .then(html=>document.getElementById('header').innerHTML=html)
+  .catch(()=>{/* header optional */});
+</script>
+
+<main class="quiz-container">
+
+  <div class="quiz-header">
+    <h1>Quiz JFT – Bab 8</h1>
+    <p>Percakapan & Situasi Ujian</p>
+  </div>
+
+  <form id="quizForm" aria-label="Quiz Bab 8">
+
+    <!-- Q1: dialog workplace -->
+    <div class="quiz-card" data-answer="b">
+      <div class="dialog-jp">
+        A: おつかれさまです。<br>
+        B: おつかれさまです。
+      </div>
+      <div class="dialog-id">Terima kasih atas kerja kerasnya. — Terima kasih.</div>
+
+      <div class="question">1. Dialog ini paling mungkin terjadi di …</div>
+      <div class="choices">
+        <label><input type="radio" name="q1" value="a"> Rumah</label>
+        <label><input type="radio" name="q1" value="b"> Kantor</label>
+        <label><input type="radio" name="q1" value="c"> Toko</label>
+        <label><input type="radio" name="q1" value="d"> Sekolah</label>
+      </div>
+      <div class="explain">Jawab: Kantor — ungkapan ini umum antar rekan kerja setelah/selama bekerja.</div>
+    </div>
+
+    <!-- Q2: repeat request -->
+    <div class="quiz-card" data-answer="c">
+      <div class="dialog-jp">
+        A: すみません。もういちど おねがいします。
+      </div>
+      <div class="dialog-id">Permisi. Tolong ulangi sekali lagi.</div>
+
+      <div class="question">2. Maksud pembicara adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q2" value="a"> Menolak</label>
+        <label><input type="radio" name="q2" value="b"> Mengucapkan terima kasih</label>
+        <label><input type="radio" name="q2" value="c"> Meminta pengulangan</label>
+        <label><input type="radio" name="q2" value="d"> Memberi perintah</label>
+      </div>
+      <div class="explain">Jawab: Meminta pengulangan — frasa もういちど = sekali lagi.</div>
+    </div>
+
+    <!-- Q3: understand -->
+    <div class="quiz-card" data-answer="b">
+      <div class="dialog-jp">
+        A: わかりました。<br>
+        A: ありがとうございます。
+      </div>
+      <div class="dialog-id">Saya mengerti. Terima kasih.</div>
+
+      <div class="question">3. Arti 「わかりました」 adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q3" value="a"> Saya tidak tahu</label>
+        <label><input type="radio" name="q3" value="b"> Saya mengerti</label>
+        <label><input type="radio" name="q3" value="c"> Tolong ulangi</label>
+        <label><input type="radio" name="q3" value="d"> Maaf</label>
+      </div>
+      <div class="explain">Jawab: Saya mengerti — umum digunakan setelah menerima instruksi.</div>
+    </div>
+
+    <!-- Q4: politeness -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">4. Ketika menjawab atasan di kantor, pilihan jawaban sebaiknya bersifat …</div>
+      <div class="choices">
+        <label><input type="radio" name="q4" value="a"> Kasual</label>
+        <label><input type="radio" name="q4" value="b"> Sopan</label>
+        <label><input type="radio" name="q4" value="c"> Santai</label>
+        <label><input type="radio" name="q4" value="d"> Puas</label>
+      </div>
+      <div class="explain">Jawab: Sopan — di lingkungan kerja gunakan bahasa sopan dan hormat.</div>
+    </div>
+
+    <!-- Q5: purpose of dialog questions -->
+    <div class="quiz-card" data-answer="c">
+      <div class="question">5. Tujuan soal percakapan di JFT biasanya untuk menguji …</div>
+      <div class="choices">
+        <label><input type="radio" name="q5" value="a"> Hafalan kanji</label>
+        <label><input type="radio" name="q5" value="b"> Kecepatan menulis</label>
+        <label><input type="radio" name="q5" value="c"> Pemahaman situasi dan respons tepat</label>
+        <label><input type="radio" name="q5" value="d"> Kemampuan menerjemah bebas</label>
+      </div>
+      <div class="explain">Jawab: Pemahaman situasi & respons — JFT menilai pilihan jawaban yang paling alami/sopan sesuai konteks.</div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="checkQuiz()" aria-label="Cek Jawaban">Cek Jawaban</button>
+
+  </form>
+
+  <div id="result" class="result" role="status" aria-live="polite"></div>
+
+  <div class="nav-back">
+    <a href="bab8.html">← Kembali ke Materi Bab 8</a>
+  </div>
+
+</main>
+
+<script>
+function checkQuiz(){
+  const cards = Array.from(document.querySelectorAll('.quiz-card'));
+  let score = 0;
+
+  cards.forEach(card=>{
+    const correct = card.dataset.answer;
+    const selected = card.querySelector('input[type="radio"]:checked');
+    const explain = card.querySelector('.explain');
+
+    // reset
+    card.querySelectorAll('label').forEach(l=>l.classList.remove('correct','wrong'));
+    if (explain) explain.style.display = 'none';
+
+    if (!selected) return;
+
+    if (selected.value === correct){
+      selected.parentElement.classList.add('correct');
+      score++;
+    } else {
+      selected.parentElement.classList.add('wrong');
+      const ci = card.querySelector(`input[value="${correct}"]`);
+      if (ci) ci.parentElement.classList.add('correct');
+    }
+
+    if (explain) explain.style.display = 'block';
+  });
+
+  document.getElementById('result').innerText = `Skor kamu: ${score} / ${cards.length}`;
+  // optional: disable inputs after submit
+  // document.querySelectorAll('input[type="radio"]').forEach(i=>i.disabled=true);
+}
+</script>
+
+</body>
+</html>
