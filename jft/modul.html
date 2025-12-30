@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Modul JFT Basic A2 | Manabu Mantappu</title>
+<meta name="description" content="Materi JFT Basic A2 lengkap dan bertahap untuk pemula. Persiapan ujian bahasa Jepang dan SSW.">
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* ===== JFT MODUL ===== */
+.jft-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.jft-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.jft-header h1 {
+  font-size: 2rem;
+  color: #1e3a8a;
+}
+
+.jft-header p {
+  max-width: 720px;
+  margin: 10px auto 0;
+  color: #475569;
+}
+
+/* ===== GRID ===== */
+.jft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.jft-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.jft-card h3 {
+  margin-top: 0;
+  color: #1e88e5;
+}
+
+.jft-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.jft-card a {
+  display: inline-block;
+  margin-top: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e88e5;
+}
+
+.jft-card a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(d => document.getElementById('header').innerHTML = d);
+</script>
+
+<main class="jft-container">
+
+  <div class="jft-header">
+    <h1>Modul JFT Basic (A2)</h1>
+    <p>
+      Materi JFT Basic disusun bertahap untuk pemula.
+      Cocok untuk persiapan ujian JFT dan program kerja Jepang (SSW).
+    </p>
+  </div>
+
+  <div class="jft-grid">
+
+    <div class="jft-card">
+      <h3>Bab 1 – Kana & Kosakata Dasar</h3>
+      <p>Mengenal hiragana, katakana, dan kosakata dasar yang sering muncul di JFT.</p>
+      <a href="bab1.html">Mulai Bab 1 →</a>
+    </div>
+
+    <div class="jft-card">
+      <h3>Bab 2 – Aisatsu & Ungkapan</h3>
+      <p>Salam dan ungkapan penting dalam kehidupan sehari-hari di Jepang.</p>
+      <a href="bab2.html">Mulai Bab 2 →</a>
+    </div>
+
+    <div class="jft-card">
+      <h3>Bab 3 – Kata Kerja Dasar</h3>
+      <p>Pengenalan kata kerja bentuk ます dan penggunaannya.</p>
+      <a href="bab3.html">Mulai Bab 3 →</a>
+    </div>
+
+    <div class="jft-card">
+      <h3>Bab 4 – Pola Kalimat Dasar</h3>
+      <p>Pola kalimat dasar ～です／～ます yang sering keluar di ujian.</p>
+      <a href="bab4.html">Mulai Bab 4 →</a>
+    </div>
+
+    <div class="jft-card">
+      <h3>Bab 5 – Partikel Penting</h3>
+      <p>Penggunaan partikel は・が・を・に・で secara sederhana.</p>
+      <a href="bab5.html">Mulai Bab 5 →</a>
+    </div>
+
+    <div class="jft-card">
+      <h3>Bab 6 – Kalimat Sehari-hari</h3>
+      <p>Contoh kalimat di rumah, tempat kerja, dan lingkungan sekitar.</p>
+      <a href="bab6.html">Mulai Bab 6 →</a>
+    </div>
+
+    <div class="jft-card">
+      <h3>Bab 7 – Pemahaman Bacaan</h3>
+      <p>Latihan membaca teks pendek ala soal JFT.</p>
+      <a href="bab7.html">Mulai Bab 7 →</a>
+    </div>
+
+    <div class="jft-card">
+      <h3>Bab 8 – Latihan & Try Out</h3>
+      <p>Latihan soal dan simulasi ujian JFT Basic.</p>
+      <a href="tryout.html">Mulai Try Out →</a>
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html>
