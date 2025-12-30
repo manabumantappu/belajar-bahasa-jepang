@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JFT Basic Bab 3 – Kata Kerja Dasar | Manabu Mantappu</title>
+<meta name="description" content="Materi JFT Basic Bab 3: Kata kerja dasar bahasa Jepang bentuk ます (masu), lengkap dengan contoh dan latihan.">
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* ===== BAB CONTENT ===== */
+.bab-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.bab-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.bab-header h1 {
+  font-size: 1.9rem;
+  color: #1e3a8a;
+}
+
+.bab-header p {
+  color: #475569;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.section h2 {
+  color: #1e88e5;
+  margin-bottom: 14px;
+}
+
+.section p {
+  line-height: 1.7;
+  color: #334155;
+}
+
+.table-basic {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table-basic th,
+.table-basic td {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  text-align: left;
+}
+
+.table-basic th {
+  background: #f1f5f9;
+}
+
+.example {
+  background: #f8fafc;
+  border-left: 4px solid #1e88e5;
+  padding: 14px;
+  margin: 14px 0;
+}
+
+.quiz-mini {
+  background: #eef6ff;
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.quiz-mini h3 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.nav-bab {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.nav-bab a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e88e5;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(d => document.getElementById('header').innerHTML = d);
+</script>
+
+<main class="bab-container">
+
+  <div class="bab-header">
+    <h1>Bab 3 – Kata Kerja Dasar（ます形）</h1>
+    <p>Kata kerja yang sering muncul di JFT Basic</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <h2>1️⃣ Apa itu Kata Kerja（動詞）</h2>
+    <p>
+      Kata kerja (動詞・どうし) adalah kata yang menunjukkan
+      aktivitas atau keadaan.
+      Dalam JFT Basic, kata kerja paling sering muncul
+      dalam bentuk <strong>～ます</strong>.
+    </p>
+
+    <div class="example">
+      たべ<strong>ます</strong> = makan  
+      <br>のみ<strong>ます</strong> = minum
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section">
+    <h2>2️⃣ Kata Kerja Dasar Bentuk ます</h2>
+
+    <table class="table-basic">
+      <tr>
+        <th>Jepang</th>
+        <th>Romaji</th>
+        <th>Arti</th>
+      </tr>
+      <tr>
+        <td>たべます</td>
+        <td>tabemasu</td>
+        <td>makan</td>
+      </tr>
+      <tr>
+        <td>のみます</td>
+        <td>nomimasu</td>
+        <td>minum</td>
+      </tr>
+      <tr>
+        <td>いきます</td>
+        <td>ikimasu</td>
+        <td>pergi</td>
+      </tr>
+      <tr>
+        <td>きます</td>
+        <td>kimasu</td>
+        <td>datang</td>
+      </tr>
+      <tr>
+        <td>みます</td>
+        <td>mimasu</td>
+        <td>melihat</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section">
+    <h2>3️⃣ Contoh Kalimat Sederhana</h2>
+
+    <div class="example">
+      わたしは パンを たべます。  
+      <br>Saya makan roti.
+    </div>
+
+    <div class="example">
+      みずを のみます。  
+      <br>Minum air.
+    </div>
+
+    <div class="example">
+      がっこうへ いきます。  
+      <br>Pergi ke sekolah.
+    </div>
+  </div>
+
+  <!-- MINI QUIZ -->
+  <div class="quiz-mini">
+    <h3>📝 Latihan Mini (Gaya JFT)</h3>
+
+    <p>1. 「のみます」artinya adalah …</p>
+    <p>a. makan &nbsp; b. minum &nbsp; c. pergi &nbsp; d. melihat</p>
+
+    <p>2. Kalimat 「パンを たべます」artinya …</p>
+    <p>a. minum roti &nbsp; b. makan roti &nbsp; c. melihat roti &nbsp; d. membeli roti</p>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-bab">
+    <a href="bab2.html">← Kembali ke Bab 2</a>
+    <a href="bab4.html">Lanjut ke Bab 4 →</a>
+  </div>
+
+</main>
+
+</body>
+</html>
