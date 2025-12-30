@@ -14,3 +14,51 @@
   background:#dc2626;
   transform:translateY(-2px);
 }
+/* ===== SSW COMPARISON TABLE ===== */
+.ssw-compare{
+  margin-top:60px;
+}
+
+.ssw-compare h2{
+  text-align:center;
+  color:#1e3a8a;
+  margin-bottom:8px;
+}
+
+.compare-desc{
+  text-align:center;
+  color:#475569;
+  margin-bottom:24px;
+}
+
+.table-wrap{
+  overflow-x:auto;
+}
+
+.ssw-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#ffffff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 26px rgba(0,0,0,.08);
+}
+
+.ssw-table th{
+  background:#1e88e5;
+  color:#ffffff;
+  padding:14px;
+  text-align:left;
+  font-size:.95rem;
+}
+
+.ssw-table td{
+  padding:14px;
+  border-bottom:1px solid #e5e7eb;
+  color:#0f172a;
+  font-size:.9rem;
+}
+
+.ssw-table tr:nth-child(even){
+  background:#f8fafc;
+}
