@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Try Out JFT</title>
+
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+h1{
+  text-align:center;
+  color:#1e3a8a;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#475569;
+  margin-bottom:30px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.card h2{
+  color:#1e88e5;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#334155;
+  font-size:.95rem;
+  margin-bottom:18px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  color:#fff;
+}
+
+.btn-primary{background:#1e88e5}
+.btn-dark{background:#0f172a}
+
+.btn-primary:hover{background:#1565c0}
+.btn-dark:hover{opacity:.9}
+
+.nav{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🧪 Menu Try Out JFT</h1>
+  <div class="subtitle">
+    Simulasi ujian JFT Basic – pilih mode latihan
+  </div>
+
+  <div class="grid">
+
+    <!-- CBT -->
+    <div class="card">
+      <h2>CBT Resmi</h2>
+      <p>
+        Mode ujian asli JFT<br>
+        • 50 soal<br>
+        • 50 menit<br>
+        • 1 soal per layar
+      </p>
+      <a href="tryout-cbt.html" class="btn btn-primary">
+        ▶ Mulai CBT
+      </a>
+    </div>
+
+    <!-- PRACTICE -->
+    <div class="card">
+      <h2>Latihan Bebas</h2>
+      <p>
+        Mode latihan tanpa timer<br>
+        Cocok untuk pemula & review
+      </p>
+      <a href="tryout.html" class="btn btn-primary">
+        ▶ Mulai Latihan
+      </a>
+    </div>
+
+    <!-- REVIEW -->
+    <div class="card">
+      <h2>Ulang Materi</h2>
+      <p>
+        Kembali ke materi Bab 1–8<br>
+        Sebelum mengerjakan try out
+      </p>
+      <a href="../jft/index.html" class="btn btn-dark">
+        📘 Materi JFT
+      </a>
+    </div>
+
+  </div>
+
+  <div class="nav">
+    <a href="../index.html" class="btn btn-dark">🏠 Home</a>
+  </div>
+
+</div>
+
+</body>
+</html>
