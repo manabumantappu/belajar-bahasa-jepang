@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz JFT Bab 3 – Kata Kerja Dasar</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+.quiz-container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quiz-header h1 {
+  color: #1e3a8a;
+}
+
+.quiz-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.question {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.choices label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.correct {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.wrong {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.explain {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.nav-back {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.nav-back a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e88e5;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(d => document.getElementById('header').innerHTML = d);
+</script>
+
+<main class="quiz-container">
+
+  <div class="quiz-header">
+    <h1>Quiz JFT – Bab 3</h1>
+    <p>Kata Kerja Dasar（ます形）</p>
+  </div>
+
+  <form id="quizForm">
+
+    <!-- SOAL 1 -->
+    <div class="quiz-card" data-answer="a">
+      <div class="question">1. 「たべます」artinya adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q1" value="a"> makan</label>
+        <label><input type="radio" name="q1" value="b"> minum</label>
+        <label><input type="radio" name="q1" value="c"> pergi</label>
+        <label><input type="radio" name="q1" value="d"> melihat</label>
+      </div>
+      <div class="explain">たべます = makan</div>
+    </div>
+
+    <!-- SOAL 2 -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">2. 「のみます」artinya adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q2" value="a"> makan</label>
+        <label><input type="radio" name="q2" value="b"> minum</label>
+        <label><input type="radio" name="q2" value="c"> datang</label>
+        <label><input type="radio" name="q2" value="d"> melihat</label>
+      </div>
+      <div class="explain">のみます = minum</div>
+    </div>
+
+    <!-- SOAL 3 -->
+    <div class="quiz-card" data-answer="c">
+      <div class="question">3. 「いきます」artinya adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q3" value="a"> datang</label>
+        <label><input type="radio" name="q3" value="b"> pulang</label>
+        <label><input type="radio" name="q3" value="c"> pergi</label>
+        <label><input type="radio" name="q3" value="d"> belajar</label>
+      </div>
+      <div class="explain">いきます = pergi</div>
+    </div>
+
+    <!-- SOAL 4 -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">4. 「きます」artinya adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q4" value="a"> pergi</label>
+        <label><input type="radio" name="q4" value="b"> datang</label>
+        <label><input type="radio" name="q4" value="c"> melihat</label>
+        <label><input type="radio" name="q4" value="d"> makan</label>
+      </div>
+      <div class="explain">きます = datang (kebalikan dari いきます)</div>
+    </div>
+
+    <!-- SOAL 5 -->
+    <div class="quiz-card" data-answer="a">
+      <div class="question">5. 「みます」artinya adalah …</div>
+      <div class="choices">
+        <label><input type="radio" name="q5" value="a"> melihat</label>
+        <label><input type="radio" name="q5" value="b"> minum</label>
+        <label><input type="radio" name="q5" value="c"> membaca</label>
+        <label><input type="radio" name="q5" value="d"> menulis</label>
+      </div>
+      <div class="explain">みます = melihat / menonton</div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="checkQuiz()">
+      Cek Jawaban
+    </button>
+
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <div class="nav-back">
+    <a href="bab3.html">← Kembali ke Materi Bab 3</a>
+  </div>
+
+</main>
+
+<script>
+function checkQuiz() {
+  let score = 0;
+  const cards = document.querySelectorAll('.quiz-card');
+
+  cards.forEach(card => {
+    const correct = card.dataset.answer;
+    const selected = card.querySelector('input[type="radio"]:checked');
+    const explain = card.querySelector('.explain');
+
+    // reset (jika cek ulang)
+    card.querySelectorAll('label').forEach(label => {
+      label.classList.remove('correct', 'wrong');
+    });
+
+    if (!selected) return;
+
+    if (selected.value === correct) {
+      selected.parentElement.classList.add('correct');
+      score++;
+    } else {
+      selected.parentElement.classList.add('wrong');
+      card.querySelector(`input[value="${correct}"]`)
+          .parentElement.classList.add('correct');
+    }
+
+    explain.style.display = "block";
+  });
+
+  document.getElementById("result").innerText =
+    `Skor kamu: ${score} / ${cards.length}`;
+}
+</script>
+
+</body>
+</html>
