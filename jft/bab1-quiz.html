@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Quiz JFT Bab 1 – Kana & Kosakata Dasar</title>
-
 <link rel="stylesheet" href="../style.css">
 
 <style>
-/* ===== QUIZ JFT ===== */
 .quiz-container {
   max-width: 720px;
   margin: 40px auto;
@@ -19,10 +17,6 @@
 .quiz-header {
   text-align: center;
   margin-bottom: 30px;
-}
-
-.quiz-header h1 {
-  color: #1e3a8a;
 }
 
 .quiz-card {
@@ -35,31 +29,44 @@
 
 .question {
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .choices label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   cursor: pointer;
 }
 
+.correct {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.wrong {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.explain {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .submit-btn {
-  display: block;
   width: 100%;
-  margin-top: 20px;
   padding: 14px;
   background: #1e88e5;
-  color: #ffffff;
+  color: #fff;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-}
-
-.submit-btn:hover {
-  opacity: 0.9;
 }
 
 .result {
@@ -73,18 +80,11 @@
   text-align: center;
   margin-top: 24px;
 }
-
-.nav-back a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #1e88e5;
-}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
@@ -102,7 +102,7 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
   <form id="quizForm">
 
     <!-- SOAL 1 -->
-    <div class="quiz-card">
+    <div class="quiz-card" data-answer="b">
       <div class="question">1. 「みず」artinya adalah …</div>
       <div class="choices">
         <label><input type="radio" name="q1" value="a"> api</label>
@@ -110,10 +110,11 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
         <label><input type="radio" name="q1" value="c"> rumah</label>
         <label><input type="radio" name="q1" value="d"> orang</label>
       </div>
+      <div class="explain">「みず」= air</div>
     </div>
 
     <!-- SOAL 2 -->
-    <div class="quiz-card">
+    <div class="quiz-card" data-answer="c">
       <div class="question">2. 「アイス」ditulis dengan huruf …</div>
       <div class="choices">
         <label><input type="radio" name="q2" value="a"> Hiragana</label>
@@ -121,10 +122,11 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
         <label><input type="radio" name="q2" value="c"> Katakana</label>
         <label><input type="radio" name="q2" value="d"> Romaji</label>
       </div>
+      <div class="explain">Kata serapan → Katakana</div>
     </div>
 
     <!-- SOAL 3 -->
-    <div class="quiz-card">
+    <div class="quiz-card" data-answer="c">
       <div class="question">3. Huruf 「あ」dibaca …</div>
       <div class="choices">
         <label><input type="radio" name="q3" value="a"> i</label>
@@ -132,10 +134,11 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
         <label><input type="radio" name="q3" value="c"> a</label>
         <label><input type="radio" name="q3" value="d"> e</label>
       </div>
+      <div class="explain">「あ」dibaca “a”</div>
     </div>
 
     <!-- SOAL 4 -->
-    <div class="quiz-card">
+    <div class="quiz-card" data-answer="c">
       <div class="question">4. 「くるま」artinya …</div>
       <div class="choices">
         <label><input type="radio" name="q4" value="a"> sepeda</label>
@@ -143,10 +146,11 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
         <label><input type="radio" name="q4" value="c"> mobil</label>
         <label><input type="radio" name="q4" value="d"> kereta</label>
       </div>
+      <div class="explain">「くるま」= mobil</div>
     </div>
 
     <!-- SOAL 5 -->
-    <div class="quiz-card">
+    <div class="quiz-card" data-answer="b">
       <div class="question">5. Kata 「いえ」berarti …</div>
       <div class="choices">
         <label><input type="radio" name="q5" value="a"> sekolah</label>
@@ -154,6 +158,7 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
         <label><input type="radio" name="q5" value="c"> toko</label>
         <label><input type="radio" name="q5" value="d"> kantor</label>
       </div>
+      <div class="explain">「いえ」= rumah</div>
     </div>
 
     <button type="button" class="submit-btn" onclick="checkQuiz()">
@@ -172,26 +177,27 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
 
 <script>
 function checkQuiz() {
-  const answers = {
-    q1: "b",
-    q2: "c",
-    q3: "c",
-    q4: "c",
-    q5: "b"
-  };
-
   let score = 0;
-  let total = Object.keys(answers).length;
+  const cards = document.querySelectorAll('.quiz-card');
 
-  for (let q in answers) {
-    const selected = document.querySelector(`input[name="${q}"]:checked`);
-    if (selected && selected.value === answers[q]) {
-      score++;
+  cards.forEach(card => {
+    const correct = card.dataset.answer;
+    const selected = card.querySelector('input[type="radio"]:checked');
+
+    if (selected) {
+      if (selected.value === correct) {
+        selected.parentElement.classList.add('correct');
+        score++;
+      } else {
+        selected.parentElement.classList.add('wrong');
+        card.querySelector(`input[value="${correct}"]`)
+            .parentElement.classList.add('correct');
+      }
     }
-  }
+  });
 
-  document.getElementById("result").innerHTML =
-    `Skor kamu: ${score} / ${total}`;
+  document.getElementById('result').innerText =
+    `Skor kamu: ${score} / ${cards.length}`;
 }
 </script>
 
