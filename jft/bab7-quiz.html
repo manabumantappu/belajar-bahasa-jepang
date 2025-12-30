@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quiz JFT Bab 7 – Pemahaman Bacaan Pendek</title>
+<link rel="stylesheet" href="../style.css" />
+
+<style>
+/* ===== QUIZ BAB 7 ===== */
+.quiz-container {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.quiz-header h1 {
+  color: #1e3a8a;
+  margin: 6px 0;
+}
+
+.quiz-header p {
+  color: #475569;
+  margin: 0;
+}
+
+.quiz-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+
+.question {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.reading-jp {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.reading-id {
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.choices label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+.choices input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* feedback */
+.correct {
+  color: #14532d;
+  background: rgba(16,185,129,0.08);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.wrong {
+  color: #7f1d1d;
+  background: rgba(239,68,68,0.06);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.explain {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 8px 20px rgba(30,136,229,0.14);
+}
+
+.submit-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+
+.result {
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.nav-back {
+  display:flex;
+  justify-content:center;
+  margin-top: 18px;
+}
+
+.nav-back a {
+  text-decoration: none;
+  color: #1e88e5;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<!-- header include (optional) -->
+<div id="header"></div>
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(r => r.text())
+  .then(html => { document.getElementById('header').innerHTML = html; })
+  .catch(()=>{/* header optional */});
+</script>
+
+<main class="quiz-container">
+
+  <div class="quiz-header">
+    <h1>Quiz JFT – Bab 7</h1>
+    <p>Pemahaman Bacaan Pendek (Reading)</p>
+  </div>
+
+  <form id="quizForm" aria-label="Quiz Bab 7">
+
+    <!-- Reading 1 + question -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">Bacaan ① — Baca dan jawab:</div>
+      <div class="reading-jp">
+        わたしは まいにち あさ 7じに おきます。<br>
+        8じに がっこうへ いきます。<br>
+        がっこうで にほんごを べんきょうします。
+      </div>
+      <div class="reading-id">Saya bangun setiap pagi jam 7. Jam 8 pergi ke sekolah. Di sekolah belajar bahasa Jepang.</div>
+
+      <div class="question" style="margin-top:8px; font-weight:700;">1. Jam berapa dia pergi ke sekolah?</div>
+      <div class="choices">
+        <label><input type="radio" name="q1" value="a"> Jam 7</label>
+        <label><input type="radio" name="q1" value="b"> Jam 8</label>
+        <label><input type="radio" name="q1" value="c"> Jam 9</label>
+        <label><input type="radio" name="q1" value="d"> Jam 10</label>
+      </div>
+      <div class="explain">Jawab: Jam 8 — disebutkan 「8じに がっこうへ いきます」.</div>
+    </div>
+
+    <!-- Reading 2 + question -->
+    <div class="quiz-card" data-answer="c">
+      <div class="question">Bacaan ② — Baca dan jawab:</div>
+      <div class="reading-jp">
+        きょう わたしは しごとです。<br>
+        かいしゃで はたらきます。<br>
+        6じに いえへ かえります。
+      </div>
+      <div class="reading-id">Hari ini saya bekerja. Bekerja di perusahaan. Jam 6 pulang ke rumah.</div>
+
+      <div class="question" style="margin-top:8px; font-weight:700;">2. Di mana dia bekerja?</div>
+      <div class="choices">
+        <label><input type="radio" name="q2" value="a"> Rumah</label>
+        <label><input type="radio" name="q2" value="b"> Sekolah</label>
+        <label><input type="radio" name="q2" value="c"> Perusahaan</label>
+        <label><input type="radio" name="q2" value="d"> Toko</label>
+      </div>
+      <div class="explain">Jawab: Perusahaan — teks menyebut 「かいしゃで はたらきます」 (bekerja di perusahaan).</div>
+    </div>
+
+    <!-- Reading 3 + question -->
+    <div class="quiz-card" data-answer="c">
+      <div class="question">Bacaan ③ — Baca dan jawab:</div>
+      <div class="reading-jp">
+        にちようび です。<br>
+        わたしは いえで やすみます。<br>
+        テレビを みます。
+      </div>
+      <div class="reading-id">Hari Minggu. Saya istirahat di rumah. Menonton TV.</div>
+
+      <div class="question" style="margin-top:8px; font-weight:700;">3. Apa yang dia lakukan di rumah?</div>
+      <div class="choices">
+        <label><input type="radio" name="q3" value="a"> Bekerja</label>
+        <label><input type="radio" name="q3" value="b"> Belajar</label>
+        <label><input type="radio" name="q3" value="c"> Menonton TV</label>
+        <label><input type="radio" name="q3" value="d"> Pergi</label>
+      </div>
+      <div class="explain">Jawab: Menonton TV — disebut 「テレビを みます」.</div>
+    </div>
+
+    <!-- Q4 general -->
+    <div class="quiz-card" data-answer="b">
+      <div class="question">4. Kata 'まいにち' berarti …</div>
+      <div class="choices">
+        <label><input type="radio" name="q4" value="a"> Hari ini</label>
+        <label><input type="radio" name="q4" value="b"> Setiap hari</label>
+        <label><input type="radio" name="q4" value="c"> Besok</label>
+        <label><input type="radio" name="q4" value="d"> Kemarin</label>
+      </div>
+      <div class="explain">Jawab: 'まいにち' = setiap hari (menunjukkan rutinitas).</div>
+    </div>
+
+    <!-- Q5 general -->
+    <div class="quiz-card" data-answer="d">
+      <div class="question">5. Partikel apa yang menunjukkan tempat terjadinya aktivitas dalam bacaan?</div>
+      <div class="choices">
+        <label><input type="radio" name="q5" value="a"> は</label>
+        <label><input type="radio" name="q5" value="b"> を</label>
+        <label><input type="radio" name="q5" value="c"> に</label>
+        <label><input type="radio" name="q5" value="d"> で</label>
+      </div>
+      <div class="explain">Jawab: で — menunjukkan lokasi terjadinya aktivitas (例: がっこうで にほんごを べんきょうします).</div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="checkQuiz()" aria-label="Cek Jawaban">
+      Cek Jawaban
+    </button>
+
+  </form>
+
+  <div id="result" class="result" role="status" aria-live="polite"></div>
+
+  <div class="nav-back">
+    <a href="bab7.html">← Kembali ke Materi Bab 7</a>
+  </div>
+
+</main>
+
+<script>
+function checkQuiz(){
+  const cards = Array.from(document.querySelectorAll('.quiz-card'));
+  let score = 0;
+
+  cards.forEach(card => {
+    const correct = card.dataset.answer;
+    const selected = card.querySelector('input[type="radio"]:checked');
+    const explain = card.querySelector('.explain');
+
+    // reset classes and hide explain
+    card.querySelectorAll('label').forEach(l=>{
+      l.classList.remove('correct','wrong');
+    });
+    if (explain) explain.style.display = 'none';
+
+    if (!selected) return; // skip unanswered
+
+    if (selected.value === correct) {
+      selected.parentElement.classList.add('correct');
+      score++;
+    } else {
+      selected.parentElement.classList.add('wrong');
+      const correctInput = card.querySelector(`input[value="${correct}"]`);
+      if (correctInput) correctInput.parentElement.classList.add('correct');
+    }
+
+    if (explain) explain.style.display = 'block';
+  });
+
+  document.getElementById('result').innerText = `Skor kamu: ${score} / ${cards.length}`;
+  // optional: disable inputs after submit
+  // document.querySelectorAll('input[type="radio"]').forEach(i=>i.disabled=true);
+}
+</script>
+
+</body>
+</html>
