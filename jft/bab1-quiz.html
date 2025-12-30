@@ -184,23 +184,33 @@ function checkQuiz() {
   cards.forEach(card => {
     const correct = card.dataset.answer;
     const selected = card.querySelector('input[type="radio"]:checked');
+    const explain = card.querySelector('.explain');
 
-    if (selected) {
-      if (selected.value === correct) {
-        selected.parentElement.classList.add('correct');
-        score++;
-      } else {
-        selected.parentElement.classList.add('wrong');
-        card.querySelector(`input[value="${correct}"]`)
-            .parentElement.classList.add('correct');
-      }
+    // reset status (jika klik ulang)
+    card.querySelectorAll('label').forEach(label => {
+      label.classList.remove('correct', 'wrong');
+    });
+
+    if (!selected) return; // belum dijawab
+
+    if (selected.value === correct) {
+      selected.parentElement.classList.add('correct');
+      score++;
+    } else {
+      selected.parentElement.classList.add('wrong');
+      card.querySelector(`input[value="${correct}"]`)
+          .parentElement.classList.add('correct');
     }
+
+    // 🔥 FEEDBACK BARU MUNCUL DI SINI
+    explain.style.display = "block";
   });
 
-  document.getElementById('result').innerText =
+  document.getElementById("result").innerText =
     `Skor kamu: ${score} / ${cards.length}`;
 }
 </script>
+
 
 </body>
 </html>
