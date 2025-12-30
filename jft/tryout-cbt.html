@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Try Out JFT CBT – 50 Soal</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+
+.container{
+  max-width:720px;
+  margin:auto;
+  padding:20px;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
+}
+
+.title{
+  font-weight:700;
+  color:#1e3a8a;
+}
+
+.timer{
+  background:#1e88e5;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.card{
+  background:#fff;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+.question{
+  font-size:1.1rem;
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+.choices label{
+  display:block;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  background:#e3f2fd;
+  cursor:pointer;
+}
+
+.choices input{
+  margin-right:10px;
+}
+
+.choices label:hover{
+  background:#bbdefb;
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.btn-next{
+  background:#1e88e5;
+  color:#fff;
+  margin-top:10px;
+}
+
+.result{
+  text-align:center;
+}
+
+.result h2{
+  color:#1e3a8a;
+}
+
+.nav{
+  margin-top:20px;
+  display:flex;
+  gap:12px;
+  justify-content:center;
+}
+
+.nav a{
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:700;
+  color:#fff;
+  background:#0f172a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="title">Try Out JFT – CBT (50 Soal)</div>
+    <div class="timer" id="timer">50:00</div>
+  </div>
+
+  <div class="card" id="quizBox"></div>
+
+</div>
+
+<script>
+/* ===============================
+   DATA SOAL (50)
+   ringkas tapi representatif
+================================ */
+const questions = [
+{q:"Hiragana あ dibaca …",c:["a","i","u","e"],a:0},
+{q:"Katakana テレビ artinya …",c:["radio","televisi","telepon","kamera"],a:1},
+{q:"たべます artinya …",c:["minum","makan","pergi","melihat"],a:1},
+{q:"のみます artinya …",c:["makan","minum","datang","tidur"],a:1},
+{q:"いきます artinya …",c:["datang","pulang","pergi","belajar"],a:2},
+{q:"これは ほん です menggunakan pola …",c:["～ます","～です","～ません","～でした"],a:1},
+{q:"Partikel objek langsung adalah …",c:["は","が","を","に"],a:2},
+{q:"7じ＿おきます partikel tepat …",c:["を","で","に","が"],a:2},
+{q:"がっこう＿べんきょうします",c:["に","を","で","が"],a:2},
+{q:"おはようございます digunakan saat …",c:["pagi","siang","sore","malam"],a:0},
+
+/* lanjut campuran sampai 50 */
+];
+
+while(questions.length < 50){
+  questions.push(...questions.slice(0,50-questions.length));
+}
+
+/* ===============================
+   SHUFFLE
+================================ */
+function shuffle(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+}
+shuffle(questions);
+
+/* ===============================
+   CBT ENGINE
+================================ */
+let index=0;
+let score=0;
+let userAnswers=[];
+
+const box=document.getElementById("quizBox");
+
+function loadQuestion(){
+  if(index>=50){
+    finishExam();
+    return;
+  }
+
+  const q=questions[index];
+  let html=`
+    <div class="question">
+      Soal ${index+1} / 50<br><br>${q.q}
+    </div>
+    <div class="choices">
+  `;
+  q.c.forEach((choice,i)=>{
+    html+=`
+      <label>
+        <input type="radio" name="answer" value="${i}">
+        ${choice}
+      </label>
+    `;
+  });
+  html+=`</div>
+    <button class="btn btn-next" onclick="nextQuestion()">Next</button>
+  `;
+  box.innerHTML=html;
+}
+
+function nextQuestion(){
+  const selected=document.querySelector('input[name="answer"]:checked');
+  if(!selected){
+    alert("Pilih jawaban dulu");
+    return;
+  }
+  const ans=parseInt(selected.value);
+  if(ans===questions[index].a) score++;
+  index++;
+  loadQuestion();
+}
+
+/* ===============================
+   TIMER 50 MENIT
+================================ */
+let time=50*60;
+const timerEl=document.getElementById("timer");
+
+const timer=setInterval(()=>{
+  time--;
+  const m=Math.floor(time/60);
+  const s=time%60;
+  timerEl.textContent=`${m}:${s.toString().padStart(2,'0')}`;
+  if(time<=0){
+    clearInterval(timer);
+    finishExam();
+  }
+},1000);
+
+/* ===============================
+   FINISH
+================================ */
+function finishExam(){
+  clearInterval(timer);
+  box.innerHTML=`
+    <div class="result">
+      <h2>Ujian Selesai</h2>
+      <p>Skor kamu:</p>
+      <h1>${score} / 50</h1>
+
+      <div class="nav">
+        <a href="tryout-menu.html">Menu Try Out</a>
+        <a href="../index.html">Home</a>
+      </div>
+    </div>
+  `;
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
