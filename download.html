@@ -152,6 +152,26 @@
 .download-wrap{
   margin-top:40px; /* sebelumnya 60px */
 }
+/* =========================
+   JFT = 3 MENU SEJAJAR
+========================= */
+
+.jft-list{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:26px;
+}
+@media (max-width:1024px){
+  .jft-list{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:640px){
+  .jft-list{
+    grid-template-columns:1fr;
+  }
+}
 
 
 </style>
