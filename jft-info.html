@@ -58,13 +58,25 @@
     text-align:center;
   ">
 
-  <h1 class="animate__animated animate__fadeInDown"
-      style="font-size:3rem;font-weight:900;color:#f9fafb;">
-    🇯🇵 Latihan JFT Online
+  <h1 id="heroTitle"
+      class="animate__animated animate__fadeInDown"
+      style="
+        font-size:3rem;
+        font-weight:900;
+        margin-bottom:12px;
+        color:#f9fafb;
+      ">
+    🇯🇵 JP Latihan JFT Online
   </h1>
 
-  <p class="animate__animated animate__fadeInUp animate__delay-1s"
-     style="font-size:1.3rem;color:#c7d2fe;">
+  <p id="heroSubtitle"
+     class="animate__animated animate__fadeInUp animate__delay-1s"
+     style="
+       font-size:1.3rem;
+       color:#c7d2fe;
+       max-width:760px;
+       margin:0 auto;
+     ">
     Persiapan JFT-Basic untuk Kerja & SSW Jepang
   </p>
 
@@ -103,7 +115,7 @@
     <p>
       Latihan JFT Online oleh <strong>Manabu Mantappu</strong> membantu
       pemula dan calon pekerja SSW mempersiapkan
-      <strong>JFT-Basic</strong> secara mandiri dan terarah.
+      <strong>JFT-Basic</strong> secara mandiri, terarah, dan praktis.
     </p>
   </div>
 
@@ -119,10 +131,10 @@
        ">
     <h2 style="color:#86efac;">🎯 Yang Akan Kamu Dapatkan</h2>
     <ul style="padding-left:0;">
-      <li style="list-style:none;margin:8px 0;">✔ Soal JFT sesuai format</li>
-      <li style="list-style:none;margin:8px 0;">✔ Kosakata sehari-hari</li>
+      <li style="list-style:none;margin:8px 0;">✔ Soal sesuai format JFT-Basic</li>
+      <li style="list-style:none;margin:8px 0;">✔ Kosakata & ungkapan sehari-hari</li>
       <li style="list-style:none;margin:8px 0;">✔ Latihan membaca & mendengar</li>
-      <li style="list-style:none;margin:8px 0;">✔ Bisa di HP</li>
+      <li style="list-style:none;margin:8px 0;">✔ Bisa dikerjakan lewat HP</li>
     </ul>
   </div>
 
@@ -132,107 +144,3 @@
         background:linear-gradient(135deg,#7f1d1d,#450a0a);
         border-radius:26px;
         padding:48px 25px;
-        text-align:center;
-        box-shadow:0 20px 55px rgba(127,29,29,.55);
-       ">
-    <p style="font-size:1.4rem;font-weight:900;color:#fee2e2;">
-      Siap mulai latihan?
-    </p>
-
-    <a href="https://sociabuzz.com/manabumantappu"
-       target="_blank"
-       style="
-        display:inline-block;
-        margin-top:20px;
-        padding:16px 46px;
-        background:#020617;
-        color:#fff;
-        font-weight:800;
-        border-radius:999px;
-        text-decoration:none;
-        border:1px solid #334155;
-       ">
-      🚀 Mulai Latihan JFT
-    </a>
-  </div>
-
-</main>
-
-<!-- ================= ADS ================= -->
-<div style="
-  margin:30px auto;
-  max-width:900px;
-  background:#020617;
-  padding:16px;
-  border-radius:16px;
-">
-  <script async data-cfasync="false"
-    src="https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/invoke.js">
-  </script>
-  <div id="container-a025500e946b1b3c647de88ab69d003a"></div>
-</div>
-
-<!-- ================= FOOTER ================= -->
-<footer style="
-  background:#020617;
-  color:#94a3b8;
-  text-align:center;
-  padding:45px 20px;
-  border-top:1px solid #1e293b;
-">
-  <p>© 2025 Manabu Mantappu</p>
-  <p style="font-style:italic;">無料で学べる日本語学習サイト</p>
-</footer>
-
-<!-- ================= SCRIPT ================= -->
-<script>
-  // Scroll animation
-  const items = document.querySelectorAll('.scroll-animate');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('animate__fadeInUp');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  items.forEach(i => observer.observe(i));
-
-  // Theme toggle
-  const body = document.getElementById("themeBody");
-  const hero = document.getElementById("heroSection");
-  const btn = document.getElementById("themeToggle");
-
-  const saved = localStorage.getItem("mm_theme");
-  if (saved) setTheme(saved);
-
-  function toggleTheme(){
-    setTheme(body.getAttribute("data-theme") === "dark" ? "light" : "dark");
-  }
-
-  function setTheme(t){
-    body.setAttribute("data-theme", t);
-    localStorage.setItem("mm_theme", t);
-
-    if(t === "dark"){
-      body.style.background = "#0b1220";
-      body.style.color = "#e5e7eb";
-      hero.style.background =
-        "linear-gradient(135deg,#020617,#0f172a,#020617)";
-      btn.innerHTML = "🌙 Dark";
-      btn.style.background =
-        "linear-gradient(135deg,#dc2626,#b91c1c)";
-    } else {
-      body.style.background = "#f8fafc";
-      body.style.color = "#0f172a";
-      hero.style.background =
-        "linear-gradient(135deg,#fef2f2,#e0f2fe)";
-      btn.innerHTML = "☀️ Light";
-      btn.style.background =
-        "linear-gradient(135deg,#2563eb,#38bdf8)";
-    }
-  }
-</script>
-
-</body>
-</html>
