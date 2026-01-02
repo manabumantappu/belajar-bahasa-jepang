@@ -9,79 +9,44 @@
 
 <style>
 /* =========================
-   DOWNLOAD PAGE – FINAL FIX
+   FINAL FIX – MENU SERAGAM
 ========================= */
 
-body.download-page{
-  margin:0;
-  font-family:system-ui,"Segoe UI";
-  background:linear-gradient(180deg,#eef6ff,#ffffff);
-  color:#1e293b;
-}
-
-/* =========================
-   MAIN WRAP
-========================= */
-.download-wrap{
-  max-width:1100px;
-  margin:60px auto;
-  padding:40px 30px;
+/* ===== FRAME MENU ===== */
+.download-page .section{
   background:#ffffff;
   border-radius:24px;
+  padding:40px 30px;
   box-shadow:0 30px 60px rgba(15,23,42,.12);
-}
-
-/* =========================
-   TITLE
-========================= */
-.download-wrap h1{
-  text-align:center;
-  font-size:2.3rem;
-  font-weight:900;
-  background:linear-gradient(90deg,#1e3a8a,#2563eb);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  margin-bottom:12px;
-}
-
-.subtitle{
-  text-align:center;
-  color:#475569;
-  margin-bottom:60px;
-  font-size:1.05rem;
-}
-
-/* =========================
-   SECTION
-========================= */
-.section{
   margin-bottom:70px;
-}
 
-.section h2{
-  font-size:1.55rem;
-  margin-bottom:28px;
-  padding-left:14px;
-  border-left:6px solid #2563eb;
+  /* ⬇️ LEBAR FRAME DIKUNCI */
+  max-width:1200px;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+
   display:flex;
-  align-items:center;
-  gap:10px;
+  flex-direction:column;
 }
 
-/* =========================
-   GRID – ONE SOURCE OF TRUTH
-   (SSW, JLPT, BUKU)
-========================= */
+/* ===== GRID MENU: 3 KOLOM FIX ===== */
 .download-page .file-list{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns:repeat(3, 1fr); /* ⬅️ KUNCI 3 MENU */
   gap:26px;
+  width:100%;
+  align-items:stretch;
+  flex:1;
 }
 
-/* =========================
-   CARD
-========================= */
+/* ===== CARD MENU ===== */
 .download-page .file-item{
+  width:100%;
+  height:100%;
+  margin:0;
+  max-width:none;
+
   background:linear-gradient(145deg,#e8f2ff,#f5f9ff);
   border-radius:20px;
   padding:28px 26px;
@@ -91,13 +56,9 @@ body.download-page{
   transition:.3s ease;
   position:relative;
   border:1px solid rgba(37,99,235,.15);
-  max-width:280px;
-  margin:0 auto;
-}
 
-.download-page .file-item:hover{
-  transform:translateY(-6px);
-  box-shadow:0 30px 60px rgba(30,58,138,.25);
+  display:flex;
+  flex-direction:column;
 }
 
 /* accent bar */
@@ -112,229 +73,30 @@ body.download-page{
   border-radius:20px 0 0 20px;
 }
 
-/* =========================
-   CARD TITLE
-========================= */
-.file-item strong{
-  display:block;
-  font-size:1.15rem;
-  margin-bottom:4px;
-  color:#1e3a8a;
-}
-
-.file-item span{
-  display:block;
-  font-size:.9rem;
-  color:#64748b;
-  margin-bottom:14px;
-}
-
-/* =========================
-   LINK LIST
-========================= */
-.sub-file{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-
-.sub-file li{
-  margin:8px 0;
-}
-
-.sub-file a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  text-decoration:none;
-  color:#0f172a;
-  font-weight:600;
-  padding:8px 12px;
-  border-radius:10px;
-  background:#ffffff;
-  transition:.25s;
-}
-
-.sub-file a:hover{
-  background:#2563eb;
-  color:#ffffff;
-}
-
-/* =========================
-   JFT BUTTON GRID
-========================= */
-.jft-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin-top:18px;
-}
-
-.jft-grid a{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:14px 12px;
-  background:linear-gradient(145deg,#eef6ff,#ffffff);
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:.9rem;
-  color:#1e3a8a;
-  border:1px solid rgba(37,99,235,.2);
-  box-shadow:0 8px 20px rgba(30,58,138,.12);
-  transition:.3s;
-  text-align:center;
-}
-
-.jft-grid a:hover{
-  background:linear-gradient(145deg,#2563eb,#3b82f6);
-  color:#ffffff;
-  transform:translateY(-4px);
-}
-
-/* =========================
-   CTA
-========================= */
-.form-cta{
-  text-align:center;
-  margin-top:40px;
-}
-
-.form-cta a{
-  display:inline-block;
-  padding:16px 38px;
-  font-size:1.05rem;
-  font-weight:800;
-  background:linear-gradient(135deg,#22c55e,#4ade80);
-  color:#022c22;
-  border-radius:999px;
-  text-decoration:none;
-  box-shadow:0 18px 35px rgba(34,197,94,.45);
-}
-
-.form-cta a:hover{
-  transform:scale(1.05);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width:768px){
-  .jft-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-   /* =========================
-   FINISHING GRID LAYOUT
-========================= */
-
-/* JLPT – 5 kolom desktop */
-.section.jlpt .file-list{
-  grid-template-columns:repeat(5, 1fr);
-}
-
-/* Buku – 3 kolom desktop */
-.section.buku .file-list{
-  grid-template-columns:repeat(3, 1fr);
-}
-
-/* Tablet */
-@media (max-width:1024px){
-  .section.jlpt .file-list,
-  .section.buku .file-list{
-    grid-template-columns:repeat(3, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width:640px){
-  .section.jlpt .file-list,
-  .section.buku .file-list{
-    grid-template-columns:1fr;
-  }
-}
-/* =========================
-   EQUAL HEIGHT CARDS
-========================= */
-
-/* grid: pastikan item stretch */
-.download-page .file-list{
-  align-items:stretch;
-}
-
-/* card jadi flex kolom */
-.download-page .file-item{
-  display:flex;
-  flex-direction:column;
-}
-
-/* list materi fleksibel (isi tengah) */
+/* isi card mengisi tinggi */
 .download-page .sub-file{
   flex:1;
 }
 
-/* jaga jarak bawah rapi */
-.download-page .file-item strong{
-  margin-top:0;
-}
-/* =========================
-   EQUAL FRAME SIZE
-========================= */
-
-/* semua section jadi frame */
-.download-page .section{
-  background:#ffffff;
-  border-radius:24px;
-  padding:40px 30px;
-  box-shadow:0 30px 60px rgba(15,23,42,.12);
-  min-height:560px;              /* ⬅️ INI KUNCI */
-  display:flex;
-  flex-direction:column;
+/* hover */
+.download-page .file-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(30,58,138,.25);
 }
 
-/* jarak antar frame */
-.download-page .section + .section{
-  margin-top:70px;
-}
-
-/* isi frame mengisi tinggi */
-.download-page .file-list{
-  flex:1;
-}
-/* =========================
-   EQUAL WIDTH ALL FRAMES
-========================= */
-
-/* samakan lebar semua frame */
-.download-page .section{
-  max-width:1200px;   /* ⬅️ satu ukuran lebar */
-  width:100%;
-  margin-left:auto;
-  margin-right:auto;
-}
-/* =========================
-   FIX LEBAR SEMUA FRAME MENU
-========================= */
-
-/* semua frame menu */
-.download-page .section{
-  width:100%;
-  max-width:1200px;     /* ⬅️ SATU UKURAN LEBAR */
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* pastikan isi tidak mengubah lebar frame */
-.download-page .file-list{
-  width:100%;
-}
-@media (max-width:768px){
-  .download-page .section{
-    max-width:100%;
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px){
+  .download-page .file-list{
+    grid-template-columns:repeat(2, 1fr);
   }
 }
+
+@media (max-width:640px){
+  .download-page .file-list{
+    grid-template-columns:1fr;
+  }
+}
+
 
 </style>
 
