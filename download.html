@@ -255,6 +255,30 @@ body.download-page{
     grid-template-columns:1fr;
   }
 }
+/* =========================
+   EQUAL HEIGHT CARDS
+========================= */
+
+/* grid: pastikan item stretch */
+.download-page .file-list{
+  align-items:stretch;
+}
+
+/* card jadi flex kolom */
+.download-page .file-item{
+  display:flex;
+  flex-direction:column;
+}
+
+/* list materi fleksibel (isi tengah) */
+.download-page .sub-file{
+  flex:1;
+}
+
+/* jaga jarak bawah rapi */
+.download-page .file-item strong{
+  margin-top:0;
+}
 
 </style>
 
