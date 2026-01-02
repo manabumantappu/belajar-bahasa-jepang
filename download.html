@@ -85,6 +85,37 @@ body.download-page{
   position:relative;
   border:1px solid rgba(37,99,235,.15);
 }
+/* ===== JFT GRID ===== */
+.jft-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+  margin-top:18px;
+}
+
+.jft-grid a{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px 12px;
+  background:linear-gradient(145deg,#eef6ff,#ffffff);
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.9rem;
+  color:#1e3a8a;
+  border:1px solid rgba(37,99,235,.2);
+  box-shadow:0 8px 20px rgba(30,58,138,.12);
+  transition:.3s;
+  text-align:center;
+}
+
+.jft-grid a:hover{
+  background:linear-gradient(145deg,#2563eb,#3b82f6);
+  color:#ffffff;
+  transform:translateY(-4px);
+  box-shadow:0 14px 35px rgba(37,99,235,.35);
+}
 
 .file-item:hover{
   transform:translateY(-8px);
@@ -290,29 +321,19 @@ JFT-Basic • JLPT • SSW • Buku Bahasa Jepang (sedang proses UPLOAD)
 
  
 <!-- ===== JFT ===== -->
-<div class="section">
-<h2>📝 JFT-Basic</h2>
-<div class="file-list">
+<div class="file-item">
 
-  <div class="file-item">
-    <a href="assets/pdf/jft/jft-modul-bab1-8.pdf" target="_blank">
-      Modul JFT Bab 1–8
-    </a>
-  </div>
+  <strong>JFT-Basic</strong>
+  <span>Modul & latihan JFT</span>
 
-  <div class="file-item">
-    <a href="assets/pdf/jft/jft-soal-latihan.pdf" target="_blank">
-      Kumpulan Soal JFT
-    </a>
-  </div>
-
-  <div class="file-item">
-    <a href="assets/pdf/jft/jft-tryout.pdf" target="_blank">
-      Try Out JFT (PDF)
-    </a>
+  <div class="jft-grid">
+    <a href="assets/pdf/jft/jft-modul-bab1-8.pdf" target="_blank">📘 Modul JFT Bab 1–8</a>
+    <a href="assets/pdf/jft/jft-soal-latihan.pdf" target="_blank">📝 Kumpulan Soal JFT</a>
+    <a href="assets/pdf/jft/jft-tryout.pdf" target="_blank">🧪 Try Out JFT (PDF)</a>
   </div>
 
 </div>
+
 
 <div class="form-cta">
   <a href="jft-info.html">
