@@ -8,101 +8,98 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-body{
+/* =========================
+   DOWNLOAD PAGE FIX FINAL
+========================= */
+
+body.download-page{
   margin:0;
-  font-family:system-ui,Segoe UI;
-  background:linear-gradient(180deg,#f8fbff,#eef4ff);
-  color:#0f172a;
+  font-family:system-ui,"Segoe UI";
+  background:linear-gradient(180deg,#eef6ff,#ffffff);
+  color:#1e293b;
 }
 
-/* ===== WRAP ===== */
+/* main wrap */
 .download-wrap{
   max-width:1100px;
-  margin:50px auto;
-  padding:0 20px;
+  margin:60px auto;
+  padding:40px 30px;
+  background:#ffffff;
+  border-radius:24px;
+  box-shadow:0 30px 60px rgba(15,23,42,.12);
 }
 
+/* title */
 .download-wrap h1{
   text-align:center;
-  font-size:2.2rem;
+  font-size:2.3rem;
   font-weight:900;
   background:linear-gradient(90deg,#1e3a8a,#2563eb);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .subtitle{
   text-align:center;
   color:#475569;
-  margin-bottom:50px;
-  font-size:1rem;
+  margin-bottom:60px;
+  font-size:1.05rem;
 }
 
-/* ===== SECTION ===== */
+/* section */
 .section{
   margin-bottom:70px;
 }
 
 .section h2{
-  font-size:1.6rem;
-  font-weight:800;
-  margin-bottom:22px;
+  font-size:1.55rem;
+  margin-bottom:28px;
+  padding-left:14px;
+  border-left:6px solid #2563eb;
   display:flex;
   align-items:center;
   gap:10px;
 }
 
-/* ===== GRID ===== */
+/* grid */
 .file-list{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+  gap:26px;
 }
 
-/* ===== CARD ===== */
+/* card */
 .file-item{
-  background:linear-gradient(180deg,#ffffff,#f1f6ff);
+  background:#f8fafc;
   border-radius:18px;
-  padding:20px 22px;
-  box-shadow:0 12px 30px rgba(30,58,138,.12);
+  padding:26px 24px;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+  transition:.3s ease;
   position:relative;
-  transition:.25s ease;
-  overflow:hidden;
 }
 
 .file-item:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 45px rgba(30,58,138,.22);
+  transform:translateY(-6px);
+  box-shadow:0 25px 55px rgba(0,0,0,.15);
 }
 
-/* accent bar */
-.file-item::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  width:6px;
-  height:100%;
-  background:linear-gradient(180deg,#2563eb,#38bdf8);
-}
-
-/* title */
+/* title in card */
 .file-item strong{
-  font-size:1.05rem;
   display:block;
+  font-size:1.15rem;
   margin-bottom:4px;
+  color:#1e3a8a;
 }
 
-/* subtitle */
 .file-item span{
-  font-size:.85rem;
-  color:#64748b;
   display:block;
+  font-size:.9rem;
+  color:#64748b;
   margin-bottom:14px;
 }
 
-/* ===== SUB FILE ===== */
+/* links */
 .sub-file{
   list-style:none;
   padding:0;
@@ -110,60 +107,47 @@ body{
 }
 
 .sub-file li{
-  margin:7px 0;
+  margin:8px 0;
 }
 
 .sub-file a{
-  text-decoration:none;
-  color:#0f172a;
-  font-weight:600;
   display:flex;
   align-items:center;
   gap:8px;
-  font-size:.95rem;
+  text-decoration:none;
+  color:#0f172a;
+  font-weight:600;
+  padding:8px 12px;
+  border-radius:10px;
+  background:#ffffff;
+  transition:.25s;
 }
 
 .sub-file a:hover{
-  color:#2563eb;
+  background:#2563eb;
+  color:#ffffff;
 }
 
-/* ===== JFT ===== */
-.section.jft h2{ color:#16a34a; }
-.section.jft .file-item::before{
-  background:linear-gradient(180deg,#16a34a,#4ade80);
-}
-
-/* ===== JLPT ===== */
-.section.jlpt h2{ color:#7c3aed; }
-.section.jlpt .file-item::before{
-  background:linear-gradient(180deg,#7c3aed,#a78bfa);
-}
-
-/* ===== BUKU ===== */
-.section.buku h2{ color:#ea580c; }
-.section.buku .file-item::before{
-  background:linear-gradient(180deg,#ea580c,#fb923c);
-}
-
-/* ===== CTA ===== */
+/* CTA */
 .form-cta{
   text-align:center;
-  margin-top:35px;
+  margin-top:40px;
 }
 
 .form-cta a{
   display:inline-block;
-  padding:16px 36px;
+  padding:16px 38px;
+  font-size:1.05rem;
+  font-weight:800;
   background:linear-gradient(135deg,#22c55e,#4ade80);
   color:#022c22;
-  font-weight:900;
   border-radius:999px;
   text-decoration:none;
-  box-shadow:0 12px 30px rgba(34,197,94,.4);
+  box-shadow:0 18px 35px rgba(34,197,94,.45);
 }
 
 .form-cta a:hover{
-  transform:scale(1.03);
+  transform:scale(1.05);
 }
 </style>
 
@@ -180,7 +164,8 @@ body{
   
 </head>
 
-<body>
+<body class="download-page">
+
 
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
