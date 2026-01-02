@@ -1030,4 +1030,48 @@ th {
 .sub-file a:hover {
   text-decoration: underline;
 }
+.simple-header {
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: #fff;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.cta-box {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #2e7d32;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: #1b5e20;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #666;
+}
 
