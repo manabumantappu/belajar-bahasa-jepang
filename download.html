@@ -279,9 +279,32 @@ body.download-page{
 .download-page .file-item strong{
   margin-top:0;
 }
+/* =========================
+   EQUAL FRAME SIZE
+========================= */
+
+/* semua section jadi frame */
+.download-page .section{
+  background:#ffffff;
+  border-radius:24px;
+  padding:40px 30px;
+  box-shadow:0 30px 60px rgba(15,23,42,.12);
+  min-height:560px;              /* ⬅️ INI KUNCI */
+  display:flex;
+  flex-direction:column;
+}
+
+/* jarak antar frame */
+.download-page .section + .section{
+  margin-top:70px;
+}
+
+/* isi frame mengisi tinggi */
+.download-page .file-list{
+  flex:1;
+}
 
 </style>
-
 
   <!-- Google tag (gtag.js) -->
 <script async src=https://www.googletagmanager.com/gtag/js?id=G-C5C26QNPKL></script>
