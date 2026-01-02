@@ -1,18 +1,182 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Download | Manabu Mantappu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Materi Jepang – SSW, JFT, JLPT | Manabu Mantappu</title>
 
-  <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 
-  <!-- ✅ CSS KHUSUS DOWNLOAD -->
-  <link rel="stylesheet" href="download.css">
-</head>
+<style>
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI;
+  background:linear-gradient(180deg,#f8fbff,#eef4ff);
+  color:#0f172a;
+}
 
-<body class="download-page">
+/* ===== WRAP ===== */
+.download-wrap{
+  max-width:1100px;
+  margin:50px auto;
+  padding:0 20px;
+}
+
+.download-wrap h1{
+  text-align:center;
+  font-size:2.2rem;
+  font-weight:900;
+  background:linear-gradient(90deg,#1e3a8a,#2563eb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#475569;
+  margin-bottom:50px;
+  font-size:1rem;
+}
+
+/* ===== SECTION ===== */
+.section{
+  margin-bottom:70px;
+}
+
+.section h2{
+  font-size:1.6rem;
+  font-weight:800;
+  margin-bottom:22px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* ===== GRID ===== */
+.file-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+/* ===== CARD ===== */
+.file-item{
+  background:linear-gradient(180deg,#ffffff,#f1f6ff);
+  border-radius:18px;
+  padding:20px 22px;
+  box-shadow:0 12px 30px rgba(30,58,138,.12);
+  position:relative;
+  transition:.25s ease;
+  overflow:hidden;
+}
+
+.file-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 45px rgba(30,58,138,.22);
+}
+
+/* accent bar */
+.file-item::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:6px;
+  height:100%;
+  background:linear-gradient(180deg,#2563eb,#38bdf8);
+}
+
+/* title */
+.file-item strong{
+  font-size:1.05rem;
+  display:block;
+  margin-bottom:4px;
+}
+
+/* subtitle */
+.file-item span{
+  font-size:.85rem;
+  color:#64748b;
+  display:block;
+  margin-bottom:14px;
+}
+
+/* ===== SUB FILE ===== */
+.sub-file{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.sub-file li{
+  margin:7px 0;
+}
+
+.sub-file a{
+  text-decoration:none;
+  color:#0f172a;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.95rem;
+}
+
+.sub-file a:hover{
+  color:#2563eb;
+}
+
+/* ===== JFT ===== */
+.section.jft h2{ color:#16a34a; }
+.section.jft .file-item::before{
+  background:linear-gradient(180deg,#16a34a,#4ade80);
+}
+
+/* ===== JLPT ===== */
+.section.jlpt h2{ color:#7c3aed; }
+.section.jlpt .file-item::before{
+  background:linear-gradient(180deg,#7c3aed,#a78bfa);
+}
+
+/* ===== BUKU ===== */
+.section.buku h2{ color:#ea580c; }
+.section.buku .file-item::before{
+  background:linear-gradient(180deg,#ea580c,#fb923c);
+}
+
+/* ===== CTA ===== */
+.form-cta{
+  text-align:center;
+  margin-top:35px;
+}
+
+.form-cta a{
+  display:inline-block;
+  padding:16px 36px;
+  background:linear-gradient(135deg,#22c55e,#4ade80);
+  color:#022c22;
+  font-weight:900;
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 12px 30px rgba(34,197,94,.4);
+}
+
+.form-cta a:hover{
+  transform:scale(1.03);
+}
+</style>
+
+
+  <!-- Google tag (gtag.js) -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-C5C26QNPKL></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C5C26QNPKL');
+</script>
   
 </head>
 
@@ -47,7 +211,6 @@ JFT-Basic • JLPT • SSW • Buku Bahasa Jepang (sedang proses UPLOAD)
       <li><a href="assets/pdf/ssw/kaigo/kaigo-01.pdf" target="_blank">📄 Modul 1</a></li>
       <li><a href="assets/pdf/ssw/kaigo/kaigo-02.pdf" target="_blank">📄 Modul 2</a></li>
       <li><a href="assets/pdf/ssw/kaigo/kaigo-03.pdf" target="_blank">📄 Modul 3</a></li>
-      <li><a href="assets/pdf/ssw/kaigo/kaigo-04.pdf" target="_blank">📄 Modul 4</a></li>
     </ul>
   </div>
 
@@ -59,6 +222,7 @@ JFT-Basic • JLPT • SSW • Buku Bahasa Jepang (sedang proses UPLOAD)
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-02.pdf" target="_blank">📄 Modul 2</a></li>
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-03.pdf" target="_blank">📄 Modul 3</a></li>
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-04.pdf" target="_blank">📄 Modul 4</a></li>
+      <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-05.pdf" target="_blank">📄 Modul 5</a></li>
     </ul>
   </div>
 
