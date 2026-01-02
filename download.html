@@ -3,72 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Download Materi Jepang – SSW, JFT, JLPT | Manabu Mantappu</title>
+<title>Download Materi Belajar Jepang | Manabu Mantappu</title>
 
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* ===== SECTION WRAPPER ===== */
-.section{
-  margin-bottom:80px;
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Arial,sans-serif;
+  background:linear-gradient(180deg,#f8fbff,#eef4ff);
+  color:#0f172a;
 }
 
-/* ===== GRID BESAR (SSW) ===== */
-.grid-ssw{
+/* ===== CONTAINER ===== */
+.download-wrap{
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+/* ===== HEADER ===== */
+.download-header{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.download-header h1{
+  font-size:2.3rem;
+  font-weight:900;
+  background:linear-gradient(90deg,#1e3a8a,#2563eb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+.download-header p{
+  color:#475569;
+  font-size:1rem;
+}
+
+/* ===== SECTION ===== */
+.section{
+  margin-bottom:70px;
+}
+
+.section-title{
+  font-size:1.6rem;
+  font-weight:800;
+  margin-bottom:28px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* ===== GRID ===== */
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-  align-items:start;
-}
-
-/* ===== GRID KECIL (JFT / JLPT) ===== */
-.grid-small{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-  max-width:900px;
+  gap:24px;
 }
 
 /* ===== CARD ===== */
 .card{
   background:linear-gradient(180deg,#ffffff,#f1f6ff);
-  border-radius:18px;
+  border-radius:20px;
   padding:22px 24px;
-  box-shadow:0 12px 28px rgba(30,58,138,.12);
+  box-shadow:0 14px 35px rgba(30,58,138,.15);
   position:relative;
+  transition:.25s ease;
 }
 
-/* ACCENT BAR */
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 50px rgba(30,58,138,.25);
+}
+
+/* accent bar */
 .card::before{
   content:'';
   position:absolute;
-  left:0;
   top:0;
+  left:0;
   width:6px;
   height:100%;
+  border-radius:20px 0 0 20px;
   background:linear-gradient(180deg,#2563eb,#38bdf8);
-  border-radius:6px 0 0 6px;
 }
 
-/* TITLE */
-.card strong{
-  display:block;
+.card h3{
   font-size:1.05rem;
-  margin-bottom:4px;
+  margin-bottom:6px;
 }
 
-/* SUBTITLE */
-.card span{
+.card p{
   font-size:.85rem;
   color:#64748b;
   margin-bottom:14px;
-  display:block;
 }
 
+/* ===== FILE LIST ===== */
+.file-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.file-list li{
+  margin:6px 0;
+}
+
+.file-list a{
+  text-decoration:none;
+  font-size:.95rem;
+  font-weight:600;
+  color:#0f172a;
+}
+
+.file-list a:hover{
+  color:#2563eb;
+}
+
+/* ===== JFT ===== */
+.jft .card::before{
+  background:linear-gradient(180deg,#16a34a,#4ade80);
+}
+
+/* ===== JLPT ===== */
+.jlpt .card::before{
+  background:linear-gradient(180deg,#7c3aed,#a78bfa);
+}
+
+/* ===== CTA ===== */
+.cta{
+  text-align:center;
+  margin-top:30px;
+}
+
+.cta a{
+  display:inline-block;
+  padding:16px 36px;
+  background:linear-gradient(135deg,#22c55e,#4ade80);
+  color:#022c22;
+  font-weight:900;
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 14px 35px rgba(34,197,94,.4);
+}
+
+.cta a:hover{
+  transform:scale(1.04);
+}
 </style>
 
-
-  <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src=https://www.googletagmanager.com/gtag/js?id=G-C5C26QNPKL></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -77,158 +164,114 @@
 
   gtag('config', 'G-C5C26QNPKL');
 </script>
-  
+
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
-<div id="header"></div>
-<script>
-fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(r=>r.ok?r.text():'')
-  .then(t=>document.getElementById('header').innerHTML=t)
-  .catch(()=>{});
-</script>
-
 <div class="download-wrap">
 
-<h1>📥 Download Materi Belajar Jepang</h1>
-<p class="subtitle">
-JFT-Basic • JLPT • SSW • Buku Bahasa Jepang (sedang proses UPLOAD)
-</p>
-
-<!-- ===== SSW ===== -->
-<div class="section">
-<h2>📘 Modul SSW (PDF)</h2>
-<div class="file-list">
-
- <!-- SSW Kaigo -->
-  <div class="file-item">
-    <strong>SSW Kaigo</strong>
-    <span>Perawatan lansia Jepang</span>
-    <ul class="sub-file">
-      <li><a href="assets/pdf/ssw/kaigo/kaigo-01.pdf" target="_blank">📄 Modul 1</a></li>
-      <li><a href="assets/pdf/ssw/kaigo/kaigo-02.pdf" target="_blank">📄 Modul 2</a></li>
-      <li><a href="assets/pdf/ssw/kaigo/kaigo-03.pdf" target="_blank">📄 Modul 3</a></li>
-    </ul>
+  <!-- ===== HEADER ===== -->
+  <div class="download-header">
+    <h1>⬇ Download Materi Belajar Jepang</h1>
+    <p>JFT-Basic • JLPT • SSW • Buku Bahasa Jepang</p>
   </div>
 
-  <div class="file-item">
-    <strong>SSW Pengolahan Makanan</strong>
-    <span>Pabrik makanan Jepang</span>
-    <ul class="sub-file">
+  <!-- ===== SSW ===== -->
+  <section class="section">
+    <div class="section-title">📘 Modul SSW (PDF)</div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>SSW Kaigo</h3>
+        <p>Perawatan lansia Jepang</p>
+        <ul class="file-list">
+      <li><a href="assets/pdf/ssw/kaigo/kaigo-01.pdf" target="_blank">📄 Modul 1</a></li>
+      <li><a href="assets/pdf/ssw/kaigo/kaigo-02.pdf" target="_blank">📄 Modul 2</a></li>
+      <li><a href="assets
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>SSW Pengolahan Makanan</h3>
+        <p>Pabrik makanan Jepang</p>
+        <ul class="file-list">
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-01.pdf" target="_blank">📄 Modul 1</a></li>
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-02.pdf" target="_blank">📄 Modul 2</a></li>
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-03.pdf" target="_blank">📄 Modul 3</a></li>
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-04.pdf" target="_blank">📄 Modul 4</a></li>
       <li><a href="assets/pdf/ssw/pengolahan-makanan/makanan-05.pdf" target="_blank">📄 Modul 5</a></li>
-    </ul>
-  </div>
+        </ul>
+      </div>
 
+      <div class="card">
+        <h3>SSW Pertanian</h3>
+        <p>Pertanian & greenhouse</p>
+        <ul class="file-list">
+         <li><a href="assets/pdf/ssw/pertanian/pertanian-01.pdf" target="_blank">📄 Modul 1</a></li>
+         <li><a href="assets/pdf/ssw/pertanian/pertanian-02.pdf" target="_blank">📄 Modul 2</a></li>
+         <li><a href="assets/pdf/ssw/pertanian/pertanian-03.pdf" target="_blank">📄 Modul 3</a></li>
+         <li><a href="assets/pdf/ssw/pertanian/pertanian-04.pdf" target="_blank">📄 Modul 4</a></li>
+         <li><a href="assets/pdf/ssw/pertanian/pertanian-05.pdf" target="_blank">📄 Modul 5</a></li>
+        </ul>
+      </div>
 
-   <div class="file-item">
-    <strong>SSW Pertanian</strong>
-    <span>Pertanian & greenhouse</span>
-    <ul class="sub-file">
-      <li><a href="assets/pdf/ssw/pertanian/pertanian-01.pdf" target="_blank">📄 Modul 1</a></li>
-      <li><a href="assets/pdf/ssw/pertanian/pertanian-02.pdf" target="_blank">📄 Modul 2</a></li>
-      <li><a href="assets/pdf/ssw/pertanian/pertanian-03.pdf" target="_blank">📄 Modul 3</a></li>
-      <li><a href="assets/pdf/ssw/pertanian/pertanian-04.pdf" target="_blank">📄 Modul 4</a></li>
-      <li><a href="assets/pdf/ssw/pertanian/pertanian-05.pdf" target="_blank">📄 Modul 5</a></li>
-    </ul>
-  </div>
-
-   <div class="file-item">
-    <strong>SSW Perhotelan</strong>
-    <span>Hotel & ryokan</span>
-    <ul class="sub-file">
+      <div class="card">
+        <h3>SSW Perhotelan</h3>
+        <p>Hotel & ryokan</p>
+        <ul class="file-list">
       <li><a href="assets/pdf/ssw/perhotelan/hotel-01.pdf" target="_blank">📄 Modul 1</a></li>
       <li><a href="assets/pdf/ssw/perhotelan/hotel-02.pdf" target="_blank">📄 Modul 2</a></li>
       <li><a href="assets/pdf/ssw/perhotelan/hotel-03.pdf" target="_blank">📄 Modul 3</a></li>
       <li><a href="assets/pdf/ssw/perhotelan/hotel-04.pdf" target="_blank">📄 Modul 4</a></li>
-      <li><a href="assets/pdf/ssw/perhotelan/hotel-05.pdf" target="_blank">📄 Modul 5</a></li>
-    </ul>
-  </div>
+      <li><a href="assets/pdf/ssw/perhotelan/hotel-05.pdf" target="_blank">📄 Modul 5</a></
 
-     <div class="file-item">
-    <strong>SSW Manufaktur</strong>
-    <span>Pabrik & produksi</span>
-    <ul class="sub-file">
-      <li><a href="assets/pdf/ssw/manufaktur/manufaktur-01.pdf" target="_blank">📄 Modul 1</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>SSW Manufaktur</h3>
+        <p>Pabrik & produksi</p>
+        <ul class="file-list">
+     <li><a href="assets/pdf/ssw/manufaktur/manufaktur-01.pdf" target="_blank">📄 Modul 1</a></li>
       <li><a href="assets/pdf/ssw/manufaktur/manufaktur-02.pdf" target="_blank">📄 Modul 2</a></li>
       <li><a href="assets/pdf/ssw/manufaktur/manufaktur-03.pdf" target="_blank">📄 Modul 3</a></li>
       <li><a href="assets/pdf/ssw/manufaktur/manufaktur-04.pdf" target="_blank">📄 Modul 4</a></li>
       <li><a href="assets/pdf/ssw/manufaktur/manufaktur-05.pdf" target="_blank">📄 Modul 5</a></li>
-    </ul>
-  </div>
-  
-  <div class="file-item">
-  <strong>SSW Jidōsha Seibi</strong>
-  <span>Mekanik kendaraan</span>
+      </ul>
+      </div>
 
-  <ul class="sub-file">
-    <li>
-      <a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-01.pdf" target="_blank">
-        📄 Modul 1
-      </a>
-    </li>
-    <li>
-      <a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-02.pdf" target="_blank">
-        📄 Modul 2
-      </a>
-    </li>
-    <li>
-      <a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-03.pdf" target="_blank">
-        📄 Modul 3
-      </a>
-    </li>
-    <li>
-      <a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-04.pdf" target="_blank">
-        📄 Modul 4
-      </a>
-    </li>
-    <li>
-      <a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-05.pdf" target="_blank">
-        📄 Modul 5
-      </a>
-    </li>
-  </ul>
-</div>
-
+      <div class="card">
+        <h3>SSW Jidōsha Seibi</h3>
+        <p>Mekanik kendaraan</p>
+        <ul class="file-list">
+    <li><a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-01.pdf" target="_blank">📄 Modul 1</a></li>
+    <li><a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-02.pdf" target="_blank">📄 Modul 2</a></li>
+    <li><a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-03.pdf" target="_blank">📄 Modul 3</a></li>
+    <li><a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-04.pdf" target="_blank">📄 Modul 4</a></li>
+    <li><a href="assets/pdf/ssw/jidousha-seibi/jidousha-seibi-05.pdf" target="_blank">📄 Modul 5</a></li>
+      </ul>
+      </div>
  
-<!-- ===== JFT ===== -->
-<div class="section">
-<h2>📝 JFT-Basic</h2>
-<div class="file-list">
+  <!-- ===== JFT ===== -->
+  <section class="section jft">
+    <div class="section-title">📝 JFT-Basic</div>
 
-  <div class="file-item">
-    <a href="assets/pdf/jft/jft-modul-bab1-8.pdf" target="_blank">
-      Modul JFT Bab 1–8
-    </a>
-  </div>
+    <div class="grid">
+      <div class="card">
+        <ul class="file-list">
+          <li><a href="#">Modul JFT Bab 1–8</a></li>
+          <li><a href="#">Kumpulan Soal JFT</a></li>
+          <li><a href="#">Try Out JFT (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
 
-  <div class="file-item">
-    <a href="assets/pdf/jft/jft-soal-latihan.pdf" target="_blank">
-      Kumpulan Soal JFT
-    </a>
-  </div>
-
-  <div class="file-item">
-    <a href="assets/pdf/jft/jft-tryout.pdf" target="_blank">
-      Try Out JFT (PDF)
-    </a>
-  </div>
-
-</div>
-
-<div class="form-cta">
-  <a href="jft-info.html">
-    🚀 Latihan JFT Online
-  </a>
-</div>
-
-
+    <div class="cta">
+      <a href="latihan-jft.html">🚀 Latihan JFT Online (Google Form)</a>
+    </div>
+  </section>
 <!-- ===== JLPT ===== -->
 <div class="section">
 <h2>📚 Modul JLPT (PDF)</h2>
@@ -378,3 +421,4 @@ src=https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/inv
   
 </body>
 </html>
+
