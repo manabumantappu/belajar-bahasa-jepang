@@ -96,6 +96,44 @@
     grid-template-columns:1fr;
   }
 }
+/* =========================
+   FIX LIST MODUL DI CARD
+========================= */
+
+/* hilangkan bullet bawaan */
+.download-page .sub-file,
+.download-page .file-item ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+/* item modul */
+.download-page .file-item li{
+  margin:6px 0;
+}
+
+/* link modul jadi tombol kecil */
+.download-page .file-item li a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:#ffffff;
+  text-decoration:none;
+  font-weight:600;
+  color:#1e293b;
+  box-shadow:0 4px 10px rgba(30,58,138,.08);
+  transition:.25s ease;
+}
+
+/* hover */
+.download-page .file-item li a:hover{
+  background:#2563eb;
+  color:#ffffff;
+  transform:translateX(4px);
+}
 
 
 </style>
