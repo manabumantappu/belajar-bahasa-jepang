@@ -144,3 +144,113 @@
         background:linear-gradient(135deg,#7f1d1d,#450a0a);
         border-radius:26px;
         padding:48px 25px;
+        text-align:center;
+        box-shadow:0 20px 55px rgba(127,29,29,.55);
+       ">
+    <p style="font-size:1.4rem;font-weight:900;color:#fee2e2;">
+      Siap mulai latihan?
+    </p>
+
+    <a href="https://sociabuzz.com/manabumantappu"
+       target="_blank"
+       style="
+        display:inline-block;
+        margin-top:20px;
+        padding:16px 46px;
+        background:#020617;
+        color:#fff;
+        font-weight:800;
+        border-radius:999px;
+        text-decoration:none;
+        border:1px solid #334155;
+       ">
+      🚀 Mulai Latihan JFT
+    </a>
+  </div>
+
+</main>
+
+<!-- ================= ADS ================= -->
+<div style="
+  margin:30px auto;
+  max-width:900px;
+  background:#020617;
+  padding:16px;
+  border-radius:16px;
+">
+  <script async data-cfasync="false"
+    src="https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/invoke.js">
+  </script>
+  <div id="container-a025500e946b1b3c647de88ab69d003a"></div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer style="
+  background:#020617;
+  color:#94a3b8;
+  text-align:center;
+  padding:45px 20px;
+  border-top:1px solid #1e293b;
+">
+  <p>© 2025 Manabu Mantappu</p>
+  <p style="font-style:italic;">無料で学べる日本語学習サイト</p>
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  /* Scroll animation */
+  const items = document.querySelectorAll('.scroll-animate');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('animate__fadeInUp');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(i => observer.observe(i));
+
+  /* Dark / Light Toggle */
+  const body = document.getElementById("themeBody");
+  const hero = document.getElementById("heroSection");
+  const title = document.getElementById("heroTitle");
+  const sub = document.getElementById("heroSubtitle");
+  const btn = document.getElementById("themeToggle");
+
+  const saved = localStorage.getItem("mm_theme");
+  if (saved) setTheme(saved);
+
+  function toggleTheme(){
+    setTheme(body.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  }
+
+  function setTheme(t){
+    body.setAttribute("data-theme", t);
+    localStorage.setItem("mm_theme", t);
+
+    if(t === "dark"){
+      body.style.background = "#0b1220";
+      body.style.color = "#e5e7eb";
+      hero.style.background =
+        "linear-gradient(135deg,#020617,#0f172a,#020617)";
+      title.style.color = "#f9fafb";
+      sub.style.color = "#c7d2fe";
+      btn.innerHTML = "🌙 Dark";
+      btn.style.background =
+        "linear-gradient(135deg,#dc2626,#b91c1c)";
+    } else {
+      body.style.background = "#f8fafc";
+      body.style.color = "#0f172a";
+      hero.style.background =
+        "linear-gradient(135deg,#ffffff,#e0f2fe)";
+      title.style.color = "#0f172a";     /* FIX UTAMA */
+      sub.style.color = "#334155";      /* FIX UTAMA */
+      btn.innerHTML = "☀️ Light";
+      btn.style.background =
+        "linear-gradient(135deg,#2563eb,#38bdf8)";
+    }
+  }
+</script>
+
+</body>
+</html>
