@@ -9,7 +9,7 @@
 
 <style>
 /* =========================
-   DOWNLOAD PAGE FIX FINAL
+   DOWNLOAD PAGE – FINAL FIX
 ========================= */
 
 body.download-page{
@@ -19,7 +19,9 @@ body.download-page{
   color:#1e293b;
 }
 
-/* main wrap */
+/* =========================
+   MAIN WRAP
+========================= */
 .download-wrap{
   max-width:1100px;
   margin:60px auto;
@@ -29,7 +31,9 @@ body.download-page{
   box-shadow:0 30px 60px rgba(15,23,42,.12);
 }
 
-/* title */
+/* =========================
+   TITLE
+========================= */
 .download-wrap h1{
   text-align:center;
   font-size:2.3rem;
@@ -47,7 +51,9 @@ body.download-page{
   font-size:1.05rem;
 }
 
-/* section */
+/* =========================
+   SECTION
+========================= */
 .section{
   margin-bottom:70px;
 }
@@ -62,88 +68,53 @@ body.download-page{
   gap:10px;
 }
 
-/* grid */
-.file-list{
+/* =========================
+   GRID – ONE SOURCE OF TRUTH
+   (SSW, JLPT, BUKU)
+========================= */
+.download-page .file-list{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
   gap:26px;
 }
 
-/* card */
-.file-item{
-  background:linear-gradient(
-    145deg,
-    #e8f2ff,
-    #f5f9ff
-  );
+/* =========================
+   CARD
+========================= */
+.download-page .file-item{
+  background:linear-gradient(145deg,#e8f2ff,#f5f9ff);
   border-radius:20px;
   padding:28px 26px;
   box-shadow:
     0 20px 40px rgba(30,58,138,.15),
     inset 0 1px 0 rgba(255,255,255,.6);
-  transition:.35s ease;
+  transition:.3s ease;
   position:relative;
   border:1px solid rgba(37,99,235,.15);
-}
-/* ===== JFT GRID ===== */
-.jft-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:14px;
-  margin-top:18px;
+  max-width:280px;
+  margin:0 auto;
 }
 
-.jft-grid a{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:14px 12px;
-  background:linear-gradient(145deg,#eef6ff,#ffffff);
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:.9rem;
-  color:#1e3a8a;
-  border:1px solid rgba(37,99,235,.2);
-  box-shadow:0 8px 20px rgba(30,58,138,.12);
-  transition:.3s;
-  text-align:center;
+.download-page .file-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(30,58,138,.25);
 }
 
-.jft-grid a:hover{
-  background:linear-gradient(145deg,#2563eb,#3b82f6);
-  color:#ffffff;
-  transform:translateY(-4px);
-  box-shadow:0 14px 35px rgba(37,99,235,.35);
-}
-
-.file-item:hover{
-  transform:translateY(-8px);
-  background:linear-gradient(
-    145deg,
-    #dbeafe,
-    #eff6ff
-  );
-  box-shadow:
-    0 30px 60px rgba(30,58,138,.25);
-}
-   
-.file-item::before{
+/* accent bar */
+.download-page .file-item::before{
   content:"";
   position:absolute;
   left:0;
   top:0;
   width:6px;
   height:100%;
-  background:linear-gradient(
-    180deg,
-    #2563eb,
-    #38bdf8
-  );
+  background:linear-gradient(180deg,#2563eb,#38bdf8);
   border-radius:20px 0 0 20px;
 }
 
-/* title in card */
+/* =========================
+   CARD TITLE
+========================= */
 .file-item strong{
   display:block;
   font-size:1.15rem;
@@ -158,7 +129,9 @@ body.download-page{
   margin-bottom:14px;
 }
 
-/* links */
+/* =========================
+   LINK LIST
+========================= */
 .sub-file{
   list-style:none;
   padding:0;
@@ -187,7 +160,42 @@ body.download-page{
   color:#ffffff;
 }
 
-/* CTA */
+/* =========================
+   JFT BUTTON GRID
+========================= */
+.jft-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:18px;
+}
+
+.jft-grid a{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px 12px;
+  background:linear-gradient(145deg,#eef6ff,#ffffff);
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.9rem;
+  color:#1e3a8a;
+  border:1px solid rgba(37,99,235,.2);
+  box-shadow:0 8px 20px rgba(30,58,138,.12);
+  transition:.3s;
+  text-align:center;
+}
+
+.jft-grid a:hover{
+  background:linear-gradient(145deg,#2563eb,#3b82f6);
+  color:#ffffff;
+  transform:translateY(-4px);
+}
+
+/* =========================
+   CTA
+========================= */
 .form-cta{
   text-align:center;
   margin-top:40px;
@@ -208,62 +216,16 @@ body.download-page{
 .form-cta a:hover{
   transform:scale(1.05);
 }
-/* ===== FIX KHUSUS JFT ===== */
-.section:first-of-type .file-item{
-  height:auto;
-  align-self:flex-start;
-}
-   
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width:768px){
   .jft-grid{
     grid-template-columns:1fr;
   }
 }
-/* ===== FORCE JLPT SAME AS SSW ===== */
-.section.jlpt .file-list{
-  display:grid !important;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) !important;
-  gap:26px !important;
-}
-
-.section.jlpt .file-item{
-  max-width:260px;
-  margin:0 auto;
-}
-
-   /* ===== FORCE BUKU SAME AS SSW ===== */
-.section.buku .file-list{
-  display:grid !important;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) !important;
-  gap:26px !important;
-  align-items:start;
-}
-
-.section.buku .file-item{
-  height:auto !important;
-}
-/* ===============================
-   FORCE GRID – OVERRIDE style.css
-   =============================== */
-
-.download-page .file-list{
-  display:grid !important;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) !important;
-  gap:26px !important;
-}
-
-.download-page .file-item{
-  width:auto !important;
-  max-width:100% !important;
-}
-
-/* pastikan section tidak memaksa layout */
-.download-page .section{
-  display:block !important;
-}
-
 </style>
-
 
   <!-- Google tag (gtag.js) -->
 <script async src=https://www.googletagmanager.com/gtag/js?id=G-C5C26QNPKL></script>
