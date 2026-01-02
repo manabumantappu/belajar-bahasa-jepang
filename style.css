@@ -1385,4 +1385,70 @@ body {
   color:#1e3a8a;
   display:block;
 }
+/* ===== SECTION WRAPPER ===== */
+.section{
+  margin-bottom:80px;
+}
+
+/* ===== GRID BESAR (SSW) ===== */
+.grid-ssw{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  align-items:start;
+}
+
+/* ===== GRID KECIL (JFT / JLPT) ===== */
+.grid-small{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+  max-width:900px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:linear-gradient(180deg,#ffffff,#f1f6ff);
+  border-radius:18px;
+  padding:22px 24px;
+  box-shadow:0 12px 28px rgba(30,58,138,.12);
+  position:relative;
+}
+
+/* ACCENT BAR */
+.card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  width:6px;
+  height:100%;
+  background:linear-gradient(180deg,#2563eb,#38bdf8);
+  border-radius:6px 0 0 6px;
+}
+
+/* TITLE */
+.card strong{
+  display:block;
+  font-size:1.05rem;
+  margin-bottom:4px;
+}
+
+/* SUBTITLE */
+.card span{
+  font-size:.85rem;
+  color:#64748b;
+  margin-bottom:14px;
+  display:block;
+}
+
+/* LIST */
+.card ul{
+  padding-left:18px;
+  margin:0;
+}
+.card li{
+  margin:6px 0;
+  font-size:.9rem;
+}
 
