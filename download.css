@@ -1,3 +1,13 @@
+/* LOGO FIX */
+.download-header img,
+.site-logo {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
 /* ===========================
    DOWNLOAD PAGE STYLE
    Author: Web Dasar Bahasa Jepang
