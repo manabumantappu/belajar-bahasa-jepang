@@ -278,14 +278,13 @@ body.download-page{
 
 <body class="download-page">
 
-
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
-<script>
+  <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(r=>r.ok?r.text():'')
-  .then(t=>document.getElementById('header').innerHTML=t)
-  .catch(()=>{});
+  .then(r => r.ok ? r.text() : '')
+  .then(t => document.getElementById('header').innerHTML = t)
+  .catch(() => {});
 </script>
 
 <div class="download-wrap">
