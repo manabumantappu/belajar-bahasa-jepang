@@ -229,7 +229,19 @@ body.download-page{
 .section.jlpt .file-item{
   height:auto !important;
 }
-   
+
+   /* ===== FORCE BUKU SAME AS SSW ===== */
+.section.buku .file-list{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important;
+  gap:26px !important;
+  align-items:start;
+}
+
+.section.buku .file-item{
+  height:auto !important;
+}
+
 </style>
 
 
@@ -452,7 +464,7 @@ JFT-Basic • JLPT • SSW • Buku Bahasa Jepang (sedang proses UPLOAD)
 
 
 <!-- ===== Buku Dasar Jepang ===== -->
-<div class="section">
+<div class="section buku">
 <h2>📗 Buku Dasar Bahasa Jepang</h2>
 <div class="file-list">
 
