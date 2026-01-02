@@ -225,6 +225,37 @@ body.download-page{
     grid-template-columns:1fr;
   }
 }
+
+   /* =========================
+   FINISHING GRID LAYOUT
+========================= */
+
+/* JLPT – 5 kolom desktop */
+.section.jlpt .file-list{
+  grid-template-columns:repeat(5, 1fr);
+}
+
+/* Buku – 3 kolom desktop */
+.section.buku .file-list{
+  grid-template-columns:repeat(3, 1fr);
+}
+
+/* Tablet */
+@media (max-width:1024px){
+  .section.jlpt .file-list,
+  .section.buku .file-list{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width:640px){
+  .section.jlpt .file-list,
+  .section.buku .file-list{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 
 
