@@ -1012,4 +1012,22 @@ th {
 .quiz-link:hover{
   text-decoration:underline;
 }
+.sub-file {
+  margin-top: 6px;
+  padding-left: 18px;
+}
+
+.sub-file li {
+  list-style: none;
+  margin: 4px 0;
+}
+
+.sub-file a {
+  text-decoration: none;
+  color: #0a58ca;
+}
+
+.sub-file a:hover {
+  text-decoration: underline;
+}
 
