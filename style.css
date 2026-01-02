@@ -1191,4 +1191,176 @@ body {
 .footer p {
   font-size: 0.85rem;
 }
+/* ==============================
+   JFT INFO – PROFESSIONAL COLOR
+   ============================== */
+
+/* Reset kecil */
+body {
+  background: linear-gradient(180deg, #f0f7ff, #ffffff);
+}
+
+/* ===== HERO ===== */
+.hero {
+  background:
+    radial-gradient(circle at top right, #ff5252, transparent 40%),
+    radial-gradient(circle at bottom left, #40c4ff, transparent 45%),
+    linear-gradient(135deg, #0d47a1, #1a237e);
+  padding: 100px 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+/* Hero button */
+.hero-btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffeb3b, #ffc107);
+  color: #000;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  margin-top: -60px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  border-radius: 20px;
+  padding: 26px;
+  margin-bottom: 26px;
+  box-shadow:
+    0 10px 25px rgba(13,71,161,0.15),
+    inset 0 0 0 1px rgba(13,71,161,0.05);
+  position: relative;
+}
+
+.card h2 {
+  color: #0d47a1;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist li {
+  font-size: 1.05rem;
+  padding: 6px 0;
+}
+
+.checklist li::before {
+  content: "✔";
+  color: #00c853;
+  font-weight: bold;
+}
+
+/* ===== CTA BOX ===== */
+.cta-box {
+  background:
+    linear-gradient(135deg, #00c853, #64dd17);
+  color: #003300;
+  padding: 40px 20px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0,200,83,0.35);
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #263238, #000);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #000, #263238);
+}
+
+/* ===== ADS SECTION ===== */
+#container-a025500e946b1b3c647de88ab69d003a {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background:
+    linear-gradient(135deg, #0f172a, #020617);
+  color: #94a3b8;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.footer p {
+  margin: 6px 0;
+}
+
+/* ===== MONETIZATION CARD ===== */
+.monetization-outer {
+  background:
+    linear-gradient(135deg, #ff9100, #ff6d00);
+  padding: 35px 20px;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(255,109,0,0.4);
+}
+
+.monetization-inner {
+  max-width: 700px;
+  margin: auto;
+  color: #2e1a00;
+}
+
+.monetization-label {
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.monetization-title {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  font-weight: 900;
+}
+
+.monetization-desc {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
 
