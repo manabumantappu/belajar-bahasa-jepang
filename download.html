@@ -134,6 +134,24 @@
   color:#ffffff;
   transform:translateX(4px);
 }
+/* =========================
+   FIX JARAK HEADER & FRAME
+========================= */
+
+/* rapatkan jarak atas frame pertama */
+.download-page .section:first-of-type{
+  margin-top:0;
+}
+
+/* kecilkan jarak antara subtitle dan frame */
+.subtitle{
+  margin-bottom:30px; /* sebelumnya 60px */
+}
+
+/* rapikan jarak frame dari container */
+.download-wrap{
+  margin-top:40px; /* sebelumnya 60px */
+}
 
 
 </style>
@@ -247,30 +265,39 @@ JFT-Basic • JLPT • SSW • Buku Bahasa Jepang (sedang proses UPLOAD)
  </div>
 </div> 
 <!-- ===== JFT ===== -->
-<div class="file-item">
-  <strong>JFT-Basic</strong>
-  <span>Modul & latihan JFT</span>
+<div class="section">
+  <h2>📝 JFT-Basic</h2>
 
- <ul class="sub-file">
-  <li>
-    <a href="assets/pdf/jft/jft-modul-bab1-8.pdf" target="_blank">
-      📘 Modul JFT Bab 1–8
-    </a>
-  </li>
-  <li>
-    <a href="assets/pdf/jft/jft-soal-latihan.pdf" target="_blank">
-      📝 Kumpulan Soal JFT
-    </a>
-  </li>
-  <li>
-    <a href="assets/pdf/jft/jft-tryout.pdf" target="_blank">
-      🧪 Try Out JFT (PDF)
-    </a>
-  </li>
-</ul>
-</div>
-</div>
+  <div class="file-list jft-list">
+    <div class="file-item">
+      <strong>Modul JFT</strong>
+      <span>Bab 1–8</span>
+      <ul class="sub-file">
+        <li><a href="assets/pdf/jft/jft-modul-bab1-8">📘 Download</a></li>
+      </ul>
+    </div>
 
+    <div class="file-item">
+      <strong>Kumpulan Soal</strong>
+      <span>Latihan JFT</span>
+      <ul class="sub-file">
+        <li><a href="assets/pdf/jft/jft-soal-latihan.pdf">📝 Download</a></li>
+      </ul>
+    </div>
+
+    <div class="file-item">
+      <strong>Try Out JFT</strong>
+      <span>PDF</span>
+      <ul class="sub-file">
+        <li><a href="assets/pdf/jft/jft-tryout.pdf">🧪 Download</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-cta">
+    <a href="jft-info.html">🚀 Latihan JFT Online</a>
+  </div>
+</div>
 
 <div class="form-cta">
   <a href="jft-info.html">
