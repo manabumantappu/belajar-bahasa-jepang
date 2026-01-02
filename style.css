@@ -1074,4 +1074,121 @@ th {
   font-size: 0.85rem;
   color: #666;
 }
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 30px 16px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-inner h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.hero-inner p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 25px;
+  background: #ffca28;
+  color: #000;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-btn:hover {
+  background: #ffd95a;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+/* ===== LIST ===== */
+.checklist {
+  padding-left: 0;
+}
+
+.checklist li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+.checklist li::before {
+  content: "✔";
+  color: #2e7d32;
+  margin-right: 8px;
+}
+
+/* ===== CTA ===== */
+.cta-box {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #2e7d32;
+  color: #fff;
+  padding: 15px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: #1b5e20;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 30px 16px;
+  text-align: center;
+}
+
+.footer-ad {
+  margin-bottom: 15px;
+}
+
+.footer p {
+  font-size: 0.85rem;
+}
 
