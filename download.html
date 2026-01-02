@@ -96,6 +96,21 @@ body.download-page{
   box-shadow:
     0 30px 60px rgba(30,58,138,.25);
 }
+   
+.file-item::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:6px;
+  height:100%;
+  background:linear-gradient(
+    180deg,
+    #2563eb,
+    #38bdf8
+  );
+  border-radius:20px 0 0 20px;
+}
 
 /* title in card */
 .file-item strong{
