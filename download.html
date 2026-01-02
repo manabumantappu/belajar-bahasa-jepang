@@ -241,6 +241,25 @@ body.download-page{
 .section.buku .file-item{
   height:auto !important;
 }
+/* ===============================
+   FORCE GRID – OVERRIDE style.css
+   =============================== */
+
+.download-page .file-list{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important;
+  gap:26px !important;
+}
+
+.download-page .file-item{
+  width:auto !important;
+  max-width:100% !important;
+}
+
+/* pastikan section tidak memaksa layout */
+.download-page .section{
+  display:block !important;
+}
 
 </style>
 
