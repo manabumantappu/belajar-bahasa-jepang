@@ -5,63 +5,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latihan – Belajar Jepang dari Nol</title>
 
-  <meta name="description" content="Manabu Mantappu adalah website belajar bahasa Jepang dari nol untuk pemula. Materi Kana, Aisatsu, Kosakata Dasar, hingga persiapan JFT Basic A2.">
+  <meta name="description" content="Latihan Bahasa Jepang untuk pemula dan persiapan JFT Basic A2 di Manabu Mantappu.">
 
-  <link rel="stylesheet" href="style.css">
+  <!-- =========================
+       CSS LANGSUNG DI FILE
+  ========================== -->
+  <style>
+    /* ===== RESET ===== */
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Segoe UI",system-ui,Arial,sans-serif;
+      background:#f3f6fb;
+      color:#1f2937;
+      line-height:1.6;
+    }
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5C26QNPKL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-C5C26QNPKL');
-  </script>
-  
+    /* ===== HEADER ===== */
+    .top-header{
+      background:linear-gradient(135deg,#1565c0,#1e88e5);
+      padding:28px 16px;
+      color:#fff;
+      text-align:center;
+    }
+    .site-logo{
+      width:72px;
+      margin-bottom:12px;
+    }
+    .logo-text{
+      margin:0;
+      font-size:1.8rem;
+    }
+    .tagline{
+      margin-top:6px;
+      font-size:.95rem;
+      opacity:.9;
+    }
+
+    /* ===== NAV ===== */
+    .main-nav{
+      background:#fff;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+    }
+    .nav-menu{
+      list-style:none;
+      display:flex;
+      justify-content:center;
+      gap:24px;
+      padding:14px 10px;
+      margin:0;
+      flex-wrap:wrap;
+    }
+    .nav-menu a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1f2937;
+    }
+    .nav-menu a.active,
+    .nav-menu a:hover{
+      color:#e53935;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container{
+      max-width:900px;
+      margin:50px auto;
+      background:#fff;
+      padding:42px 32px;
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
+    }
+
+    .section{
+      margin-top:50px;
+      text-align:center;
+    }
+    .section:first-child{margin-top:0}
+
+    .section h2{
+      font-size:1.5rem;
+      color:#0f4c81;
+      margin-bottom:14px;
+    }
+
+    .list-belajar{
+      max-width:520px;
+      margin:24px auto 0;
+      text-align:left;
+      padding-left:22px;
+    }
+    .list-belajar li{
+      margin-bottom:10px;
+    }
+
+    /* ===============================
+       TOMBOL SMARTLINK – SOFT PULSE 10s
+    ================================ */
+    .smartlink-btn{
+      position:relative;
+      display:inline-block;
+      margin-top:22px;
+      padding:16px 40px;
+      font-size:1.05rem;
+      font-weight:700;
+      color:#ffffff;
+      text-decoration:none;
+      border-radius:999px;
+      background:linear-gradient(135deg,#2563eb,#1e40af);
+      box-shadow:
+        0 10px 26px rgba(37,99,235,.45),
+        inset 0 0 0 1px rgba(255,255,255,.25);
+      transition:transform .2s ease, box-shadow .2s ease;
+      animation:smartPulse 10s ease-in-out infinite;
+    }
+
+    .smartlink-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:
+        0 16px 42px rgba(37,99,235,.6),
+        inset 0 0 0 1px rgba(255,255,255,.35);
+    }
+
+    @keyframes smartPulse{
+      0%{
+        box-shadow:
+          0 10px 26px rgba(37,99,235,.45),
+          inset 0 0 0 1px rgba(255,255,255,.25);
+      }
+      5%{
+        box-shadow:
+          0 18px 46px rgba(37,99,235,.65),
+          inset 0 0 0 1px rgba(255,255,255,.35);
+      }
+      10%{
+        box-shadow:
+          0 10px 26px rgba(37,99,235,.45),
+          inset 0 0 0 1px rgba(255,255,255,.25);
+      }
+      100%{
+        box-shadow:
+          0 10px 26px rgba(37,99,235,.45),
+          inset 0 0 0 1px rgba(255,255,255,.25);
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer{
+      text-align:center;
+      padding:36px 16px;
+      font-size:.85rem;
+      color:#64748b;
+    }
+
+    /* ===== MOBILE ===== */
+    @media(max-width:600px){
+      .container{
+        margin:30px 14px;
+        padding:28px 22px;
+      }
+      .smartlink-btn{
+        padding:15px 32px;
+        font-size:1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <!-- ===== HEADER ===== -->
 <header class="top-header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <img src="img/logo.png" alt="Manabu Mantappu Logo" class="site-logo">
-      <div class="header-text">
-        <h1 class="logo-text">Manabu Mantappu</h1>
-        <p class="tagline">Belajar Bahasa Jepang dari Nol untuk Pemula</p>
-      </div>
-    </div>
-  </div>
+  <img src="img/logo.png" alt="Manabu Mantappu" class="site-logo">
+  <h1 class="logo-text">Manabu Mantappu</h1>
+  <p class="tagline">Belajar Bahasa Jepang dari Nol untuk Pemula</p>
 </header>
 
-<!-- ===== NAVBAR ===== -->
+<!-- ===== NAV ===== -->
 <nav class="main-nav">
-  <div class="nav-inner">
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="kana.html">Kana</a></li>
-      <li><a href="aisatsu.html">Aisatsu</a></li>
-      <li><a href="kosakata-dasar.html">Kosakata Dasar</a></li>
-       <li><a href="/belajar-bahasa-jepang/jft/index.html" data-page="jft">JFT</a></li>
-       <li><a href="/belajar-bahasa-jepang/ssw/index.html" data-page="ssw">SSW</a></li>
-       <li><a href="/belajar-bahasa-jepang/download.html" data-page="download">Download</a></li>
-      <li><a href="latihan.html" class="active">Latihan</a></li>
-    </ul>
-  </div>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="kana.html">Kana</a></li>
+    <li><a href="aisatsu.html">Aisatsu</a></li>
+    <li><a href="kosakata-dasar.html">Kosakata Dasar</a></li>
+    <li><a href="latihan.html" class="active">Latihan</a></li>
+  </ul>
 </nav>
 
 <!-- ===== MAIN ===== -->
 <main class="container">
-
-  <section class="section">
-    <h2>Latihan Bahasa Jepang</h2>
-    <p class="intro">
-      Halaman ini berisi latihan tambahan untuk membantu kamu memperkuat
-      pemahaman bahasa Jepang secara bertahap.
-      Cocok untuk pemula maupun persiapan <strong>JFT Basic A2</strong>.
-    </p>
-  </section>
 
   <section class="section">
     <h2>Apa yang Akan Kamu Latih?</h2>
@@ -77,52 +208,31 @@
     <h2>Mulai Latihan</h2>
     <p>Klik tombol di bawah untuk mulai latihan.</p>
 
-   <!-- ===== Smartlink adsterra ===== --> 
-     <div style="margin-top:18px">
-       <a href="https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf"
-   target="_blank"
-   rel="nofollow noopener"
-   class="smartlink-btn">
-   Mulai Latihan</a>
-
-   </div>
+    <a
+      href="https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf"
+      target="_blank"
+      rel="nofollow noopener"
+      class="smartlink-btn"
+    >
+      🚀 Mulai Latihan
+    </a>
   </section>
 
 </main>
 
- <!-- ===== FOOTER ===== -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <p>© 2025 Manabu Mantappu</p>
   <p><em>Selamat belajar がんばりましょう！！！</em></p>
 </footer>
-  
-  <!-- Native Banner Adsterra -->
-  <div style="margin:40px auto;max-width:1000px;text-align:center;">
-<script async="async" data-cfasync="false" src="https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/invoke.js"></script>
-<div id="container-a025500e946b1b3c647de88ab69d003a"></div>
 
-<div style="text-align:center; margin:30px 0;">
-  <section class="monetization-section">
-  <div class="monetization-outer">
-    <div class="monetization-inner">
-
-      <p class="monetization-label">Sponsor</p>
-
-      <h3 class="monetization-title">
-        Ingin Mulai Menghasilkan dari Website?
-      </h3>
-
-      <p class="monetization-desc">
-        Pelajari cara mendapatkan dollar dari website menggunakan iklan dan
-        affiliate, cocok untuk pemula tanpa modal besar.
-      </p>
-  <a href="earn.html"
-     style="display:inline-block;padding:12px 20px;
-            background:#00e676;color:#000;
-            font-weight:bold;border-radius:10px;
-            text-decoration:none;">
-     💰 Cara Dapat Dollar dari Website
-  </a>
+<!-- ===== NATIVE BANNER ADSTERRA ===== -->
+<div style="margin:40px auto;max-width:1000px;text-align:center;">
+  <script async="async" data-cfasync="false"
+    src="https://pl28274097.effectivegatecpm.com/a025500e946b1b3c647de88ab69d003a/invoke.js">
+  </script>
+  <div id="container-a025500e946b1b3c647de88ab69d003a"></div>
+</div>
 
 </body>
 </html>
