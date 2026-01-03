@@ -17,6 +17,82 @@
     gtag('js', new Date());
     gtag('config', 'G-C5C26QNPKL');
   </script>
+  /* =========================
+   TOMBOL MULAI LATIHAN – PREMIUM
+========================= */
+.btn-start{
+  position: relative;
+  display: inline-block;
+  margin-top: 18px;
+  padding: 16px 38px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1e40af,
+    #2563eb
+  );
+  background-size: 200% 200%;
+  box-shadow:
+    0 10px 30px rgba(37,99,235,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.25);
+  animation: gradientMove 4s ease infinite;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Efek hover */
+.btn-start:hover{
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 40px rgba(37,99,235,0.55),
+    inset 0 0 0 1px rgba(255,255,255,0.35);
+}
+
+/* Kilau berjalan */
+.btn-start::before{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-75%;
+  width:50%;
+  height:200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.45),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shine 3.5s infinite;
+}
+
+/* Animasi gradient */
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Animasi kilau */
+@keyframes shine{
+  0%{left:-75%}
+  60%{left:125%}
+  100%{left:125%}
+}
+
+/* Mobile optimization */
+@media(max-width:600px){
+  .btn-start{
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+}
+
 </head>
 
 <body>
