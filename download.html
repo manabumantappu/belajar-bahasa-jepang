@@ -306,6 +306,56 @@
   color:#475569;            /* abu profesional */
   white-space:nowrap;       /* tetap di samping, tidak turun */
 }
+   .download-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  margin-top:30px;
+}
+
+.download-card{
+  background:#f8fbff;
+  border-radius:18px;
+  padding:24px 20px;
+  text-align:center;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+
+.download-card h3{
+  margin-bottom:4px;
+  color:#1e3a8a;
+}
+
+.subtitle{
+  font-size:.9rem;
+  color:#64748b;
+  margin-bottom:16px;
+}
+
+.module-item{
+  display:block;
+  background:#ffffff;
+  padding:10px 14px;
+  margin:8px 0;
+  border-radius:12px;
+  text-decoration:none;
+  color:#1e293b;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
+  transition:.25s;
+}
+
+.module-item:hover{
+  background:#e0f2fe;
+  transform:translateY(-2px);
+}
+
+.download-all{
+  display:inline-block;
+  margin-top:14px;
+  font-weight:600;
+  color:#0f172a;
+}
+
 </style>
 
   <!-- Google tag (gtag.js) -->
@@ -477,29 +527,20 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
   <h3>SSW Konstruksi</h3>
   <p class="subtitle">Konstruksi & bangunan</p>
 
-  <a href="#" class="module-item">
-    📄 Modul 1
-  </a>
-  <a href="#" class="module-item">
-    📄 Modul 2
-  </a>
-  <a href="#" class="module-item">
-    📄 Modul 3
-  </a>
-  <a href="#" class="module-item">
-    📄 Modul 4
-  </a>
-  <a href="#" class="module-item">
-    📄 Modul 5
-  </a>
-
-  <a href="https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf"
+  <li><a href="assets/pdf/ssw/konstruksi/konstruksi-01.pdf" target="_blank">📄 Modul 1<span class="uploading">（準備中）</span></a></li>
+  <li><a href="assets/pdf/ssw/konstruksi/konstruksi-02.pdf" target="_blank">📄 Modul 2<span class="uploading">（準備中）</span></a></li>
+  <li><a href="assets/pdf/ssw/konstruksi/konstruksi-03.pdf" target="_blank">📄 Modul 3<span class="uploading">（準備中）</span></a></li>
+  <li><a href="assets/pdf/ssw/konstruksi/konstruksi-04.pdf" target="_blank">📄 Modul 4<span class="uploading">（準備中）</span></a></li>
+  <li><a href="assets/pdf/ssw/konstruksi/konstruksi-05.pdf" target="_blank">📄 Modul 5<span class="uploading">（準備中）</span></a></li>
+         <!-- ===== Smartlink adsterra ===== --> 
+       <a href="https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf"
    target="_blank"
    rel="nofollow noopener"
    class="smartlink-btn">
    📥 Download All Materi</a>
-  </ul>
-</div>
+    </ul>
+  </div>
+  
   
  </div>
 </div> 
