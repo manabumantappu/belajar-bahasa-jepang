@@ -404,7 +404,18 @@
   width:clamp(180px, 28vw, 260px);
   height:auto;
 }
+.menu-image.dual-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  padding:24px 20px;
+}
 
+.menu-image.dual-logo img{
+  height:70px;     /* seragam */
+  width:auto;
+}
 <!========= akhir logo ssw =========!>
    
 </style>
@@ -549,9 +560,10 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
   </div>
   
   <div class="file-item">
-   <div class="menu-image">
-    <img src="img/ssw-jidousha.png" alt="SSW Jidousha">
-  </div>
+  <div class="menu-image dual-logo">
+  <img src="img/jidousha.png" alt="JIDOUSHA">
+  <img src="img/jidousha2.png" alt="JIDOUSHA2">
+</div>
   <strong>SSW Jidōsha Seibi</strong>
   <span>Mekanik kendaraan</span>
   <ul class="sub-file">
