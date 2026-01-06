@@ -356,7 +356,10 @@
   color:#0f172a;
 }
 <!======= LOGO SSW  ======!>
-   .file-item{
+/* ===============================
+   CARD
+================================ */
+.file-item{
   background:#f4f8ff;
   border-radius:18px;
   padding:20px;
@@ -364,101 +367,96 @@
   text-align:center;
 }
 
-/* IMAGE */
-.menu-image{
-  width:100%;
-  margin-bottom:12px;
-}
-
-/* IMAGE HEADER MENU */
-.menu-image img{
-  width:220px;        /* ⬅️ BESAR & JELAS */
-  max-width:100%;
-  height:auto;          /* jaga proporsi */
-  margin:0 auto 18px;
-  display:block;
-}
-
-/* TITLE */
-.file-item strong{
-  display:block;
-  font-size:18px;
-  color:#1e3a8a;
-  margin-top:6px;
-}
-
-.file-item span{
-  display:block;
-  font-size:13px;
-  color:#64748b;
-  margin-bottom:14px;
-}
-<!====== background logo ssw ========!>   
+/* ===============================
+   LOGO CONTAINER
+================================ */
 .menu-image{
   background:linear-gradient(180deg,#e0ecff,#f8fbff);
   padding:18px;
   border-radius:14px;
   margin-bottom:12px;
-}
-   .menu-image img{
-  width:clamp(180px, 28vw, 260px);
-  height:auto;
-}
-/* CONTAINER 2 LOGO */
-.menu-image.dual-logo{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:32px;              /* jarak antar logo */
-  padding:26px 20px;
-  margin-bottom:16px;
+  text-align:center;
 }
 
-/* LOGO */
-.menu-image.dual-logo img{
-  height:90px;           /* ⬅️ BESAR & JELAS */
+/* DEFAULT LOGO (SSW UMUM) */
+.menu-image img{
+  height:150px;        /* ⬅️ KUNCI DI HEIGHT */
   width:auto;
   max-width:100%;
+  display:block;
+  margin:0 auto;
   object-fit:contain;
 }
-@media (max-width:600px){
-  .menu-image.dual-logo img:first-child{
-    height:90px;
-  }
-  .menu-image.dual-logo img:last-child{
-    height:60px;
-  }
-/* JUDUL SSW */
-.file-item strong{
-  display:block;
-  margin-top:-6px;      /* ⬅️ NAIKKAN SEDIKIT */
-  margin-bottom:4px;
-  font-size:18px;
-  color:#1e3a8a;
+
+/* ===============================
+   2 LOGO (ATAS – BAWAH)
+================================ */
+.menu-image.dual-logo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
 }
 
-/* SUBTITLE */
+.menu-image.dual-logo img:first-child{
+  height:110px;
+}
+
+.menu-image.dual-logo img:last-child{
+  height:70px;
+  opacity:.9;
+}
+
+/* ===============================
+   JUDUL & SUBTITLE
+================================ */
+.file-item strong{
+  display:block;
+  font-size:18px;
+  color:#1e3a8a;
+  margin-top:-6px;
+  margin-bottom:4px;
+}
+
 .file-item span{
   display:block;
-  margin-bottom:14px;
   font-size:13px;
   color:#64748b;
+  margin-bottom:14px;
 }
-/* LIST MODUL */
+
+/* ===============================
+   LIST MODUL
+================================ */
 .file-list li{
   margin-bottom:10px;
   box-shadow:0 4px 10px rgba(0,0,0,.06);
 }
 
-/* ITEM TERAKHIR (MODUL 5) */
 .file-list li:last-child{
-  margin-bottom:18px;   /* ⬅️ JARAK KE BAWAH */
+  margin-bottom:18px;
 }
-/* LOGO PERHOTELAN – LEBIH KECIL */
+
+/* ===============================
+   KHUSUS PERHOTELAN
+================================ */
 .ssw-hotel .menu-image img{
-  height:70px;      /* ⬅️ perkecil dari sebelumnya */
-  width:auto;
+  height:90px !important;   /* ⬅️ PASTI KECIL */
 }
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width:600px){
+  .menu-image img{
+    height:120px;
+  }
+
+  .ssw-hotel .menu-image img{
+    height:70px;
+  }
+}
+
 
 <!========= akhir logo ssw =========!>
    
