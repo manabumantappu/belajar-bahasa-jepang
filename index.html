@@ -36,16 +36,27 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
     const toggle = document.getElementById("darkToggle");
     if (!toggle) return;
 
+    // 🔥 APPLY DARK MODE DARI STORAGE
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      toggle.innerHTML = "☀ Light";
+    }
+
+    // 🔥 TOGGLE + SIMPAN
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
 
-      // ubah teks tombol
-      toggle.innerHTML = document.body.classList.contains("dark")
-        ? "☀ Light"
-        : "🌙 Dark";
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        toggle.innerHTML = "☀ Light";
+      } else {
+        localStorage.setItem("theme", "light");
+        toggle.innerHTML = "🌙 Dark";
+      }
     });
   });
 </script>
+
 
   
  <!-- ===== DONASI ===== -->
