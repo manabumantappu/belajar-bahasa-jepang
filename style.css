@@ -1475,3 +1475,20 @@ body {
   }
 }
 
+ /* ======= DARK MODE ======= */  
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark .container,
+body.dark .card,
+body.dark .donation-box {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+body.dark .donate-section h2 {
+  color: #fca5a5;
+}
+   
