@@ -1487,5 +1487,23 @@ body.dark footer {
 body.dark a {
   color: #93c5fd;
 }
+/* ===== DARK MODE : NAVBAR & HEADER ===== */
+body.dark .top-header {
+  background: linear-gradient(135deg,#020617,#020617);
+}
+
+body.dark .main-nav {
+  background: #020617;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark .nav-menu li a {
+  color: #e5e7eb;
+}
+
+body.dark .nav-menu li a:hover,
+body.dark .nav-menu li a.active {
+  color: #93c5fd;
+}
 
    
