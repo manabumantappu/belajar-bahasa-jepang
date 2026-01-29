@@ -23,6 +23,18 @@
 </head>
 
 <body>
+ 
+<!-- ===== HEADER ===== -->
+<div id="header"></div>
+
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+
  <!-- ===== DONASI ===== -->
 <div id="donasi" class="section donate-section">
   <h2>❤️ Dukung Pengembangan Website</h2>
@@ -46,17 +58,6 @@
   </p>
 </div>
   
-<!-- ===== HEADER ===== -->
-<div id="header"></div>
-
-<script>
-fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('header').innerHTML = data;
-  });
-</script>
-
 <!-- ===== MAIN CONTENT ===== -->
 <main class="container">
 
