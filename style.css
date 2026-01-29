@@ -1148,11 +1148,6 @@ body {
    JFT INFO – PROFESSIONAL COLOR
    ============================== */
 
-/* Reset kecil */
-body {
-  background: linear-gradient(180deg, #f0f7ff, #ffffff);
-}
-
 /* ===== HERO ===== */
 .hero {
   background:
