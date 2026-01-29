@@ -134,14 +134,6 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
     });
   });
 </script>
-
-<script>
-fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('header').innerHTML = data;
-  });
-</script>
   
 <!-- ===== DONASI ===== -->
 <div id="donasi" class="section donate-section">
@@ -165,6 +157,16 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
     Terima kasih 🙏 <span>がんばりましょう！</span>
   </p>
 </div>
+  
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+  
+
 
 <!-- ===== HERO ===== -->
 <section class="jft-hero">
