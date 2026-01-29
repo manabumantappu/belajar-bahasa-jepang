@@ -33,15 +33,20 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
   .then(data => {
     document.getElementById('header').innerHTML = data;
 
-    // 🔥 DARK MODE SETELAH HEADER ADA
     const toggle = document.getElementById("darkToggle");
-    if (toggle) {
-      toggle.onclick = () => {
-        document.body.classList.toggle("dark");
-      };
-    }
+    if (!toggle) return;
+
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+
+      // ubah teks tombol
+      toggle.innerHTML = document.body.classList.contains("dark")
+        ? "☀ Light"
+        : "🌙 Dark";
+    });
   });
 </script>
+
   
  <!-- ===== DONASI ===== -->
 <div id="donasi" class="section donate-section">
