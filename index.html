@@ -26,6 +26,23 @@
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
 
+<!-- ===== DARK MODE SCRIPT DIBAWAH HEADER ===== -->
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+
+    // 🔥 DARK MODE SETELAH HEADER ADA
+    const toggle = document.getElementById("darkToggle");
+    if (toggle) {
+      toggle.onclick = () => {
+        document.body.classList.toggle("dark");
+      };
+    }
+  });
+</script>
+  
 <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
   .then(res => res.text())
@@ -56,14 +73,6 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
   </p>
 </div>
 
-   
-  <!-- ===== DARK MODE SCRIPT ===== -->
-  <script>
-    const toggle = document.getElementById("darkToggle");
-    toggle.onclick = () => {
-      document.body.classList.toggle("dark");
-    };
-  </script>
   
 <!-- ===== MAIN CONTENT ===== -->
 <main class="container">
