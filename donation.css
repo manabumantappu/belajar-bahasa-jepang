@@ -3,7 +3,7 @@
 ========================= */
 .donate-section{
   text-align:center;
-  background:linear-gradient(180deg,#fff5f7,#ffffff);
+  background:transparent; /* ← INI YANG DIUBAH */
 }
 
 .donate-section h2{
