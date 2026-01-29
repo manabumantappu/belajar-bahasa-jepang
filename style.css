@@ -1475,7 +1475,7 @@ body {
   }
 }
 
- /* ======= DARK MODE ======= */  
+/* ===== DARK MODE ===== */
 body.dark {
   background: #0f172a;
   color: #e5e7eb;
@@ -1483,12 +1483,14 @@ body.dark {
 
 body.dark .container,
 body.dark .card,
-body.dark .donation-box {
+body.dark .donation-box,
+body.dark footer {
   background: #111827;
   color: #e5e7eb;
 }
 
-body.dark .donate-section h2 {
-  color: #fca5a5;
+body.dark a {
+  color: #93c5fd;
 }
+
    
