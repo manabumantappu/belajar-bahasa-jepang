@@ -1532,5 +1532,40 @@ body.dark .dark-toggle {
   color: #e5e7eb;
   border: 1px solid #334155;
 }
+/* ===== DARK MODE GLOBAL ===== */
+html.dark {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+/* SECTION */
+html.dark .section,
+html.dark .container {
+  background-color: #121212;
+}
+
+/* CARD */
+html.dark .card {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+/* HEADER & FOOTER */
+html.dark header,
+html.dark .top-header,
+html.dark footer {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* LINK */
+html.dark a {
+  color: #90caf9;
+}
 
    
