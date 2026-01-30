@@ -34,19 +34,20 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
     document.getElementById('header').innerHTML = data;
 
     const toggle = document.getElementById("darkToggle");
+    const root = document.documentElement; // 🔥 <html>
+
     if (!toggle) return;
 
-    // 🔥 APPLY DARK MODE DARI STORAGE
+    // APPLY SAAT LOAD
     if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
+      root.classList.add("dark");
       toggle.innerHTML = "☀ Light";
     }
 
-    // 🔥 TOGGLE + SIMPAN
     toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
+      root.classList.toggle("dark");
 
-      if (document.body.classList.contains("dark")) {
+      if (root.classList.contains("dark")) {
         localStorage.setItem("theme", "dark");
         toggle.innerHTML = "☀ Light";
       } else {
@@ -56,6 +57,7 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
     });
   });
 </script>
+
 
 
   
