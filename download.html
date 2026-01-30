@@ -1017,7 +1017,30 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
 
   </div>
 </div>
+<!-- TOMBOL CHAT -->
+<button id="openDialog" class="help-btn">💬 Bantuan</button>
 
+<!-- DIALOG -->
+<div id="dialogOverlay" class="dialog-overlay">
+  <div class="dialog-box">
+    <button class="close-btn" onclick="closeDialog()">✕</button>
+
+    <h2>Halo Sahabat WJ 👋</h2>
+    <p>
+      Butuh bantuan?<br>
+      Jangan sungkan untuk menghubungi kami ya 😊
+    </p>
+
+    <div class="dialog-actions">
+      <a href="https://wa.me/628xxxxxxxxx" target="_blank" class="btn wa">
+        WhatsApp
+      </a>
+      <a href="mailto:admin@manabumantappu.com" class="btn email">
+        Email
+      </a>
+    </div>
+  </div>
+</div>
   
 
  <!-- ===== FOOTER ===== -->
@@ -1055,31 +1078,8 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
   </a>
 </div>
      
- <!-- TOMBOL CHAT -->
-<button id="openDialog" class="help-btn">💬 Bantuan</button>
-
-<!-- DIALOG -->
-<div id="dialogOverlay" class="dialog-overlay">
-  <div class="dialog-box">
-    <button class="close-btn" onclick="closeDialog()">✕</button>
-
-    <h2>Halo Sahabat WJ 👋</h2>
-    <p>
-      Butuh bantuan?<br>
-      Jangan sungkan untuk menghubungi kami ya 😊
-    </p>
-
-    <div class="dialog-actions">
-      <a href="https://wa.me/628xxxxxxxxx" target="_blank" class="btn wa">
-        WhatsApp
-      </a>
-      <a href="mailto:admin@manabumantappu.com" class="btn email">
-        Email
-      </a>
-    </div>
-  </div>
-</div>
-
+ 
+<!-- TOMBOL CHAT -->
      <script>
   const overlay = document.getElementById("dialogOverlay");
   const openBtn = document.getElementById("openDialog");
