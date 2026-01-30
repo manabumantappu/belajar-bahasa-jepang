@@ -1567,5 +1567,42 @@ html.dark footer {
 html.dark a {
   color: #90caf9;
 }
+/* =====================
+   DARK MODE – HEADER & NAV
+===================== */
+html.dark .top-header {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+}
+
+html.dark .header-text .logo-text {
+  color: #ffffff;
+}
+
+html.dark .header-text .tagline {
+  color: #cccccc;
+}
+
+/* NAV */
+html.dark .main-nav {
+  background-color: #121212;
+  border-top: 1px solid #333;
+}
+
+html.dark .nav-menu a {
+  color: #e0e0e0;
+}
+
+html.dark .nav-menu a:hover {
+  color: #90caf9;
+}
+
+/* BUTTON DARK */
+html.dark .dark-toggle {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
 
    
