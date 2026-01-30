@@ -26,41 +26,7 @@
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
 
-<!-- ===== DARK MODE SCRIPT DIBAWAH HEADER ===== -->
-<script>
-fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('header').innerHTML = data;
 
-    const toggle = document.getElementById("darkToggle");
-    const root = document.documentElement; // 🔥 <html>
-
-    if (!toggle) return;
-
-    // APPLY SAAT LOAD
-    if (localStorage.getItem("theme") === "dark") {
-      root.classList.add("dark");
-      toggle.innerHTML = "☀ Light";
-    }
-
-    toggle.addEventListener("click", () => {
-      root.classList.toggle("dark");
-
-      if (root.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-        toggle.innerHTML = "☀ Light";
-      } else {
-        localStorage.setItem("theme", "light");
-        toggle.innerHTML = "🌙 Dark";
-      }
-    });
-  });
-</script>
-
-
-
-  
  <!-- ===== DONASI ===== -->
 <div id="donasi" class="section donate-section">
   <h2>❤️ Dukung Pengembangan Website</h2>
