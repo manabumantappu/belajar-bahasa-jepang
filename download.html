@@ -1079,7 +1079,20 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
     </div>
   </div>
 </div>
-   
+
+     <script>
+  const overlay = document.getElementById("dialogOverlay");
+  const openBtn = document.getElementById("openDialog");
+
+  openBtn.addEventListener("click", function () {
+    overlay.style.display = "block";
+  });
+
+  function closeDialog() {
+    overlay.style.display = "none";
+  }
+</script>
+
 </body>
 </html>
 
