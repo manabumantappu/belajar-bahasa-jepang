@@ -193,7 +193,20 @@ function showResult(){
         ? "<span class='correct'>Lulus level A2 👍</span>"
         : "<span class='wrong'>Perlu latihan lagi 💪</span>"}
       <br><br>
-      <button onclick="location.reload()">Ulangi Tryout</button>
+
+      <button onclick="location.reload()">
+        🔄 Ulangi Tryout
+      </button>
+
+      <br><br>
+
+      <button onclick="
+        if(confirm('Keluar dari tryout dan kembali ke menu?')){
+          location.href='tryout-menu.html';
+        }
+      ">
+        ⬅ Kembali ke Menu
+      </button>
     </div>
   `;
 }
