@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu Try Out JFT</title>
 
+  <link rel="stylesheet" href="/ssw-manabu-mantappu/style.css">
 <style>
 body{
   font-family:Arial, sans-serif;
@@ -92,7 +93,35 @@ h1{
 </head>
 
 <body>
+<!--===== HEADER SERAGAM PANGGIL DARI HEADER.HTML ===== -->
 
+<div id="site-header"></div>
+
+ 
+
+<script>
+
+fetch("/ssw-manabu-mantappu/header.html")
+
+  .then(res => {
+
+    if (!res.ok) throw new Error("header.html tidak ditemukan");
+
+    return res.text();
+
+  })
+
+  .then(html => {
+
+    document.getElementById("site-header").innerHTML = html;
+
+  })
+
+  .catch(err => console.error(err));
+
+</script>
+
+  
 <div class="container">
 
   <h1>🧪 Menu Try Out JFT</h1>
