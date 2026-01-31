@@ -140,16 +140,273 @@ body{
    ringkas tapi representatif
 ================================ */
 const questions = [
-{q:"Hiragana あ dibaca …",c:["a","i","u","e"],a:0},
-{q:"Katakana テレビ artinya …",c:["radio","televisi","telepon","kamera"],a:1},
-{q:"たべます artinya …",c:["minum","makan","pergi","melihat"],a:1},
-{q:"のみます artinya …",c:["makan","minum","datang","tidur"],a:1},
-{q:"いきます artinya …",c:["datang","pulang","pergi","belajar"],a:2},
-{q:"これは ほん です menggunakan pola …",c:["～ます","～です","～ません","～でした"],a:1},
-{q:"Partikel objek langsung adalah …",c:["は","が","を","に"],a:2},
-{q:"7じ＿おきます partikel tepat …",c:["を","で","に","が"],a:2},
-{q:"がっこう＿べんきょうします",c:["に","を","で","が"],a:2},
-{q:"おはようございます digunakan saat …",c:["pagi","siang","sore","malam"],a:0},
+{q:"まいにち にほんご を べんきょうしています artinya …",
+ c:["Saya belajar bahasa Jepang setiap hari","Saya akan belajar bahasa Jepang","Saya sudah belajar bahasa Jepang","Saya tidak belajar bahasa Jepang"],
+ a:0},
+
+{q:"きのう えいが を みました artinya …",
+ c:["Saya menonton film besok","Saya sedang menonton film","Saya menonton film kemarin","Saya tidak menonton film"],
+ a:2},
+
+{q:"いま あめ が ふっています artinya …",
+ c:["Hujan akan turun","Sedang hujan","Hujan sudah berhenti","Tidak hujan"],
+ a:1},
+
+{q:"にほん に いった こと が あります artinya …",
+ c:["Saya akan ke Jepang","Saya sedang di Jepang","Saya pernah pergi ke Jepang","Saya tidak pernah ke Jepang"],
+ a:2},
+
+{q:"あたま が いたい から やすみます artinya …",
+ c:["Saya istirahat tetapi sakit kepala","Saya istirahat karena sakit kepala","Saya sakit kepala sesudah istirahat","Saya ingin istirahat"],
+ a:1},
+
+{q:"えき まで あるいて いきます artinya …",
+ c:["Pergi ke stasiun dengan berjalan kaki","Pergi dari stasiun","Berjalan di stasiun","Datang ke stasiun"],
+ a:0},
+
+{q:"しごと が おわって から かえります artinya …",
+ c:["Pulang sebelum kerja selesai","Pulang ketika bekerja","Pulang setelah pekerjaan selesai","Pulang karena pekerjaan"],
+ a:2},
+
+{q:"この へや は しずか です artinya …",
+ c:["Kamar ini kecil","Kamar ini bersih","Kamar ini tenang","Kamar ini sempit"],
+ a:2},
+
+{q:"この くすり を のまないで ください artinya …",
+ c:["Silakan minum obat ini","Tolong jangan minum obat ini","Minumlah obat ini","Saya ingin minum obat"],
+ a:1},
+
+{q:"らいしゅう しゅっちょう します artinya …",
+ c:["Saya sedang dinas","Saya dinas minggu lalu","Saya akan dinas minggu depan","Saya tidak dinas"],
+ a:2},
+
+{q:"でんしゃ で かいしゃ に いきます partikel で menunjukkan …",
+ c:["tujuan","alat / cara","waktu","kepemilikan"],
+ a:1},
+
+{q:"ここ に くるま を とめて も いいですか artinya …",
+ c:["Apakah boleh memarkir mobil di sini?","Apakah mobil ada di sini?","Apakah mobil ini milik Anda?","Bolehkah saya membeli mobil?"],
+ a:0},
+
+{q:"あつい から まど を あけます artinya …",
+ c:["Saya membuka jendela walaupun panas","Saya membuka jendela setelah panas","Karena panas, saya membuka jendela","Saya membuka jendela lalu panas"],
+ a:2},
+
+{q:"にほんご が だんだん わかる ように なりました artinya …",
+ c:["Bahasa Jepang sulit","Saya mulai memahami bahasa Jepang sedikit demi sedikit",
+    "Saya akan belajar bahasa Jepang","Saya lupa bahasa Jepang"],
+ a:1},
+
+{q:"この しごと は だれ でも できます artinya …",
+ c:["Pekerjaan ini sulit","Pekerjaan ini hanya untuk orang Jepang",
+    "Siapa pun bisa melakukan pekerjaan ini","Pekerjaan ini tidak bisa dilakukan"],
+ a:2}
+{q:"きょう は いそがしい から ざんぎょう します artinya …",
+ c:["Hari ini libur","Hari ini lembur karena sibuk","Hari ini pulang cepat","Hari ini tidak bekerja"],
+ a:1},
+
+{q:"あした は やすみ なので かいもの に いきます artinya …",
+ c:["Besok kerja","Besok istirahat jadi pergi belanja","Besok sakit","Besok lembur"],
+ a:1},
+
+{q:"しごと が おわって から でんわ して ください artinya …",
+ c:["Telepon sebelum kerja","Telepon saat kerja",
+    "Telepon setelah pekerjaan selesai","Tidak usah menelepon"],
+ a:2},
+
+{q:"この きかい は あぶない です から さわらないで ください artinya …",
+ c:["Mesin ini mudah","Silakan sentuh mesin ini",
+    "Mesin ini berbahaya jadi jangan disentuh","Mesin ini rusak"],
+ a:2},
+
+{q:"10じ まで に きて ください partikel に menunjukkan …",
+ c:["tempat","batas waktu","alat","alasan"],
+ a:1},
+
+{q:"きのう は びょうき で かいしゃ を やすみました artinya …",
+ c:["Kemarin libur karena sakit","Kemarin bekerja","Kemarin lembur","Kemarin cuti liburan"],
+ a:0},
+
+{q:"まいあさ 6じ に おきて しごと に いきます artinya …",
+ c:["Pergi kerja malam","Bangun jam 6 setiap pagi dan pergi kerja",
+    "Bangun siang","Pergi kerja sore"],
+ a:1},
+
+{q:"この へや で しごと を します partikel で menunjukkan …",
+ c:["tujuan","alat","tempat kegiatan","waktu"],
+ a:2},
+
+{q:"しゅくだい が おわった ら やすんで も いいです artinya …",
+ c:["Tidak boleh istirahat",
+    "Boleh istirahat setelah tugas selesai",
+    "Istirahat sebelum tugas","Harus bekerja terus"],
+ a:1},
+
+{q:"あぶない から ヘルメット を かぶって ください artinya …",
+ c:["Lepas helm","Helm tidak perlu",
+    "Pakai helm karena berbahaya","Helm rusak"],
+ a:2},
+
+{q:"この しごと は ちょっと むずかしい です artinya …",
+ c:["Pekerjaan ini sangat mudah","Pekerjaan ini sedikit sulit",
+    "Pekerjaan ini menyenangkan","Pekerjaan ini berbahaya"],
+ a:1},
+
+{q:"らいげつ くに に かえります artinya …",
+ c:["Pulang minggu lalu","Pulang bulan ini",
+    "Pulang ke negara asal bulan depan","Tidak pulang"],
+ a:2},
+
+{q:"にほんご が まだ じょうず じゃ ありません artinya …",
+ c:["Bahasa Jepang sangat bagus",
+    "Bahasa Jepang belum terlalu lancar",
+    "Tidak bisa bahasa Jepang sama sekali",
+    "Sudah fasih"],
+ a:1},
+
+{q:"しごと が おおい とき は たいへん です artinya …",
+ c:["Saat pekerjaan banyak, berat",
+    "Pekerjaan sedikit",
+    "Selalu santai",
+    "Tidak bekerja"],
+ a:0},
+
+{q:"わからない こと が あったら きいて ください artinya …",
+ c:["Jangan bertanya",
+    "Kalau ada yang tidak mengerti, silakan bertanya",
+    "Kalau mengerti, diam",
+    "Tanya sebelum bekerja"],
+ a:1}
+{q:"毎日 工場で 仕事を しています artinya …",
+ c:["Saya bekerja di pabrik setiap hari","Saya libur setiap hari",
+    "Saya bekerja di kantor","Saya tidak bekerja"],
+ a:0},
+
+{q:"来週 会社を 休みます artinya …",
+ c:["Libur minggu lalu","Libur minggu ini",
+    "Libur minggu depan","Masuk kerja minggu depan"],
+ a:2},
+
+{q:"仕事が 終わったら 帰って ください artinya …",
+ c:["Pulang sebelum kerja selesai",
+    "Pulang setelah kerja selesai",
+    "Jangan pulang","Pulang saat kerja"],
+ a:1},
+
+{q:"今日は 雨です から 外に 出ません artinya …",
+ c:["Hari ini hujan jadi tidak keluar",
+    "Hari ini cerah",
+    "Hari ini keluar karena hujan",
+    "Hari ini bekerja di luar"],
+ a:0},
+
+{q:"朝 6時に 起きます artinya …",
+ c:["Bangun jam 6 pagi","Tidur jam 6 pagi",
+    "Pulang jam 6","Kerja jam 6 malam"],
+ a:0},
+
+{q:"この 部屋は とても 静かです artinya …",
+ c:["Kamar ini ramai","Kamar ini bersih",
+    "Kamar ini sangat tenang","Kamar ini sempit"],
+ a:2},
+
+{q:"昼ごはんの あとで 会議が あります artinya …",
+ c:["Rapat sebelum makan siang",
+    "Rapat saat makan siang",
+    "Rapat setelah makan siang",
+    "Tidak ada rapat"],
+ a:2},
+
+{q:"外国人の 社員が 多いです artinya …",
+ c:["Banyak karyawan Jepang",
+    "Banyak karyawan asing",
+    "Sedikit karyawan",
+    "Tidak ada karyawan"],
+ a:1},
+
+{q:"安全の ために ヘルメットを かぶります artinya …",
+ c:["Lepas helm",
+    "Memakai helm demi keselamatan",
+    "Helm tidak perlu",
+    "Helm rusak"],
+ a:1},
+
+{q:"この 作業は 一人で できます artinya …",
+ c:["Pekerjaan ini sulit",
+    "Pekerjaan ini harus berdua",
+    "Pekerjaan ini bisa dilakukan sendiri",
+    "Pekerjaan ini berbahaya"],
+ a:2},
+
+{q:"時間が ありません から いそぎます artinya …",
+ c:["Santai karena ada waktu",
+    "Karena tidak ada waktu, saya terburu-buru",
+    "Tidak bekerja",
+    "Pulang cepat"],
+ a:1},
+
+{q:"先月 日本へ 行きました artinya …",
+ c:["Pergi ke Jepang bulan ini",
+    "Pergi ke Jepang bulan depan",
+    "Pergi ke Jepang bulan lalu",
+    "Belum pernah ke Jepang"],
+ a:2},
+
+{q:"この 仕事は だれでも できます artinya …",
+ c:["Pekerjaan ini sulit",
+    "Hanya orang Jepang",
+    "Siapa pun bisa melakukan pekerjaan ini",
+    "Tidak bisa dilakukan"],
+ a:2},
+
+{q:"熱が あります から 会社を 休みます artinya …",
+ c:["Masuk kerja walaupun demam",
+    "Libur karena demam",
+    "Libur karena hujan",
+    "Lembur"],
+ a:1},
+
+{q:"入口で 靴を ぬいで ください artinya …",
+ c:["Pakai sepatu",
+    "Beli sepatu",
+    "Lepas sepatu di pintu masuk",
+    "Cuci sepatu"],
+ a:2},
+
+{q:"この 書類を コピーして ください artinya …",
+ c:["Buang dokumen ini",
+    "Fotokopi dokumen ini",
+    "Tulis dokumen ini",
+    "Baca dokumen ini"],
+ a:1},
+
+{q:"午後から 会議が あります artinya …",
+ c:["Rapat pagi",
+    "Rapat siang ke sore",
+    "Rapat malam",
+    "Tidak ada rapat"],
+ a:1},
+
+{q:"仕事中は スマホを 使わないで ください artinya …",
+ c:["Boleh pakai HP",
+    "Gunakan HP",
+    "Jangan gunakan HP saat kerja",
+    "Beli HP baru"],
+ a:2},
+
+{q:"新しい 仕事を 覚えるのは 大変です artinya …",
+ c:["Pekerjaan baru mudah",
+    "Mengingat pekerjaan baru itu berat",
+    "Tidak ada pekerjaan",
+    "Pekerjaan lama sulit"],
+ a:1},
+
+{q:"困った ときは 上司に 相談します artinya …",
+ c:["Diam saja",
+    "Kalau ada masalah, konsultasi ke atasan",
+    "Pulang",
+    "Berhenti kerja"],
+ a:1}
 
 /* lanjut campuran sampai 50 */
 ];
