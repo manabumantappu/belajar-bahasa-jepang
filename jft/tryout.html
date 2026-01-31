@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tryout JFT Basic A2</title>
+
+<style>
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:20px;
+}
+.container{
+  max-width:700px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+h1{
+  text-align:center;
+  margin-bottom:10px;
+}
+.progress{
+  font-size:14px;
+  color:#555;
+  margin-bottom:10px;
+}
+.question{
+  font-size:18px;
+  margin-bottom:15px;
+}
+.choices button{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  font-size:16px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:#fafafa;
+  cursor:pointer;
+}
+.choices button:hover{
+  background:#e9f2ff;
+}
+.result{
+  text-align:center;
+  font-size:18px;
+}
+.correct{color:green;}
+.wrong{color:red;}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Tryout JFT Basic A2</h1>
+  <div class="progress" id="progress"></div>
+  <div class="question" id="question"></div>
+  <div class="choices" id="choices"></div>
+</div>
+
+<script>
+const quiz = [
+  /* ===== Vocabulary ===== */
+{q:"「残業」artinya …",c:["libur","lembur","istirahat","cuti"],a:1},
+{q:"「準備します」artinya …",c:["membersihkan","menyiapkan","membawa","menutup"],a:1},
+{q:"「危ない」artinya …",c:["aman","berbahaya","mudah","cepat"],a:1},
+{q:"「相談します」artinya …",c:["bertanya","konsultasi","memutuskan","menjawab"],a:1},
+
+/* ===== Ekspresi Kerja ===== */
+{q:"仕事が 終わって から 電話して ください artinya …",
+ c:["Telepon sebelum kerja","Telepon setelah kerja selesai",
+    "Telepon saat kerja","Tidak perlu menelepon"],a:1},
+
+{q:"分からない ときは 聞いて ください artinya …",
+ c:["Diam saja","Kalau tidak mengerti, silakan bertanya",
+    "Tanya nanti","Jangan bertanya"],a:1},
+
+{q:"危ないですから 入らないで ください artinya …",
+ c:["Silakan masuk","Masuk cepat",
+    "Karena berbahaya, jangan masuk","Masuk pelan-pelan"],a:2},
+
+/* ===== Kanji Dasar ===== */
+{q:"「毎日 工場で 働きます」artinya …",
+ c:["Bekerja di rumah","Bekerja di pabrik setiap hari",
+    "Bekerja di kantor","Libur setiap hari"],a:1},
+
+{q:"「午後から 会議が あります」artinya …",
+ c:["Rapat pagi","Rapat siang ke sore","Rapat malam","Tidak ada rapat"],a:1},
+
+{q:"「会社を 休みます」artinya …",
+ c:["Masuk kerja","Lembur","Libur kerja","Pindah kerja"],a:2},
+
+{q:"「安全の ために ヘルメットを かぶります」artinya …",
+ c:["Lepas helm","Pakai helm demi keselamatan",
+    "Helm rusak","Helm tidak perlu"],a:1},
+
+/* ===== Tata Bahasa ===== */
+{q:"10時＿来て ください partikel yang tepat …",
+ c:["を","に","で","が"],a:1},
+
+{q:"工場＿仕事を します partikel yang tepat …",
+ c:["を","が","に","で"],a:3},
+
+/* ===== Dokkai (Reading Pendek) ===== */
+{q:"【読解】\n田中さんは 工場で 働いて います。\n毎朝 6時に 起きて、7時に 会社へ 行きます。\n\n田中さんは 何時に 起きますか。",
+ c:["6時","7時","8時","9時"],a:0},
+
+{q:"【読解】\n今日は 雨です。\n危ないですから、外で 仕事を しません。\n\nなぜ 外で 仕事を しませんか。",
+ c:["暑いから","雨で 危ないから","忙しいから","休みだから"],a:1},
+
+{q:"【読解】\n山田さんは きのう びょうきで 会社を 休みました。\n今日は 元気です。\n\n山田さんは きのう どうしましたか。",
+ c:["仕事を しました","休みました",
+    "旅行しました","残業しました"],a:1},
+
+/* ===== Campuran JFT ===== */
+{q:"「この 仕事は 一人で できます」artinya …",
+ c:["難しい","一人でできる","二人でやる","できません"],a:1},
+
+{q:"「熱が あるので 会社を 休みます」artinya …",
+ c:["出勤する","雨だから休む",
+    "熱があって休む","旅行する"],a:2},
+
+{q:"「来週 国へ 帰ります」artinya …",
+ c:["Pulang minggu lalu","Pulang minggu ini",
+    "Pulang minggu depan","Tidak pulang"],a:2},
+
+{q:"「仕事中は スマホを 使わないで ください」artinya …",
+ c:["Boleh pakai HP","Jangan pakai HP saat kerja",
+    "Beli HP","HP rusak"],a:1},
+
+{q:"「新しい 仕事を 覚えるのは 大変です」artinya …",
+ c:["Mudah","Menyenangkan",
+    "Sulit","Tidak perlu"],a:2},
+
+{q:"「困った ときは 上司に 相談します」artinya …",
+ c:["Diam saja","Pulang",
+    "Konsultasi ke atasan","Berhenti kerja"],a:2}
+
+{q:"「早く 来て ください」artinya …",
+ c:["Datang cepat","Datang pelan-pelan","Datang besok","Jangan datang"],a:0},
+
+{q:"「仕事が 多くて 忙しいです」artinya …",
+ c:["Pekerjaan sedikit dan santai",
+    "Pekerjaan banyak dan sibuk",
+    "Tidak bekerja",
+    "Libur kerja"],a:1},
+
+{q:"【読解】\n佐藤さんは 会社で 仕事を しています。\n今日は 忙しいですから、残業します。\n\n佐藤さんは どうしますか。",
+ c:["早く 帰ります","休みます","残業します","会社を 休みます"],a:2}
+  
+];
+
+let index = 0;
+let score = 0;
+
+const qEl = document.getElementById("question");
+const cEl = document.getElementById("choices");
+const pEl = document.getElementById("progress");
+
+function loadQuiz(){
+  if(index >= quiz.length){
+    showResult();
+    return;
+  }
+  pEl.textContent = `Soal ${index+1} / ${quiz.length}`;
+  qEl.textContent = quiz[index].q;
+  cEl.innerHTML = "";
+  quiz[index].c.forEach((choice,i)=>{
+    const btn = document.createElement("button");
+    btn.textContent = choice;
+    btn.onclick = ()=>checkAnswer(i);
+    cEl.appendChild(btn);
+  });
+}
+
+function checkAnswer(i){
+  if(i === quiz[index].a) score++;
+  index++;
+  loadQuiz();
+}
+
+function showResult(){
+  document.querySelector(".container").innerHTML = `
+    <h1>Hasil Tryout</h1>
+    <div class="result">
+      Skor: <b>${score} / ${quiz.length}</b><br><br>
+      ${score >= quiz.length*0.7 
+        ? "<span class='correct'>Lulus level A2 👍</span>"
+        : "<span class='wrong'>Perlu latihan lagi 💪</span>"}
+      <br><br>
+      <button onclick="location.reload()">Ulangi Tryout</button>
+    </div>
+  `;
+}
+
+loadQuiz();
+</script>
+</body>
+</html>
