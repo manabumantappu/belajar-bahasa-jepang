@@ -94,18 +94,17 @@ h1{
 
 <body>
 <!--===== HEADER SERAGAM PANGGIL DARI HEADER.HTML ===== -->
-<div id="site-header"></div>
+<div id="header"></div>
+
 <script>
-fetch("/ssw-manabu-mantappu/header.html")
-  .then(res => {
-    if (!res.ok) throw new Error("header.html tidak ditemukan");
-    return res.text();
-  })
-  .then(html => {
-    document.getElementById("site-header").innerHTML = html;
-  })
-  .catch(err => console.error(err));
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
 </script>
+
+
 
   
 <div class="container">
