@@ -54,7 +54,7 @@ h1{
 }
 .correct{color:green;}
 .wrong{color:red;}
-} 
+
   .page-content{
   padding-top:0; /* default aman */
 }
@@ -70,19 +70,24 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById('header').innerHTML = data;
- // AUTO HITUNG TINGGI HEADER + NAV
-    setTimeout(() => {
+
+    requestAnimationFrame(() => {
       const header = document.querySelector('.top-header');
       const nav = document.querySelector('.main-nav');
       const page = document.querySelector('.page-content');
 
       if(header && nav && page){
-        const offset = header.offsetHeight + nav.offsetHeight + 20;
+        const offset =
+          header.offsetHeight +
+          nav.offsetHeight +
+          8; // buffer kecil & rapi
+
         page.style.paddingTop = offset + 'px';
       }
-    }, 50);
+    });
   });
 </script>
+
 
 <div class="page-content">
 <div class="container">
