@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tryout JFT Basic A2</title>
 
+  <link rel="stylesheet" href="../style.css">
+  
 <style>
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -56,6 +58,17 @@ h1{
 </head>
 
 <body>
+  <!--===== HEADER SERAGAM PANGGIL DARI HEADER.HTML ===== -->
+<div id="header"></div>
+
+<script>
+fetch('/belajar-bahasa-jepang/includes/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+  
 <div class="container">
   <h1>Tryout JFT Basic A2</h1>
   <div class="progress" id="progress"></div>
