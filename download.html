@@ -648,8 +648,13 @@ onChildAdded(ref(db, "chat"), (snap) => {
   const div = document.createElement("div");
   div.className = "msg-user";
   div.innerText = snap.val().text;
-  document.getElementById("messages").appendChild(div);
+
+  messagesEl.appendChild(div);
+
+  // auto scroll ke pesan terbaru
+  messagesEl.scrollTop = messagesEl.scrollHeight;
 });
+
 </script>
 
 <!-- TOGGLE CHAT -->
