@@ -1080,31 +1080,13 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
      
  
 <!-- TOMBOL CHAT -->
-  <script>
-  const overlay = document.getElementById("dialogOverlay");
-  const openBtn = document.getElementById("openDialog");
+ <div id="chat-box">
+  <div id="messages"></div>
 
-  // buka dialog
-  function openDialog(){
-    overlay.classList.add("active");
-  }
+  <input type="text" id="msg" placeholder="Tulis pesan..." />
+  <button onclick="sendMessage()">Kirim</button>
+</div>
 
-  // tutup dialog + simpan status
-  function closeDialog(){
-    overlay.classList.remove("active");
-    localStorage.setItem("dialogSeen", "yes");
-  }
-
-  // klik tombol bantuan
-  openBtn.addEventListener("click", openDialog);
-
-  // auto muncul 1x saja
-  window.addEventListener("load", () => {
-    if(!localStorage.getItem("dialogSeen")){
-      setTimeout(openDialog, 5000); // ⏱ 5 detik
-    }
-  });
-</script>
 
 
 </body>
