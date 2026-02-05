@@ -638,22 +638,25 @@ messagesEl.innerHTML = "";   // ⬅️ baris kunci
 
   push(ref(db, "chat"), {
     text: msg,
-    time: Date.now()
+    time: Date.now(),
+    role: "admin"   // ⬅️ TEMPEL DI SINI
   });
 
   document.getElementById("msg").value = "";
 };
 
+
 onChildAdded(ref(db, "chat"), (snap) => {
+  const data = snap.val();
   const div = document.createElement("div");
-  div.className = "msg-user";
-  div.innerText = snap.val().text;
+
+  div.className = data.role === "admin" ? "msg-admin" : "msg-user";
+  div.innerText = data.text;
 
   messagesEl.appendChild(div);
-
-  // auto scroll ke pesan terbaru
   messagesEl.scrollTop = messagesEl.scrollHeight;
 });
+
 
 </script>
 
