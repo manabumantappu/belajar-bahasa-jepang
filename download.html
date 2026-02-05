@@ -1094,6 +1094,14 @@ onChildAdded(ref(db,"chat"), (snap)=>{
   document.getElementById("messages").appendChild(div);
 });
 </script>    
+
+     <script>
+function toggleChat(){
+  const chat = document.getElementById("chat-box");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
 <!-- WHATSAPP CHAT BUBBLE -->
 <div id="wa-bubble" onclick="toggleChat()">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
