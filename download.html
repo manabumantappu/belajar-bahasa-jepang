@@ -612,7 +612,15 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
 <script type="module">
 import { initializeApp } from 
 "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getDatabase, ref, push, onChildAdded } from 
+
+import { 
+  getDatabase, 
+  ref, 
+  push, 
+  onChildAdded, 
+  query, 
+  limitToLast 
+} from 
 "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -627,52 +635,41 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-  
-/* ✅ TEMPEL DI SINI (INI DIA) */
+
 const messagesEl = document.getElementById("messages");
-messagesEl.innerHTML = "";   // ⬅️ baris kunci
+messagesEl.innerHTML = "";
 
- window.sendMessage = () => {
+/* 👤 USER KIRIM PESAN */
+window.sendMessage = () => {
   const msg = document.getElementById("msg").value;
-   if (!msg) return;
-   
-push(ref(db,"chat"),{
-  text: msg,
-  time: Date.now(),
-  role: "user"
-});
+  if (!msg) return;
 
+  push(ref(db,"chat"),{
+    text: msg,
+    time: Date.now(),
+    role: "user"
+  });
 
   document.getElementById("msg").value = "";
 };
 
+/* 📩 TERIMA HANYA PESAN TERBARU */
+const chatQuery = query(ref(db, "chat"), limitToLast(1));
 
-onChildAdded(ref(db, "chat"), (snap) => {
+onChildAdded(chatQuery, (snap) => {
   const data = snap.val();
   const div = document.createElement("div");
 
-  // 🔥 BEDAKAN ADMIN & USER
   div.className = data.role === "admin"
     ? "msg-admin"
     : "msg-user";
 
   div.innerText = data.text;
-
   messagesEl.appendChild(div);
   messagesEl.scrollTop = messagesEl.scrollHeight;
 });
-
-
 </script>
 
-<!-- TOGGLE CHAT -->
-<script>
-function toggleChat(){
-  const chat = document.getElementById("chat-box");
-  chat.style.display =
-    (chat.style.display === "flex") ? "none" : "flex";
-}
-</script>
 
 
 </body>
