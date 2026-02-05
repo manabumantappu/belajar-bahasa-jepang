@@ -57,7 +57,8 @@ h2{
 <script type="module">
 import { initializeApp } from 
 "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getDatabase, ref, push, onChildAdded } from 
+
+import { getDatabase, ref, push, onChildAdded, query, limitToLast } 
 "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -91,7 +92,9 @@ window.sendMessage = () => {
 };
 
 /* 📩 TERIMA PESAN */
-onChildAdded(ref(db,"chat"), snap=>{
+const chatQuery = query(ref(db, "chat"), limitToLast(1));
+
+onChildAdded(chatQuery, (snap) => {
   const data = snap.val();
   const div = document.createElement("div");
 
