@@ -1031,8 +1031,13 @@ import { getDatabase, ref, push, onChildAdded } from
 "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "API_KEY_KAMU",
-  databaseURL: "DATABASE_URL_KAMU"
+  apiKey: "AIzaSyB....",
+  authDomain: "manabu-mantappu-chat.firebaseapp.com",
+  databaseURL: "https://manabu-mantappu-chat-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "manabu-mantappu-chat",
+  storageBucket: "manabu-mantappu-chat.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "1:XXXX:web:XXXX"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -1057,6 +1062,7 @@ onChildAdded(ref(db,"chat"), (snap)=>{
   document.getElementById("messages").appendChild(div);
 });
 </script>
+
   
 
  <!-- ===== FOOTER ===== -->
