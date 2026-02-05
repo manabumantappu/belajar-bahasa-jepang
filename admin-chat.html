@@ -2,31 +2,58 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Admin Chat</title>
+<title>Admin Live Chat</title>
 <link rel="stylesheet" href="chat.css">
+
+<!-- 🔐 PROTEKSI ADMIN (PALING ATAS) -->
+<script>
+const pass = prompt("Password admin:");
+if(pass !== "admin123"){
+  alert("Akses ditolak");
+  location.href = "/";
+}
+</script>
+
 <style>
 body{
-  font-family:system-ui;
+  font-family:system-ui, sans-serif;
   background:#f1f5f9;
   padding:20px;
 }
 h2{
   text-align:center;
+  margin-bottom:20px;
+}
+#chat-box{
+  display:flex;
+  position:relative;
+  max-width:500px;
+  margin:0 auto;
+  height:520px;
+}
+.chat-input{
+  display:flex;
+}
+.chat-input input{
+  flex:1;
 }
 </style>
 </head>
+
 <body>
 
 <h2>🧑‍💼 Admin Live Chat</h2>
 
-<div id="chat-box" style="display:flex;position:relative;height:500px;">
+<div id="chat-box">
   <div id="messages"></div>
 
   <div class="chat-input">
-    <input type="text" id="msg" placeholder="Balas pesan..." />
+    <input type="text" id="msg" placeholder="Balas pesan user..." />
     <button onclick="sendMessage()">Kirim</button>
   </div>
 </div>
+
+<!-- 🔥 FIREBASE ADMIN CHAT -->
 <script type="module">
 import { initializeApp } from 
 "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
@@ -49,7 +76,7 @@ const db = getDatabase(app);
 const messagesEl = document.getElementById("messages");
 messagesEl.innerHTML = "";
 
-/* ADMIN KIRIM PESAN */
+/* 🧑‍💼 ADMIN KIRIM PESAN */
 window.sendMessage = () => {
   const msg = document.getElementById("msg").value;
   if(!msg) return;
@@ -57,13 +84,13 @@ window.sendMessage = () => {
   push(ref(db,"chat"),{
     text: msg,
     time: Date.now(),
-    role: "admin"   // 🔐 ADMIN ONLY
+    role: "admin"
   });
 
   document.getElementById("msg").value="";
 };
 
-/* TERIMA PESAN */
+/* 📩 TERIMA PESAN */
 onChildAdded(ref(db,"chat"), snap=>{
   const data = snap.val();
   const div = document.createElement("div");
@@ -77,3 +104,6 @@ onChildAdded(ref(db,"chat"), snap=>{
   messagesEl.scrollTop = messagesEl.scrollHeight;
 });
 </script>
+
+</body>
+</html>
