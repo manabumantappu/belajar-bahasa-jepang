@@ -107,3 +107,22 @@
   background:#c7d2fe;
   align-self:flex-end;
 }
+/* USER (PENGUNJUNG) */
+.msg-user{
+  background:#dcf8c6;
+  padding:8px 12px;
+  border-radius:12px;
+  margin-bottom:8px;
+  max-width:80%;
+  align-self:flex-start;   /* kiri */
+}
+
+/* ADMIN (KAMU) */
+.msg-admin{
+  background:#c7d2fe;
+  padding:8px 12px;
+  border-radius:12px;
+  margin-bottom:8px;
+  max-width:80%;
+  align-self:flex-end;     /* kanan */
+}
