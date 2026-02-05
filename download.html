@@ -627,8 +627,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+  
+/* ✅ TEMPEL DI SINI (INI DIA) */
+const messagesEl = document.getElementById("messages");
+messagesEl.innerHTML = "";   // ⬅️ baris kunci
 
-window.sendMessage = () => {
+  window.sendMessage = () => {
   const msg = document.getElementById("msg").value;
   if (!msg) return;
 
