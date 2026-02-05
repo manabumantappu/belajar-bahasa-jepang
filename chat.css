@@ -103,3 +103,7 @@
     right:20px;
   }
 }
+.msg-admin{
+  background:#c7d2fe;
+  align-self:flex-end;
+}
