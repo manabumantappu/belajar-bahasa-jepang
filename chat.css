@@ -107,22 +107,24 @@
   background:#c7d2fe;
   align-self:flex-end;
 }
-/* USER (PENGUNJUNG) */
+/* USER MESSAGE */
 .msg-user{
   background:#dcf8c6;
-  padding:8px 12px;
-  border-radius:12px;
-  margin-bottom:8px;
+  padding:10px 14px;
+  border-radius:14px;
+  margin-bottom:10px;
   max-width:80%;
-  align-self:flex-start;   /* kiri */
+  align-self:flex-end;
 }
 
-/* ADMIN (KAMU) */
+/* ADMIN MESSAGE */
 .msg-admin{
-  background:#c7d2fe;
-  padding:8px 12px;
-  border-radius:12px;
-  margin-bottom:8px;
+  background:#2563eb;   /* 🔵 BIRU */
+  color:#ffffff;
+  padding:10px 14px;
+  border-radius:14px;
+  margin-bottom:10px;
   max-width:80%;
-  align-self:flex-end;     /* kanan */
+  align-self:flex-start;
 }
+
