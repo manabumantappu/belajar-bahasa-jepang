@@ -1,1 +1,452 @@
+<style>
+/* =========================
+   FINAL FIX – MENU SERAGAM
+========================= */
 
+/* ===== FRAME MENU ===== */
+.download-page .section{
+  background:#ffffff;
+  border-radius:24px;
+  padding:40px 30px;
+  box-shadow:0 30px 60px rgba(15,23,42,.12);
+  margin-bottom:70px;
+
+  /* ⬇️ LEBAR FRAME DIKUNCI */
+  max-width:1200px;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+
+  display:flex;
+  flex-direction:column;
+}
+
+/* ===== GRID MENU: 3 KOLOM FIX ===== */
+.download-page .file-list{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr); /* ⬅️ KUNCI 3 MENU */
+  gap:26px;
+  width:100%;
+  align-items:stretch;
+  flex:1;
+}
+
+/* ===== CARD MENU ===== */
+.download-page .file-item{
+  width:100%;
+  height:100%;
+  margin:0;
+  max-width:none;
+
+  background:linear-gradient(145deg,#e8f2ff,#f5f9ff);
+  border-radius:20px;
+  padding:28px 26px;
+  box-shadow:
+    0 20px 40px rgba(30,58,138,.15),
+    inset 0 1px 0 rgba(255,255,255,.6);
+  transition:.3s ease;
+  position:relative;
+  border:1px solid rgba(37,99,235,.15);
+
+  display:flex;
+  flex-direction:column;
+}
+
+/* accent bar */
+.download-page .file-item::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:6px;
+  height:100%;
+  background:linear-gradient(180deg,#2563eb,#38bdf8);
+  border-radius:20px 0 0 20px;
+}
+
+/* isi card mengisi tinggi */
+.download-page .sub-file{
+  flex:1;
+}
+
+/* hover */
+.download-page .file-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(30,58,138,.25);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px){
+  .download-page .file-list{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:640px){
+  .download-page .file-list{
+    grid-template-columns:1fr;
+  }
+}
+/* =========================
+   FIX LIST MODUL DI CARD
+========================= */
+
+/* hilangkan bullet bawaan */
+.download-page .sub-file,
+.download-page .file-item ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+/* item modul */
+.download-page .file-item li{
+  margin:6px 0;
+}
+
+/* link modul jadi tombol kecil */
+.download-page .file-item li a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:#ffffff;
+  text-decoration:none;
+  font-weight:600;
+  color:#1e293b;
+  box-shadow:0 4px 10px rgba(30,58,138,.08);
+  transition:.25s ease;
+}
+
+/* hover */
+.download-page .file-item li a:hover{
+  background:#2563eb;
+  color:#ffffff;
+  transform:translateX(4px);
+}
+/* =========================
+   FIX JARAK HEADER & FRAME
+========================= */
+
+/* rapatkan jarak atas frame pertama */
+.download-page .section:first-of-type{
+  margin-top:0;
+}
+
+/* kecilkan jarak antara subtitle dan frame */
+.subtitle{
+  margin-bottom:30px; /* sebelumnya 60px */
+}
+
+/* rapikan jarak frame dari container */
+.download-wrap{
+  margin-top:40px; /* sebelumnya 60px */
+}
+/* =========================
+   JFT = 3 MENU SEJAJAR
+========================= */
+
+.jft-list{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:26px;
+}
+@media (max-width:1024px){
+  .jft-list{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:640px){
+  .jft-list{
+    grid-template-columns:1fr;
+  }
+}
+/* =========================
+   PROFESSIONAL HEADER
+========================= */
+
+/* bungkus judul */
+.download-header{
+  text-align:center;
+  margin-bottom:50px;
+  position:relative;
+}
+
+/* judul utama */
+.download-header h1{
+  font-size:2.4rem;
+  font-weight:900;
+  margin:0 0 14px;
+  background:linear-gradient(90deg,#1e3a8a,#2563eb,#38bdf8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:.5px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+}
+
+/* subtitle */
+.download-header .subtitle{
+  font-size:1.05rem;
+  color:#475569;
+  max-width:720px;
+  margin:0 auto;
+  line-height:1.6;
+}
+
+/* garis hias */
+.download-header::after{
+  content:"";
+  display:block;
+  width:120px;
+  height:4px;
+  margin:26px auto 0;
+  border-radius:999px;
+  background:linear-gradient(90deg,#2563eb,#38bdf8);
+  box-shadow:0 8px 20px rgba(37,99,235,.35);
+}
+/* =========================
+   PROFESSIONAL CTA JFT
+========================= */
+
+.form-cta{
+  text-align:center;
+  margin-top:50px;
+}
+
+/* tombol utama */
+.form-cta a{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 44px;
+  font-size:1.15rem;
+  font-weight:900;
+  text-decoration:none;
+  border-radius:999px;
+
+  color:#ffffff;
+  background:linear-gradient(135deg,#22c55e,#3b82f6);
+  box-shadow:
+    0 18px 40px rgba(34,197,94,.45),
+    0 8px 20px rgba(59,130,246,.35);
+
+  transition:all .35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* efek kilau */
+.form-cta a::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-60%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.4),
+    transparent
+  );
+  transform:skewX(-20deg);
+}
+
+/* hover */
+.form-cta a:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:
+    0 25px 60px rgba(34,197,94,.6),
+    0 14px 30px rgba(59,130,246,.5);
+}
+
+/* animasi kilau saat hover */
+.form-cta a:hover::before{
+  animation:shine 1s ease;
+}
+
+@keyframes shine{
+  from{ left:-60%; }
+  to{ left:140%; }
+}
+/* SMARTLINK */
+.smartlink-btn{
+  display:inline-block;
+  padding:14px 22px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:#fff;
+  font-weight:600;
+  border-radius:14px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+.smartlink-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(37,99,235,.45);
+}
+.uploading{
+  margin-left:8px;          /* jarak pas dari Modul */
+  font-size:0.85rem;        /* sedikit lebih besar */
+  font-weight:500;          /* lebih tegas tapi masih halus */
+  opacity:0.7;              /* TIDAK terlalu transparan */
+  color:#475569;            /* abu profesional */
+  white-space:nowrap;       /* tetap di samping, tidak turun */
+}
+   .download-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  margin-top:30px;
+}
+
+.download-card{
+  background:#f8fbff;
+  border-radius:18px;
+  padding:24px 20px;
+  text-align:center;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+
+.download-card h3{
+  margin-bottom:4px;
+  color:#1e3a8a;
+}
+
+.subtitle{
+  font-size:.9rem;
+  color:#64748b;
+  margin-bottom:16px;
+}
+
+.module-item{
+  display:block;
+  background:#ffffff;
+  padding:10px 14px;
+  margin:8px 0;
+  border-radius:12px;
+  text-decoration:none;
+  color:#1e293b;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
+  transition:.25s;
+}
+
+.module-item:hover{
+  background:#e0f2fe;
+  transform:translateY(-2px);
+}
+
+.download-all{
+  display:inline-block;
+  margin-top:14px;
+  font-weight:600;
+  color:#0f172a;
+}
+
+/* ===============================
+   CARD LOGO SSW KEREN NIH
+================================ */
+.file-item{
+  background:#f4f8ff;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 12px 28px rgba(30,58,138,.12);
+  text-align:center;
+}
+
+/* ===============================
+   LOGO CONTAINER
+================================ */
+.menu-image{
+  background:linear-gradient(180deg,#e0ecff,#f8fbff);
+  padding:18px;
+  border-radius:14px;
+  margin-bottom:12px;
+  text-align:center;
+}
+
+/* DEFAULT LOGO (SSW UMUM) */
+.menu-image img{
+  height:150px;        /* ⬅️ KUNCI DI HEIGHT */
+  width:auto;
+  max-width:100%;
+  display:block;
+  margin:0 auto;
+  object-fit:contain;
+}
+
+/* ===============================
+   2 LOGO (ATAS – BAWAH)
+================================ */
+.menu-image.dual-logo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+
+.menu-image.dual-logo img:first-child{
+  height:110px;
+}
+
+.menu-image.dual-logo img:last-child{
+  height:70px;
+  opacity:.9;
+}
+
+/* ===============================
+   JUDUL & SUBTITLE
+================================ */
+.file-item strong{
+  display:block;
+  font-size:18px;
+  color:#1e3a8a;
+  margin-top:-6px;
+  margin-bottom:4px;
+}
+
+.file-item span{
+  display:block;
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:14px;
+}
+
+/* ===============================
+   LIST MODUL
+================================ */
+.file-list li{
+  margin-bottom:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
+}
+
+.file-list li:last-child{
+  margin-bottom:18px;
+}
+
+/* ===============================
+   KHUSUS PERHOTELAN
+================================ */
+.ssw-hotel .menu-image img{
+  height:110px !important;   /* ⬅️ PASTI KECIL */
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width:600px){
+  .menu-image img{
+    height:120px;
+  }
+
+  .ssw-hotel .menu-image img{
+    height:70px;
+  }
+}
+/* ===== Akhir LOGO SSW ===== */
+
+</style>
