@@ -669,6 +669,23 @@ onChildAdded(chatQuery, (snap) => {
   messagesEl.scrollTop = messagesEl.scrollHeight;
 });
 </script>
+<!-- TOGGLE CHAT (WAJIB ADA) -->
+<script>
+function toggleChat(){
+  const chat = document.getElementById("chat-box");
+
+  if (!chat) {
+    console.error("chat-box tidak ditemukan");
+    return;
+  }
+
+  if (chat.style.display === "flex") {
+    chat.style.display = "none";
+  } else {
+    chat.style.display = "flex"; // 🔥 HARUS FLEX
+  }
+}
+</script>
 
 
 
