@@ -634,13 +634,14 @@ messagesEl.innerHTML = "";   // ⬅️ baris kunci
 
  window.sendMessage = () => {
   const msg = document.getElementById("msg").value;
-  if (!msg) return;
+   if (!msg) return;
+   
+push(ref(db,"chat"),{
+  text: msg,
+  time: Date.now(),
+  role: "user"
+});
 
-  push(ref(db, "chat"), {
-    text: msg,
-    time: Date.now(),
-    role: "admin"   // ⬅️ PENANDA ADMIN
-  });
 
   document.getElementById("msg").value = "";
 };
