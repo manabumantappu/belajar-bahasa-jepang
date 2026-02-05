@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Admin Chat</title>
+<link rel="stylesheet" href="chat.css">
+<style>
+body{
+  font-family:system-ui;
+  background:#f1f5f9;
+  padding:20px;
+}
+h2{
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h2>🧑‍💼 Admin Live Chat</h2>
+
+<div id="chat-box" style="display:flex;position:relative;height:500px;">
+  <div id="messages"></div>
+
+  <div class="chat-input">
+    <input type="text" id="msg" placeholder="Balas pesan..." />
+    <button onclick="sendMessage()">Kirim</button>
+  </div>
+</div>
