@@ -750,10 +750,10 @@ const SMARTLINK_URL = "https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb
 const ADS_ENABLED = true;
 
 function isMobile(){
-  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  return window.innerWidth <= 768;
 }
 
-// 🔥 Auto smartlink untuk semua PDF
+// PDF download trigger
 document.addEventListener("click", function(e){
 
   const link = e.target.closest("a");
@@ -763,16 +763,19 @@ document.addEventListener("click", function(e){
   if(!href) return;
 
   if(href.endsWith(".pdf")){
+
     if(ADS_ENABLED && !isMobile()){
+
+      // Delay lebih lama supaya terlihat selesai download
       setTimeout(() => {
         window.open(SMARTLINK_URL, "_blank", "noopener");
-      }, 3000);
+      }, 8000); // 🔥 8 detik (lebih natural)
+
     }
   }
 
 });
 
-// 🔥 Untuk tombol Download All
 function openSmartlink(e){
   e.preventDefault();
 
