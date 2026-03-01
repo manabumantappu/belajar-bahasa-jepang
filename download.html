@@ -762,7 +762,7 @@ function isMobile(){
   return window.innerWidth <= 768;
 }
 
-// PDF download trigger
+// 🔥 Auto untuk semua file PDF
 document.addEventListener("click", function(e){
 
   const link = e.target.closest("a");
@@ -774,23 +774,42 @@ document.addEventListener("click", function(e){
   if(href.endsWith(".pdf")){
 
     if(ADS_ENABLED && !isMobile()){
-
-      // Delay lebih lama supaya terlihat selesai download
-      setTimeout(() => {
-        window.open(SMARTLINK_URL, "_blank", "noopener");
-      }, 8000); // 🔥 8 detik (lebih natural)
-
+      startCountdown();
     }
+
   }
 
 });
 
+// 🔥 Tombol Download All
 function openSmartlink(e){
   e.preventDefault();
 
   if(ADS_ENABLED && !isMobile()){
     window.open(SMARTLINK_URL, "_blank", "noopener");
   }
+}
+
+// 🔥 Countdown Logic
+function startCountdown(){
+  const modal = document.getElementById("download-modal");
+  const counter = document.getElementById("countdown");
+
+  modal.style.display = "flex";
+
+  let timeLeft = 5;
+  counter.innerText = timeLeft;
+
+  const timer = setInterval(() => {
+    timeLeft--;
+    counter.innerText = timeLeft;
+
+    if(timeLeft <= 0){
+      clearInterval(timer);
+      modal.style.display = "none";
+      window.open(SMARTLINK_URL, "_blank", "noopener");
+    }
+  }, 1000);
 }
 </script>
 </body>
