@@ -409,7 +409,7 @@ fetch('/belajar-bahasa-jepang/includes/header.html')
       <strong>Modul JFT <span class="uploading">（準備中）</span></strong>
       <span>Bab 1–8</span>
       <ul class="sub-file">
-        <li><a href="assets/pdf/jft/jft-modul-bab1-8">📘 Download</a></li>
+        <li><a href="assets/pdf/jft/jft-modul-bab1-8.pdf">📘 Download</a></li>
       </ul>
     </div>
 
@@ -745,16 +745,15 @@ function toggleChat(){
 }
 </script>
     
-
-  <script>
+<script>
 const SMARTLINK_URL = "https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf";
-const ADS_ENABLED = true; // aktifkan iklan
+const ADS_ENABLED = true;
 
 function isMobile(){
   return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
-// 🔥 Otomatis berlaku untuk SEMUA link PDF
+// 🔥 Auto smartlink untuk semua PDF
 document.addEventListener("click", function(e){
 
   const link = e.target.closest("a");
@@ -763,41 +762,23 @@ document.addEventListener("click", function(e){
   const href = link.getAttribute("href");
   if(!href) return;
 
-  // hanya untuk file PDF lokal
   if(href.endsWith(".pdf")){
-
-    // biarkan download jalan normal
-
     if(ADS_ENABLED && !isMobile()){
-
       setTimeout(() => {
         window.open(SMARTLINK_URL, "_blank", "noopener");
-      }, 3000); // delay 3 detik
-
+      }, 3000);
     }
   }
 
 });
-</script>
-
-    <script>
-const SMARTLINK_URL = "https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf";
-const ADS_ENABLED = true;
-
-function isMobile(){
-  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
 
 // 🔥 Untuk tombol Download All
 function openSmartlink(e){
   e.preventDefault();
 
-  if(!ADS_ENABLED) return;
-
-  // hanya desktop
-  if(isMobile()) return;
-
-  window.open(SMARTLINK_URL, "_blank", "noopener");
+  if(ADS_ENABLED && !isMobile()){
+    window.open(SMARTLINK_URL, "_blank", "noopener");
+  }
 }
 </script>
 </body>
