@@ -687,27 +687,39 @@ function toggleChat(){
 </script>
     
 
-    <script>
-const ADS_ENABLED = false; // false = matikan semua iklan
+  <script>
+const SMARTLINK_URL = "https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf";
+const ADS_ENABLED = true; // aktifkan iklan
 
 function isMobile(){
   return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
-function openAdsterra(){
-  if (!ADS_ENABLED) return;
+// 🔥 Otomatis berlaku untuk SEMUA link PDF
+document.addEventListener("click", function(e){
 
-  // 🔥 IKLAN HANYA BOLEH DESKTOP
-  if (isMobile()) return;
+  const link = e.target.closest("a");
+  if(!link) return;
 
-  window.open(
-    "https://www.effectivegatecpm.com/zn686180ax?key=b5e4a59eb59cb8501aa88cbc4cc775cf",
-    "_blank",
-    "noopener"
-  );
-}
+  const href = link.getAttribute("href");
+  if(!href) return;
+
+  // hanya untuk file PDF lokal
+  if(href.endsWith(".pdf")){
+
+    // biarkan download jalan normal
+
+    if(ADS_ENABLED && !isMobile()){
+
+      setTimeout(() => {
+        window.open(SMARTLINK_URL, "_blank", "noopener");
+      }, 3000); // delay 3 detik
+
+    }
+  }
+
+});
 </script>
-
 
 </body>
 </html>
