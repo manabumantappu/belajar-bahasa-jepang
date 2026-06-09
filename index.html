@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta property="og:title" content="Manabu Mantappu – Belajar Jepang dari Nol">
+<meta property="og:description" content="Belajar bahasa Jepang gratis dari pemula hingga JFT Basic A2 dan SSW.">
+<meta property="og:type" content="website">
   <title>Manabu Mantappu – Belajar Jepang dari Nol</title>
   <meta name="description" content="Manabu Mantappu adalah website belajar bahasa Jepang dari nol untuk pemula. Materi Kana, Aisatsu, Kosakata Dasar, Kalimat, hingga persiapan JFT Basic A2 dan dunia kerja.">
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="donation.css">
-  
+  <link rel="icon" href="img/favicon.ico">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5C26QNPKL"></script>
 <script>
@@ -27,7 +29,14 @@
 <div id="header"></div>
   <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
-  .then(res => res.text())
+  .then(res => {
+    if(!res.ok) throw new Error('Header gagal dimuat');
+    return res.text();
+  })
+  .then(html => {
+    document.getElementById('header').innerHTML = html;
+  })
+  .catch(err => console.error(err));
   .then(html => {
     document.getElementById('header').innerHTML = html;
   });
