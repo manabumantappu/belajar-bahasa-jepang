@@ -27,19 +27,16 @@
 
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
-  <script>
+ <script>
 fetch('/belajar-bahasa-jepang/includes/header.html')
   .then(res => {
-    if(!res.ok) throw new Error('Header gagal dimuat');
+    if (!res.ok) throw new Error('Header gagal dimuat');
     return res.text();
   })
   .then(html => {
     document.getElementById('header').innerHTML = html;
   })
   .catch(err => console.error(err));
-  .then(html => {
-    document.getElementById('header').innerHTML = html;
-  });
 </script>
   
  <!-- ===== DONASI ===== -->
