@@ -23,7 +23,82 @@
 </head>
 
 <body class="download-page">
+<!-- ACCESS CODE GATE -->
+<div id="accessGate" style="
+  position:fixed;
+  inset:0;
+  background:#e8f2ff;
+  z-index:999999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial,sans-serif;
+">
+  <div style="
+    background:#fff;
+    padding:28px;
+    border-radius:16px;
+    width:90%;
+    max-width:360px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+  ">
+    <h2>🔐 Akses Download</h2>
+    <p>Masukkan kode izin dari admin.</p>
 
+    <input id="accessCode"
+      type="password"
+      placeholder="Masukkan kode"
+      style="
+        width:100%;
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:10px;
+        margin:12px 0;
+      ">
+
+    <button onclick="checkAccessCode()" style="
+      width:100%;
+      padding:12px;
+      background:#1976d2;
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-weight:bold;
+      cursor:pointer;
+    ">
+      Masuk
+    </button>
+
+    <p id="accessError" style="color:red;font-size:14px;"></p>
+  </div>
+</div>
+
+<script>
+const DOWNLOAD_CODES = [
+  "MM2026",
+  "ZAKNIHONGO",
+  "SSW123"
+];
+
+function checkAccessCode(){
+  const input = document.getElementById("accessCode").value.trim();
+  const error = document.getElementById("accessError");
+
+  if(DOWNLOAD_CODES.includes(input)){
+    sessionStorage.setItem("download_access", "true");
+    document.getElementById("accessGate").style.display = "none";
+  }else{
+    error.innerText = "Kode salah. Minta kode akses ke admin.";
+  }
+}
+
+if(sessionStorage.getItem("download_access") === "true"){
+  document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("accessGate").style.display = "none";
+  });
+}
+</script>
 <!-- ===== HEADER ===== -->
 <div id="header"></div>
   <script>
