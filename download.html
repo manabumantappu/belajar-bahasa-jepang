@@ -795,6 +795,34 @@ function startCountdown(){
 </script>
 
     <script src="access.js"></script>
+    <script>
+// Blok klik kanan
+document.addEventListener("contextmenu", function(e){
+  e.preventDefault();
+});
+
+// Blok F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener("keydown", function(e){
+
+  if (e.key === "F12") {
+    e.preventDefault();
+    return false;
+  }
+
+  if (e.ctrlKey && e.shiftKey &&
+      (e.key === "I" || e.key === "J" || e.key === "C")) {
+    e.preventDefault();
+    return false;
+  }
+
+  if (e.ctrlKey && e.key === "U") {
+    e.preventDefault();
+    return false;
+  }
+
+});
+</script>
+    
 </body>
 </html>
 
