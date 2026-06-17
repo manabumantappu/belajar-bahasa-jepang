@@ -76,9 +76,9 @@
 
 <script>
 const DOWNLOAD_CODES = [
-  "MM123456",
-  "MM1234567",
-  "MM12345678"
+  "MM2026",
+  "ZAKNIHONGO",
+  "SSW123"
 ];
 
 function checkAccessCode(){
@@ -86,17 +86,10 @@ function checkAccessCode(){
   const error = document.getElementById("accessError");
 
   if(DOWNLOAD_CODES.includes(input)){
-    sessionStorage.setItem("download_access", "true");
     document.getElementById("accessGate").style.display = "none";
   }else{
     error.innerText = "Kode salah. Minta kode akses ke admin.";
   }
-}
-
-if(sessionStorage.getItem("download_access") === "true"){
-  document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("accessGate").style.display = "none";
-  });
 }
 </script>
 <!-- ===== HEADER ===== -->
