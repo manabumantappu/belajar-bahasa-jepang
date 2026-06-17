@@ -1,7 +1,7 @@
 const DOWNLOAD_CODES = [
-  "MM2026",
-  "ZAKNIHONGO",
-  "SSW123"
+  "MM202601",
+  "MM202602",
+  "MM202603"
 ];
 
 function checkAccessCode(){
